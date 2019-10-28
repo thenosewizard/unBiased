@@ -7,7 +7,7 @@ In order to run this application here we need to do a few steps
 Navigate to the repository you have just cloned and type the following commands
 
 - **Firstly** we need to activate the virtual environment
->- Type .\venv\Scripts\activate
+>- .\venv\Scripts\activate
 - Now run this command 
 >- Pip install requirements.txt 
 - If you don't have pip installed, run this command
@@ -18,9 +18,9 @@ Navigate to the repository you have just cloned and type the following commands
 Just type **flask run** in your cmd and you should be good to go!
 
 
-## File structure
+# File structure
 
 - To be added
-## Database structure
+# Database structure
 
 - to be added
