@@ -29,7 +29,7 @@ requests==2.20.1
 rope==0.10.7
 sense-hat==2.2.0
 six==1.11.0
-urllib3==1.24.1
+urllib3==1.24.2
 virtualenv==16.1.0
 virtualenvwrapper-win==1.2.5
 websockets==3.4
