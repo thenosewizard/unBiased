@@ -8,7 +8,7 @@ instance/
 .pytest_cache/
 .coverage
 htmlcov/
-
+.vscode
 dist/
 build/
 *.egg-info/
