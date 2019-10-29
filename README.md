@@ -6,7 +6,10 @@ In order to run this application here we need to do a few steps
 
 Navigate to the repository you have just cloned and type the following commands
 
-- **Firstly** we need to activate the virtual environment
+
+- **Firstly** we need to set up the virtual environment 
+>- py -3 -m venv venv
+- Now activate the virtual environment 
 >- .\venv\Scripts\activate
 - Now run this command 
 >- Pip install requirements.txt 
