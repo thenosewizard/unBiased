@@ -18,7 +18,7 @@ Navigate to the repository you have just cloned and type the following commands
 
 ## Running the program
 
-Just type **flask run** in your cmd and you should be good to go!
+Just type **python run.py** in your cmd and you should be good to go!
 
 
 # File structure
