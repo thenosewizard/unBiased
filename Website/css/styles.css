@@ -1,0 +1,30 @@
+﻿body
+{
+    background-color: #171a21;
+    font-family: 'Montserrat';
+    color: #c7d5e0;
+    /*Decided to just margin all sides by 15% instead of just top left and right*/
+    margin: 15% 15% 0 15%
+}
+
+h1.title {
+    font-size: 500%;
+    margin: 20px;
+}
+
+.title-card {
+    text-align: center;
+}
+
+.glyphicon-search:before {
+    content:"\270f";
+}
+
+header{
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1b2838;
+}
