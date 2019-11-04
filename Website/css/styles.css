@@ -4,7 +4,16 @@
     font-family: 'Montserrat';
     color: #c7d5e0;
     /*Decided to just margin all sides by 15% instead of just top left and right*/
-    margin: 15% 15% 0 15%
+    margin: 10% 10% 0 10%
+}
+
+header {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1b2838;
 }
 
 h1.title {
@@ -16,15 +25,31 @@ h1.title {
     text-align: center;
 }
 
+
+/*Using Font Awesome to get the icon*/
 .glyphicon-search:before {
     content:"\270f";
 }
 
-header{
-    position: absolute;
-    margin: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #1b2838;
+.gameName {
+    display:inline-block;
+    margin: 3% 0 0 0;
+}
+
+.info {
+    display:inline-block;
+    overflow: hidden;
+    width: 55%;
+    float: left;
+}
+
+h2 {
+    display:inline-block;
+}
+
+aside {
+    display: inline-block;
+    border: 1px solid #5D7310;
+    float: right;
+    width: 40%;
 }
