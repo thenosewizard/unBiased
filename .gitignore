@@ -123,3 +123,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+reviews\AI\csgo.json
+reviews\AI\csgo.csv
+reviews/AI/csgo.json
+reviews/AI/csgo.csv
+reviews/AI/totalWar.json
+.vscode/settings.json
