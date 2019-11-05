@@ -15,6 +15,15 @@ Navigate to the repository you have just cloned and type the following commands
 >- Pip install requirements.txt 
 - If you don't have pip installed, run this command
 >- python get-pip.py
+- Create Database
+- Activate the virtual environment
+>- .\venv\Scripts\activate
+- Activate Python
+>- python
+- Import dependencies
+>- from models import db
+- Create Database
+>- db.create_all()
 
 ## Running the program
 
