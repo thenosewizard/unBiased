@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{D28BBF3B-A89E-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{4DE196EF-21F9-4F3D-B815-349F22ED12E5}"
 	ProjectSection(SolutionItems) = preProject
+		media\favIcon.png = media\favIcon.png
 		..\..\..\School\Year 2\2.2\P2\UNBIASED.png = ..\..\..\School\Year 2\2.2\P2\UNBIASED.png
 	EndProjectSection
 EndProject
