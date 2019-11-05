@@ -4,7 +4,8 @@
     font-family: 'Montserrat';
     color: #c7d5e0;
     /*Decided to just margin all sides by 15% instead of just top left and right*/
-    margin: 10% 10% 0 10%
+    margin: 10% 10% 0 10%;
+    line-height: 1.6;
 }
 
 header {
@@ -43,13 +44,21 @@ h1.title {
     float: left;
 }
 
-h2 {
-    display:inline-block;
+h1, h2 {
+    display: inline-block;
 }
 
 aside {
+    border-radius: 10%;
+    padding: 5px;
+    margin: 0 0 0 3%;
     display: inline-block;
     border: 1px solid #5D7310;
-    float: right;
     width: 40%;
+}
+
+ul, li {
+    padding: 0 0 0 1%;
+    list-style: none;
+    list-style-position: inside;
 }
