@@ -1,37 +1,38 @@
-﻿<!-- A grey navbar that expands horizontally at medium device -->
-<nav class="navbar navbar-expand-md bg-light navbar-light">
-    <!-- The brand(or icon) of the navbar -->
-    <a class="navbar-brand" href="~/Home/LecturerMainPage"
-       style="font-size:32px; font-weight:bold; color:#3399FF;">
-        ABC Lecturer
-    </a>
-    <!-- Toggle/collapsible Button, also known as hamburger button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#staffNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Links in the navbar, displayed as drop-down list when collapsed -->
-    <div class="collapse navbar-collapse" id="staffNavbar">
-        <!-- Links that are aligned to the left,
-        mr-auto: right margin auto-adjusted -->
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="~/LecturerProfile/Index">Lecturer Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="~/LecturerSkills/Index">View all Skillsets</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="~/SkillBranch/Index">Filter by Skillset</a>
-            </li>
-        </ul>
-        <!-- Links that are aligned to the right,
-        ml-auto: left margin auto-adjusted -->
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <!-- A link for logging out user -->
-                <a class="nav-link" href="~/Home/LogOut">Log Out</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+﻿<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Zechariah Wong" />
+    <meta name="description" content="P2 project" />
+    <title>Index.html</title>
+
+    <!--Montserrat Font-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <!--Boot strap js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!--Style sheets-->
+    <!--------------------------------------------------------------------------------------------------------------------------------->
+    <!--Boot strap style sheets-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Font Awesome for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--styles.css-->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <!--Favicon-->
+    <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand">UNBIASED</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
+            <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
+        </form>
+    </nav>
+</body>
