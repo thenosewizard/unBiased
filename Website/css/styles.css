@@ -8,6 +8,10 @@
     line-height: 1.6;
 }
 
+main {
+    display: inline-block;
+}
+
 header {
     position: absolute;
     margin: 0;
@@ -15,6 +19,15 @@ header {
     left: 0;
     width: 100%;
     background-color: #1b2838;
+}
+
+footer {
+    float: left;
+    display: block;
+}
+
+section {
+    display: block;
 }
 
 h1.title {
