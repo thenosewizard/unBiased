@@ -1,10 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29424.173
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2E5661A-FE5F-4134-8BB4-B9DC73ECC369}"
 	ProjectSection(SolutionItems) = preProject
+		Error.html = Error.html
 		Index.html = Index.html
 		Nav.html = Nav.html
 		Review.html = Review.html
@@ -12,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}"
 	ProjectSection(SolutionItems) = preProject
+		newstylesheet.css = newstylesheet.css
 		css\styles.css = css\styles.css
 	EndProjectSection
 EndProject
@@ -19,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{D28BBF3B-A89E-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{4DE196EF-21F9-4F3D-B815-349F22ED12E5}"
 	ProjectSection(SolutionItems) = preProject
+		media\404logo.png = media\404logo.png
+		media\error404LogoFull.png = media\error404LogoFull.png
 		media\favIcon.png = media\favIcon.png
 		..\..\..\School\Year 2\2.2\P2\UNBIASED.png = ..\..\..\School\Year 2\2.2\P2\UNBIASED.png
 	EndProjectSection
