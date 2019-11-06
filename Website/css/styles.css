@@ -48,12 +48,17 @@ h1, h2 {
     display: inline-block;
 }
 
+img {
+    display: block;
+    max-width:500px;
+}
+
 aside {
-    border-radius: 10%;
+    border-radius: 5px;
     padding: 5px;
     margin: 0 0 0 3%;
     display: inline-block;
-    border: 1px solid #5D7310;
+    border: 2px solid #57a64a;
     width: 40%;
 }
 
@@ -61,4 +66,27 @@ ul, li {
     padding: 0 0 0 1%;
     list-style: none;
     list-style-position: inside;
+}
+
+.link {
+    display: inline-block;
+    color: #171a21;
+    background-color: #c7d5e0;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .link:hover {
+        color: #171a21;
+        background-color: #f0f8ff;
+        text-decoration: none;
+    }
+
+img {
+    margin: 5px 5px 5px 0;
+    /*font size being changed to default is in case 
+        the img fails*/
+    font-size: 16px;
 }

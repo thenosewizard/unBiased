@@ -30,6 +30,20 @@
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
 </head>
 <body>
+    <!--================================================================================-->
+    <!--                                    Navbar                                      -->
+    <!--================================================================================-->
+    <header id="nav">
+        <nav class="navbar">
+            <a class="navbar-brand">UNBIASED</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
+                <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
+            </form>
+        </nav>
+    </header>
+
+    <!-- This might not be needed tbh-->
     <nav>
         <div class="input-group">
             <input type="text" placeholder="Search for a game..." class="form-control" />
@@ -41,11 +55,20 @@
         </div>
     </nav>
     <main>
+        <!--================================================================================-->
+        <!--           Game name, preview image / carousel and UNBIASED rating              -->
+        <!--================================================================================-->
         <section>
             <h1 class="gameName">Game Name: </h1>
             <h2>UNBIASED</h2>
+            <img src="media\UNBIASED.PNG" alt="If you can see this, something went wrong!" />
             <h3>UNBIASED Rating: </h3>
         </section>
+
+
+        <!--================================================================================-->
+        <!--       Content info / review description or whatever you want to put here       -->
+        <!--================================================================================-->
         <article class="info">
             <div style="display:inline-block;">
                 lorem ipsum dolor sit amet, consectetur adipiscing elit. maecenas quis feugiat lorem. nunc vitae maximus quam. vivamus suscipit hendrerit nisl. cras sodales ultricies augue quis efficitur. phasellus eget porttitor metus. integer blandit ultricies mauris. pellentesque scelerisque lectus quam, vel lobortis dolor ornare eu.
@@ -53,10 +76,24 @@
                 duis faucibus, sem non ullamcorper laoreet, lectus urna aliquam purus, a viverra nulla ipsum vel nunc. phasellus congue neque fermentum, faucibus nulla sagittis, fringilla libero. curabitur vehicula consequat massa, varius pellentesque elit dictum eu. aliquam erat volutpat. ut suscipit vitae leo sed porta. quisque at semper ante. mauris commodo risus ex, non imperdiet sem aliquet vel. morbi eu tristique mi. proin rhoncus justo nisl, sed fringilla risus cursus eu. aliquam viverra ante ut dolor finibus, non lacinia augue hendrerit. phasellus dictum congue dui, quis scelerisque augue faucibus ut.
             </div>
         </article>
-        <article class="info" style="margin: 3% 0 0 0;"> 
-            <h5>Get the game!</h5>
+
+
+        <!--================================================================================-->
+        <!--            This is the linking to the games steam store page                   -->
+        <!--================================================================================-->
+        <article class="info" style="margin: 3% 0 0 0;">
+            <h5>Get the game &#8594 <a href="https://store.steampowered.com/" class="link" target="_blank">Here!</a></h5>
         </article>
+
+        <!--================================================================================-->
+        <!--                        Insert link to discussion board                         -->
+        <!--================================================================================-->
+
     </main>
+
+    <!--================================================================================-->
+    <!--            This stuff is the side bar / review break down                      -->
+    <!--================================================================================-->
     <aside>
         <div>
             <h3>Rating Breakdown:</h3>
@@ -68,5 +105,6 @@
             </ul>
         </div>
     </aside>
+
 </body>
 </html>
