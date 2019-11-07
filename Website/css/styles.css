@@ -4,12 +4,12 @@
     font-family: 'Montserrat';
     color: #c7d5e0;
     /*Decided to just margin all sides by 15% instead of just top left and right*/
-    margin: 10% 10% 0 10%;
+    margin: 10% 10% 10% 10%;
     line-height: 1.6;
 }
 
-main {
-    display: inline-block;
+a {
+    color: #c7d5e0;
 }
 
 header {
@@ -20,6 +20,21 @@ header {
     width: 100%;
     background-color: #1b2838;
 }
+
+
+
+.navLinks {
+    float: right;
+    display: inline-block;
+}
+
+    .navLinks a {
+        margin: 0 20px 0 0;
+    }
+
+    .navLinks a:hover {
+        text-decoration: none;
+    }
 
 footer {
     float: left;
