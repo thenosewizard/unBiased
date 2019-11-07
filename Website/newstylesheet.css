@@ -1,12 +1,23 @@
-﻿#image {
-    position: center;
-    border: 3px solid blue;
-}
+﻿
 
-#button1 {
+body main #errorButtonDiv{
     border: 10px solid white;
 }
 
 #button2 {
     border: 10px solid white;
+}
+
+body main #errorButtonDiv .testButton {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: 10px solid white;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
 }
