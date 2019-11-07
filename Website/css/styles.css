@@ -136,3 +136,8 @@ body main #errorImage {
     position :center;
     margin: 0 auto;
 }
+
+.block {
+    float:left;
+    width: 100%;
+}
