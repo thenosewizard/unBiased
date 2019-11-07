@@ -76,7 +76,7 @@ h1, h2 {
     display: inline-block;
 }
 
-img {
+img { /*Why is there two img in the css*/
     display: block;
     max-width:500px;
 }
@@ -117,4 +117,22 @@ img {
     /*font size being changed to default is in case 
         the img fails*/
     font-size: 16px;
+}
+
+
+
+/*======================Other pages========================================*/
+
+/*----Error Page ----*/
+
+body main #errorImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+body main #errorImage {
+    position :center;
+    margin: 0 auto;
 }
