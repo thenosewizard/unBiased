@@ -76,11 +76,6 @@ h1, h2 {
     display: inline-block;
 }
 
-img { /*Why is there two img in the css*/
-    display: block;
-    max-width:500px;
-}
-
 aside {
     border-radius: 5px;
     padding: 5px;
