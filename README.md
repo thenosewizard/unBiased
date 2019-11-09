@@ -22,7 +22,7 @@ Just type **python run.py** in your cmd and you should be good to go!
 
 
 # File structure
-__the templates folder in each of these files contains their respective html pages__
+__the templates folder in each of these files contain their respective html pages__
 - AI
 > Contains the code for machine learning and scripts to get data
 
