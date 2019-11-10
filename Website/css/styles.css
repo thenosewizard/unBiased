@@ -95,16 +95,50 @@ img {
 
 /*======================Other pages========================================*/
 
-/*----Error Page ----*/
+/*----Error Page----*/
 
 body main #errorImage {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-}
-
-body main #errorImage {
-    position :center;
+    position: center;
     margin: 0 auto;
 }
+
+/*----Login Page----*/
+
+body main #loginImage, body main #registerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    margin: 0 auto;
+}
+
+body main #loginImage #lock, body main #registerImage #register {
+    width: 50%;
+}
+
+
+/*----Register Page----
+
+/*Div and img alightment
+body main #registerImage {
+    display: block;
+    margin-left: 38%;
+    margin-right: 40%;
+    width: 50%;
+}
+
+body main #registerImage #register {
+    width: 50%;
+}
+
+/*Font style and text alightment
+body main .container #title{
+    text-align:center;
+
+}
+*/
+

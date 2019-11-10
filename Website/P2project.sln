@@ -7,8 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Error.html = Error.html
 		Index.html = Index.html
-		LoginAndRegister.html = LoginAndRegister.html
+		login.html = login.html
 		Nav.html = Nav.html
+		register.html = register.html
 		Review.html = Review.html
 	EndProjectSection
 EndProject
@@ -25,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{4DE196EF
 		media\404logo.png = media\404logo.png
 		media\error404LogoFull.png = media\error404LogoFull.png
 		media\favIcon.png = media\favIcon.png
+		media\lock.png = media\lock.png
+		media\register.png = media\register.png
 		..\..\..\School\Year 2\2.2\P2\UNBIASED.png = ..\..\..\School\Year 2\2.2\P2\UNBIASED.png
 	EndProjectSection
 EndProject

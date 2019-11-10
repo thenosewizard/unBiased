@@ -3,9 +3,9 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Unbiased Error page </title>
+    <title>Unbiased login </title>
     <meta name="author" content="Theodosius Chin GuoJun" />
-    <meta name="description" content="P2 project, Error page" />
+    <meta name="description" content="P2 project, Register page" />
     <title>Index.html</title>
 
     <!--Montserrat Font-->
@@ -45,18 +45,40 @@
         </nav>
     </header>
     <main>
-        <div id="errorImage">
-            <img src="media/error404LogoFull.png" alt="ErrorLogo" style="width:100%" />
-        </div>
-        <div id="errorButtonDiv" style="position:center; text-align:center">
-            <button type="button" class="btn btn-info" onclick="alert('Send error report work!')">Send Error Report</button>
-            <button type="button" class="btn btn-info" onclick="alert('Request for game review work!')">Request for game review</button>
-        </div>
+        <form action="action_page.php" method="post">
+            <div id="registerImage">
+                <img id="register" src="media/register.png" alt="RegisterLogo" />
+            </div>
+
+            
+            <div class="container">
+                <h1 id="title">Register</h1>
+                <br>
+                <label for="firstName"><b>First name: </b></label>
+                <input type="text" placeholder="Enter your first name" name="firstname" required />
+                <br />
+                <br>
+                <label for="lastName"><b>Last name: </b></label>
+                <input type="text" placeholder="Enter your last name" name="lastname" required />
+                <br />
+                <br>
+                <label for="email"><b>Email: </b></label>
+                <input type="text" placeholder="Enter your email" name="email" required />
+                <br />
+                <br>
+                <label for="psw"><b>Password:  </b></label>
+                <input type="password" placeholder="Enter Password" name="psword" required>
+                <br />
+                <br>
+                <label for="psw"><b>Confirm password:  </b></label>
+                <input type="password" placeholder="Confirm your password" name="confirmpsword" required>
+                <br />
+                <button type="reset" class="btn btn-info" onclick="alert('Reset button work!')">Reset</button>
+                <button type="button" class="btn btn-info" onclick="alert('Back to login page button work!')"><a href="login.html">Got an account?</a></button>
+                <button type="submit" class="btn btn-info" onclick="alert('Register work!')">Register!</button>
+            </div>
+        
+        </form>
     </main>
-
-    <footer>
-
-    </footer>
-    
 </body>
 </html>

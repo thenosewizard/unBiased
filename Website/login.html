@@ -3,9 +3,9 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Unbiased Error page </title>
+    <title>Unbiased login </title>
     <meta name="author" content="Theodosius Chin GuoJun" />
-    <meta name="description" content="P2 project, Error page" />
+    <meta name="description" content="P2 project, Login page" />
     <title>Index.html</title>
 
     <!--Montserrat Font-->
@@ -45,18 +45,29 @@
         </nav>
     </header>
     <main>
-        <div id="errorImage">
-            <img src="media/error404LogoFull.png" alt="ErrorLogo" style="width:100%" />
-        </div>
-        <div id="errorButtonDiv" style="position:center; text-align:center">
-            <button type="button" class="btn btn-info" onclick="alert('Send error report work!')">Send Error Report</button>
-            <button type="button" class="btn btn-info" onclick="alert('Request for game review work!')">Request for game review</button>
-        </div>
+        <form action="action_page.php" method="post">
+            <div id="loginImage">
+                <img id="lock" src="media/lock.png" alt="LockLogo" />
+            </div>
+
+            <div class="container">
+                <h1>Login</h1>
+                <br />
+                <label for="login"><b>Username: </b></label>
+                <input type="text" placeholder="Enter Username or Email" name="uname" required />
+                <br />
+                <label for="psw"><b>Password:  </b></label>
+                <input type="password" placeholder="Enter Password" name="psword" required>
+                <br />
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <br />
+                <button type="submit" class="btn btn-info" onclick="alert('Forget account button work!')">Forget account?</button>
+                <button type="submit" class="btn btn-info" onclick="alert('Register button work!')"><a href="register.html">Register</a></button>
+                <button type="submit" class="btn btn-info" onclick="alert('Login button work!')">Login</button>
+            </div>
+        </form>
     </main>
-
-    <footer>
-
-    </footer>
-    
 </body>
 </html>
