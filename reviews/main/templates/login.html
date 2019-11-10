@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head></head>
+    <body>
+        <header>Login</header>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="">
+            {{ form.csrf_token }}
+            <fieldset>
+                {{form.email.label}}
+                {{form.email}}
+                {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                        <span style="color: red;">{{errror}}</span>
+                    {% endfor %}
+                {% endif %}
+                {{form.password.label}}
+                {{form.password}}
+            </fieldset>
+            <button>
+                {{form.submit}}
+            </button>
+        </form>
+    </body>
+</html>

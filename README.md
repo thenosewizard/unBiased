@@ -22,8 +22,18 @@ Just type **python run.py** in your cmd and you should be good to go!
 
 
 # File structure
+__the templates folder in each of these files contain their respective html pages__
+- AI
+> Contains the code for machine learning and scripts to get data
 
-- To be added
+- evaluation
+> Contains logic for reviews section/News and admin page
+
+- main
+> Contains logic for login, main page, about us and etc
+
+- static
+> main css for all pages
 # Database structure
 
 - to be added

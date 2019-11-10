@@ -3,11 +3,11 @@ import requests
 import os
 
 ################
-filename = "abi"
+filename = "csgo1.json"
 appid = "730"
 ################
 
-filename = os.getcwd() + "/reviews/AI/" + filename + '.json'
+#filename = os.getcwd() + "/reviews/AI/" + filename + '.json'
 
 #getting the reviews from the steam api
 
@@ -54,6 +54,6 @@ def clean_reviews(filename):
     with open('edited.json', 'w') as file:
         file.write(filedata)
 
-# get_reviews_2(appid, 1, filename)
-# read_reviews(filename)
-clean_reviews(filename)
+get_reviews_2(appid, 30, filename)
+#read_reviews(filename)
+#clean_reviews(filename)
