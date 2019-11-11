@@ -20,20 +20,21 @@ Navigate to the repository you have just cloned and type the following commands
 
 Just type **python run.py** in your cmd and you should be good to go!
 
-
 # File structure
-__the templates folder in each of these files contain their respective html pages__
-- AI
-> Contains the code for machine learning and scripts to get data
+````
+├───reviews                        # Application
+│   ├───AI                         # Machine learning and scripts to get data
+│   ├───Data
+│   │   └───models.py              # Database models 
+│   ├───evaluation     
+│   │   ├───templates              # Html files for evaluation
+│   │   └───controllers.py         # Contains logic for reviews section/News and admin page
+│   ├───main
+│   │   ├───templates              # Html files for main
+│   │   └───controllers.py         # Contains logic for login, main page, about us and etc
+│   ├───static                     # main css for all pages
+````
 
-- evaluation
-> Contains logic for reviews section/News and admin page
-
-- main
-> Contains logic for login, main page, about us and etc
-
-- static
-> main css for all pages
 # Database structure
 
 - to be added (Oscar add plz)
