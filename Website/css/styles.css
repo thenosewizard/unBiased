@@ -4,12 +4,8 @@
     font-family: 'Montserrat';
     color: #c7d5e0;
     /*Decided to just margin all sides by 15% instead of just top left and right*/
-    margin: 10% 10% 10% 10%;
+    margin: 10% 10% 0 10%;
     line-height: 1.6;
-}
-
-a {
-    color: #c7d5e0;
 }
 
 header {
@@ -19,30 +15,6 @@ header {
     left: 0;
     width: 100%;
     background-color: #1b2838;
-}
-
-
-
-.navLinks {
-    float: right;
-    display: inline-block;
-}
-
-    .navLinks a {
-        margin: 0 20px 0 0;
-    }
-
-    .navLinks a:hover {
-        text-decoration: none;
-    }
-
-footer {
-    float: left;
-    display: block;
-}
-
-section {
-    display: block;
 }
 
 h1.title {
@@ -76,12 +48,17 @@ h1, h2 {
     display: inline-block;
 }
 
+img { /*Why is there two img in the css*/
+    display: block;
+    max-width:500px;
+}
+
 aside {
     border-radius: 5px;
     padding: 5px;
     margin: 0 0 0 3%;
     display: inline-block;
-    border: 2px solid #28a745;
+    border: 2px solid #57a64a;
     width: 40%;
 }
 
@@ -118,21 +95,50 @@ img {
 
 /*======================Other pages========================================*/
 
-/*----Error Page ----*/
+/*----Error Page----*/
 
 body main #errorImage {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-}
-
-body main #errorImage {
-    position :center;
+    position: center;
     margin: 0 auto;
 }
 
-.block {
-    float:left;
-    width: 100%;
+/*----Login Page----*/
+
+body main #loginImage, body main #registerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    margin: 0 auto;
 }
+
+body main #loginImage #lock, body main #registerImage #register {
+    width: 50%;
+}
+
+
+/*----Register Page----
+
+/*Div and img alightment
+body main #registerImage {
+    display: block;
+    margin-left: 38%;
+    margin-right: 40%;
+    width: 50%;
+}
+
+body main #registerImage #register {
+    width: 50%;
+}
+
+/*Font style and text alightment
+body main .container #title{
+    text-align:center;
+
+}
+*/
+
