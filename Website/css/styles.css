@@ -1,11 +1,11 @@
-﻿body
-{
+﻿body {
+    /*Page layout*/
+    margin: 5% 10% 0 10%;
     background-color: #171a21;
-    font-family: 'Montserrat';
+    /*Text display*/
     color: #c7d5e0;
-    /*Decided to just margin all sides by 15% instead of just top left and right*/
-    margin: 10% 10% 0 10%;
     line-height: 1.6;
+    font-family: 'Montserrat';
 }
 
 header {
@@ -80,6 +80,9 @@ ul, li {
     }
 
 img {
+    object-fit: contain;
+    max-height:100%;
+    max-width: 100%;
     display: block;
     margin: 5px 5px 5px 0;
     /*font size being changed to default is in case 
@@ -87,7 +90,30 @@ img {
     font-size: 16px;
 }
 
+.navLinks{
+    margin: 0 10px 0 0;
+}
 
+a {
+    color: #c7d5e0;
+    text-decoration: none;
+}
+    a:hover {
+        text-decoration: none;
+    }
+
+
+.carousel-info {
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    padding: 5px;
+    color: #c7d5e0;
+    position: absolute;
+    overflow-wrap: break-word;
+    background-color: rgba( 117, 114, 106,0.2);
+}
 
 /*======================Other pages========================================*/
 
