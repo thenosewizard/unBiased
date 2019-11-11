@@ -2,7 +2,7 @@
 
 In order to run this application here we need to do a few steps
 
-# Installing the required modules
+## Installing the required modules
 
 Navigate to the repository you have just cloned and type the following commands
 
@@ -17,7 +17,6 @@ Navigate to the repository you have just cloned and type the following commands
 `` python get-pip.py ``
 
 ## Running the program
-
 Just type **``python run.py``** in your cmd and you should be good to go!
 
 # File structure
@@ -36,8 +35,7 @@ Just type **``python run.py``** in your cmd and you should be good to go!
 ````
 
 # Database structure
-
-- to be added (Oscar add plz)
+![Image](https://github.com/thenosewizard/unBiased/blob/master/Website/media/db.jfif)
 
 # Creating the database in your local
 1. Make sure your current working directory is where you can see the reviews, app.py etc..
