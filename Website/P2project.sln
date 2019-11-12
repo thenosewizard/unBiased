@@ -18,7 +18,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}"
 	ProjectSection(SolutionItems) = preProject
-		newstylesheet.css = newstylesheet.css
 		css\styles.css = css\styles.css
 	EndProjectSection
 EndProject

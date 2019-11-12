@@ -1,11 +1,18 @@
 from flask import Blueprint, render_template, flash, redirect, url_for
-from reviews.main.forms import RegistrationForm, LoginForm
 main = Blueprint('main', __name__, template_folder= "templates")
+from reviews.main.forms import RegistrationForm, LoginForm
+from reviews.Data.models import User
+from reviews import db
 
 
 @main.route('/')
 def index():
     return render_template('index.html')
+
+@main.route('/test')
+def test():
+    users = User.query.all()
+    return users
 
 
 @main.route("/register", methods = ['GET', 'POST'])
