@@ -150,11 +150,16 @@ body main #loginImage #lock, body main #registerImage #register {
 
 /*----Feedback-----*/
 
+body main #title {
+    width: 100%;
+    padding-top: 110px;
+}
+
 * {
     box-sizing: border-box;
 }
 
-input[type=text], select, textarea {
+body main #feedbackcontainer input[type=text], body main #feedbackcontainer select, body main #feedbackcontainer textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -162,12 +167,12 @@ input[type=text], select, textarea {
     resize: vertical;
 }
 
-label {
+body main #feedbackcontainer label {
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
 
-input[type=submit] {
+body main #feedbackcontainer input[type=submit] {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -177,30 +182,30 @@ input[type=submit] {
     float: right;
 }
 
-    input[type=submit]:hover {
-        background-color: #45a049;
-    }
+body main #feedbackcontainer input[type=submit]:hover {
+    background-color: #45a049;
+}
 
-.container {
+body main #feedbackcontainer .container {
     border-radius: 5px;
     background-color: #171a21;
     padding: 20px;
 }
 
-.col-25 {
+body main #feedbackcontainer .col-25 {
     float: left;
     width: 25%;
     margin-top: 6px;
 }
 
-.col-75 {
+body main #feedbackcontainer .col-75 {
     float: left;
     width: 75%;
     margin-top: 6px;
 }
 
 /* Clear floats after the columns */
-.row:after {
+body main #feedbackcontainer .row:after {
     content: "";
     display: table;
     clear: both;
