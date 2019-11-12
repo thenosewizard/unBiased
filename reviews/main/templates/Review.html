@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <meta name="author" content="Zechariah Wong" />
     <meta name="description" content="P2 project" />
-    <title>Index.html</title>
+    <title>Game review</title>
+
 
     <!--Montserrat Font-->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -19,6 +20,7 @@
     <!--------------------------------------------------------------------------------------------------------------------------------->
     <!--Boot strap style sheets-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!--Font Awesome for icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -26,32 +28,9 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <!--Favicon-->
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
-
 </head>
 <body>
-
-    <!--================================================================================-->
-    <!--                                    Navbar                                      -->
-    <!--================================================================================-->
-    <header id="nav">
-        <nav class="navbar">
-            <a class="navbar-brand" style="font-weight: normal; color: #c7d5e0;" href="Index.html">UNBIASED</a>
-            <div class="navLinks">
-                <a class="navLinks" href="Browse.html">Browse</a>
-                <a class="navLinks" href="#placeholder">Login/Signup</a>
-                <form class="form-inline" style="display:inline-block;">
-                    <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
-                    <button class="btn btn-outline-success fa fa-search" type="submit"></button>
-                </form>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <div class="title-card">
-            <h1 class="title"><img src="media/UNBIASED.png" alt="If you can see this, something went wrong!" style="display:inline-block;" /></h1>
-            <p> Automatically generated game reviews using machine learning </p>
-        </div>
+    <nav>
         <div class="input-group">
             <input type="text" placeholder="Search for a game..." class="form-control" />
             <button type="button" class="btn btn-info">
@@ -60,6 +39,36 @@
                 </span>Search
             </button>
         </div>
+    </nav>
+    <main>
+        <section>
+            <h1 class="gameName">Game Name: </h1>
+            <h2>UNBIASED</h2>
+            <img src="media\UNBIASED.PNG" alt="If you can read this text something is wrong"/>
+            <h3>UNBIASED Rating: </h3>
+        </section>
+        <article class="info">
+            <div style="display:inline-block;">
+                lorem ipsum dolor sit amet, consectetur adipiscing elit. maecenas quis feugiat lorem. nunc vitae maximus quam. vivamus suscipit hendrerit nisl. cras sodales ultricies augue quis efficitur. phasellus eget porttitor metus. integer blandit ultricies mauris. pellentesque scelerisque lectus quam, vel lobortis dolor ornare eu.
+
+                duis faucibus, sem non ullamcorper laoreet, lectus urna aliquam purus, a viverra nulla ipsum vel nunc. phasellus congue neque fermentum, faucibus nulla sagittis, fringilla libero. curabitur vehicula consequat massa, varius pellentesque elit dictum eu. aliquam erat volutpat. ut suscipit vitae leo sed porta. quisque at semper ante. mauris commodo risus ex, non imperdiet sem aliquet vel. morbi eu tristique mi. proin rhoncus justo nisl, sed fringilla risus cursus eu. aliquam viverra ante ut dolor finibus, non lacinia augue hendrerit. phasellus dictum congue dui, quis scelerisque augue faucibus ut.
+            </div>
+        </article>
+        <article class="info" style="margin: 3% 0 0 0;"> 
+            <h5>Get the game &#8594 <a href="#link" class="link">Here!</a></h5>
+        </article>
+
     </main>
+    <aside>
+        <div>
+            <h3>Rating Breakdown:</h3>
+            <ul>
+                <li>Gameplay:</li>
+                <li>Graphics: </li>
+                <li>Story: </li>
+                <li>AVG:</li>
+            </ul>
+        </div>
+    </aside>
 </body>
 </html>

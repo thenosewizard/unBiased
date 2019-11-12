@@ -1,8 +1,11 @@
-﻿<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <meta name="author" content="Zechariah Wong" />
-    <meta name="description" content="P2 project" />
+    <title>Unbiased Error page </title>
+    <meta name="author" content="Theodosius Chin GuoJun" />
+    <meta name="description" content="P2 project, Error page" />
     <title>Index.html</title>
 
     <!--Montserrat Font-->
@@ -25,14 +28,35 @@
     <!--Favicon-->
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
 
+    <style>
+    </style>
 </head>
-
 <body>
-    <nav class="navbar">
-        <a class="navbar-brand">UNBIASED</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
-            <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
-        </form>
-    </nav>
+    <header id="nav">
+        <!--================================================================================-->
+        <!--                                    Navbar                                      -->
+        <!--================================================================================-->
+        <nav class="navbar">
+            <a class="navbar-brand">UNBIASED</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
+                <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
+            </form>
+        </nav>
+    </header>
+    <main>
+        <div id="errorImage">
+            <img src="media/error404LogoFull.png" alt="ErrorLogo" style="width:100%" />
+        </div>
+        <div id="errorButtonDiv" style="position:center; text-align:center">
+            <button type="button" class="btn btn-info" onclick="alert('Send error report work!')">Send Error Report</button>
+            <button type="button" class="btn btn-info" onclick="alert('Request for game review work!')">Request for game review</button>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    
 </body>
+</html>

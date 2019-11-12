@@ -1,10 +1,11 @@
-﻿body
-{
+﻿body {
+    /*Page layout*/
+    margin: 5% 10% 0 10%;
     background-color: #171a21;
-    font-family: 'Montserrat';
+    /*Text display*/
     color: #c7d5e0;
-    /*Decided to just margin all sides by 15% instead of just top left and right*/
-    margin: 10% 10% 0 10%
+    line-height: 1.6;
+    font-family: 'Montserrat';
 }
 
 header {
@@ -25,6 +26,9 @@ h1.title {
     text-align: center;
 }
 
+.content {
+    font-family: 'Roboto';
+}
 
 /*Using Font Awesome to get the icon*/
 .glyphicon-search:before {
@@ -43,13 +47,191 @@ h1.title {
     float: left;
 }
 
-h2 {
-    display:inline-block;
+h1, h2 {
+    display: inline-block;
 }
 
 aside {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 0 0 3%;
     display: inline-block;
-    border: 1px solid #5D7310;
-    float: right;
+    border: 2px solid #57a64a;
     width: 40%;
 }
+
+ul, li {
+    padding: 0 0 0 1%;
+    list-style: none;
+    list-style-position: inside;
+}
+
+.link {
+    display: inline-block;
+    color: #171a21;
+    background-color: #c7d5e0;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .link:hover {
+        color: #171a21;
+        background-color: #f0f8ff;
+        text-decoration: none;
+    }
+
+img {
+    object-fit: contain;
+    max-height:100%;
+    max-width: 100%;
+    display: block;
+    margin: 5px 5px 5px 0;
+    /*font size being changed to default is in case 
+        the img fails*/
+    font-size: 16px;
+}
+
+.navLinks{
+    margin: 0 10px 0 0;
+}
+
+a {
+    color: #c7d5e0;
+    text-decoration: none;
+}
+    a:hover {
+        color: #c7d5e0;
+        opacity: 0.5;
+        text-decoration: none;
+    }
+
+
+.carousel-info {
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    padding: 5px;
+    color: black;
+    position: absolute;
+    overflow-wrap: break-word;
+    background-color: rgba( 255, 255, 255, 0.5);
+}
+
+/*======================Other pages========================================*/
+
+/*----Error Page----*/
+
+body main #errorImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    position: center;
+    margin: 0 auto;
+}
+
+/*----Login Page----*/
+
+body main #loginImage, body main #registerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    margin: 0 auto;
+}
+
+body main #loginImage #lock, body main #registerImage #register {
+    width: 50%;
+}
+
+
+/*----Feedback-----*/
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+.container {
+    border-radius: 5px;
+    background-color: #171a21;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/*----Register Page----
+
+/*Div and img alightment
+body main #registerImage {
+    display: block;
+    margin-left: 38%;
+    margin-right: 40%;
+    width: 50%;
+}
+
+body main #registerImage #register {
+    width: 50%;
+}
+
+/*Font style and text alightment
+body main .container #title{
+    text-align:center;
+
+}
+*/
+
