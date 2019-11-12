@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -7,27 +6,22 @@
     <meta name="author" content="Theodosius Chin GuoJun" />
     <meta name="description" content="P2 project, Login page" />
     <title>Index.html</title>
-
     <!--Montserrat Font-->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-
     <!--Boot strap js-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
     <!--Style sheets-->
     <!--------------------------------------------------------------------------------------------------------------------------------->
     <!--Boot strap style sheets-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--Font Awesome for icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!--styles.css-->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <!--Favicon-->
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
-
     <style>
     </style>
 </head>
@@ -45,26 +39,41 @@
         </nav>
     </header>
     <main>
-        <form action="action_page.php" method="post">
-zzzz
-            <div class="container">
-                <h1>Login</h1>
-                <br />
-                <label for="login"><b>Username: </b></label>
-                <input type="text" placeholder="Enter Username or Email" name="uname" required />
-                <br />
-                <label for="psw"><b>Password:  </b></label>
-                <input type="password" placeholder="Enter Password" name="psword" required>
-                <br />
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-                <br />
-                <button type="submit" class="btn btn-info" onclick="alert('Forget account button work!')">Forget account?</button>
-                <button type="submit" class="btn btn-info" onclick="alert('Register button work!')"><a href="register.html">Register</a></button>
-                <button type="submit" class="btn btn-info" onclick="alert('Login button work!')">Login</button>
-            </div>
-        </form>
+        <div id="title">
+            <h2>Login</h2>
+            <p>Login to your account</p>
+        </div>
+        <div id="logincontainer">
+            <form action="action_page.php" method="post">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="login"><b>Username: </b></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="Type in your email" name="uname" required />
+                        <p>
+                            <a href="#" onclick="alert('Register link work!')">Create an account</a>
+                        </p>
+                    </div>
+                    <div class="col-25">
+                        <label for="psw"><b>Password:  </b></label>
+                    </div>
+                    <div class="col-75">
+                        <input id="subject" type="password" placeholder="Enter Password" name="psword" required>
+                        <p>
+                            <a href="#" onclick="alert('Forget account link work!')">Forget account?</a>
+                            <br />
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label>
+                        </p>
+                    </div>
+                    <div id="logindiv">
+                        <button id="sendlogin" type="submit" class="btn btn-info" onclick="alert('Login button work!')">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
 </body>
 </html>

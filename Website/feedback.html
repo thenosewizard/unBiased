@@ -50,7 +50,7 @@
                         <label for="country">Type</label>
                     </div>
                     <div class="col-75">
-                        <select id="type" name="type">
+                        <select class="feedbackselect" name="type">
                             <option value="request">Request</option>
                             <option value="report">Report</option>
                             <option value="report">Feedback</option>
@@ -63,7 +63,7 @@
                         <label for="fname">Title: </label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="fname" name="title" placeholder="Title.." >
+                        <input class="feedbacktextbox" type="text" id="fname" name="title" placeholder="Title.." >
                     </div>
                 </div>
                 <div class="row">
@@ -71,11 +71,11 @@
                         <label for="subject">Subject</label>
                     </div>
                     <div class="col-75">
-                        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                        <textarea class="feedbacktextbox" name="subject" placeholder="What's up ?" style="height:200px"></textarea>
                     </div>
                 </div>
-                <div class="row" style="float:right; padding-top:20px">
-                    <button class="btn btn-info" type="submit" value="Submit">Submit</button>
+                <div class="rowbutton">
+                    <button id="sendfeedback" class="btn btn-info" type="submit" value="Submit">Submit</button>
                 </div>
             </form>
         </div>
