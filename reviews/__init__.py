@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 
 #here is to register you blueprints so called "modules"
 app = Flask(__name__)
@@ -8,6 +9,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///unbiased.db'
 
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
 
 from reviews.main.controllers import main
 from reviews.evaluation.controllers import evaluation
