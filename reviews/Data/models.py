@@ -78,9 +78,7 @@ db.session.add_all(
     ]
 )
 
-insert = GenreGame.insert().values(genreId = 1, gameId = 1)
-insert2 = GenreGame.insert().values(genreId = 2, gameId = 1)
-db.session.execute(insert)
-db.session.execute(insert2)
+db.session.execute(GenreGame.insert().values(genreId = 1, gameId = 1))
+db.session.execute(GenreGame.insert().values(genreId = 2, gameId = 1))
 
 db.session.commit()
