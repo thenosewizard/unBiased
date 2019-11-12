@@ -11,6 +11,9 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <!--Roboto Font-->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!--Boot strap js-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -29,6 +32,11 @@
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
 
     <style>
+
+        li {
+            display:inline-block;
+        }
+
         .month {
             padding: 5px;
             border-radius: 20px;
@@ -71,11 +79,11 @@
     <main>
 
         <!--=====================================================================================================
-                                                Monthly featured carousel
-        ========================================================================================================-->
+                                            Monthly featured carousel
+    ========================================================================================================-->
 
         <section>
-            <div class="">
+            <div>
                 <h1 class="month">
                     MONTHLY FEATURED
                 </h1>
@@ -88,10 +96,10 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <!--=====================================================================================================
-                                                CONTENT
-             ========================================================================================================-->
+                                               CONTENT
+            ========================================================================================================-->
 
-                <div class="carousel-inner " style=" width:100%; height: 500px !important; ">
+                <div class="carousel-inner content" style=" width:100%; height: 500px !important; ">
                     <div class="carousel-item active">
                         <img class="d-block w-100" style="object-fit:contain;" src="media/error404LogoFull.png" alt="First slide">
                         <div class="carousel-info"></div>
@@ -213,8 +221,8 @@
                 </div>
 
                 <!--=====================================================================================================
-                                            Carousel controls
-             ========================================================================================================-->
+                                           Carousel controls
+            ========================================================================================================-->
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -226,8 +234,28 @@
             </div>
         </section>
 
-        <section>
-            <h1>Browse</h1>
+        <!--=====================================================================================================
+                                        Browsing information
+    ========================================================================================================-->
+
+
+        <section class="browse">
+            <nav class="browseNav">
+                <div class="" id="navbarSupportedContent">
+                    <ul>
+                        <li>
+                            <a class="navLinks" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li>
+                            <a class="navLinks" href="#">Link</a>
+                        </li>
+                        <li>
+                            <a class="navLinks" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            content
         </section>
 
     </main>

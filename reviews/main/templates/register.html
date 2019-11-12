@@ -8,6 +8,14 @@
         <form method="POST" action="">
             {{ form.csrf_token }}
             <fieldset>
+                {{form.username.label}}
+                {{form.username}}
+                {% if form.username.errors %}
+                    {% for error in form.username.errors %}
+                        <span style="color: red;">{{error}}</span>
+                    {% endfor %}
+                {% endif %}
+
                 {{form.email.label}}
                 {{form.email}}
                 {% if form.email.errors %}
