@@ -39,10 +39,11 @@
             <div class="navLinks">
                 <a class="navLinks" href="Browse.html">Browse</a>
                 <a class="navLinks" href="#placeholder">Login/Signup</a>
-                <form class="form-inline" style="display:inline-block;">
-                    <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
-                    <button class="btn btn-outline-success fa fa-search" type="submit"></button>
-                </form>
+                <!--It used to be a form and not a div but the link does not work in a form-->
+                <div class="form-inline" style="display:inline-block;">
+                    <input class="form-control mr-sm-2" type="text" placeholder="search the database" />
+                    <button class="btn btn-outline-success fa fa-search" onclick="window.location.href = 'Review.html';"></button>
+                </div>
             </div>
         </nav>
     </header>
@@ -54,7 +55,7 @@
         </div>
         <div class="input-group">
             <input type="text" placeholder="Search for a game..." class="form-control" />
-            <button type="button" class="btn btn-info">
+            <button class="btn btn-info" onclick="window.location.href = 'Review.html';">
                 <span>
                     <i class="fa fa-search"></i>
                 </span>Search
