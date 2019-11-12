@@ -1,18 +1,10 @@
-from flask import Flask
-from reviews import app
-from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
-app = Flask(__name__)
-
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///unbiased.db'
-
-db = SQLAlchemy(app)
+from reviews import db
 
 class User(db.Model):
     userId = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable = False)
+    email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(50), nullable = False)
     role = db.Column(db.String(50), nullable = False)
 
