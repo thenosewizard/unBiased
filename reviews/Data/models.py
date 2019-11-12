@@ -1,15 +1,20 @@
 from datetime import datetime
-from reviews import db
+from reviews import db, login_manager
+from flask_login import UserMixin
 
-class User(db.Model):
-    userId = db.Column(db.Integer, primary_key = True, nullable = False)
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key = True, nullable = False)
     username = db.Column(db.String(50), unique = True, nullable = False)
     email = db.Column(db.String(100), unique = True, nullable = False)
     password = db.Column(db.String(50), nullable = False)
     role = db.Column(db.String(50), nullable = False)
 
     def __repr__(self):
-        return 'userId = {0}, username = {1}, password = {2}, role = {3}'.format(self.userId, self.username, self.password, self.role)
+        return 'id = {0}, username = {1}, password = {2}, role = {3}'.format(self.id, self.username, self.password, self.role)
 
 class Genre(db.Model):
     genreId = db.Column(db.String(100), primary_key = True)
@@ -36,7 +41,7 @@ GenreGame = db.Table('GenreGame',
 
 class Comment(db.Model):
     commentId = db.Column(db.Integer, primary_key = True)
-    userId = db.Column(db.Integer, db.ForeignKey('user.userId'), nullable = False)
+    userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
     gameId = db.Column(db.Integer, db.ForeignKey('game.gameId'), nullable = False)
     content = db.Column(db.String(10000), nullable = False)
     creationDateTime = db.Column(db.DateTime, nullable = False, default = datetime.now())
@@ -46,7 +51,7 @@ class Comment(db.Model):
         
 class Feedback(db.Model):
     feedbackId = db.Column(db.Integer, primary_key = True)
-    userId = db.Column(db.Integer, db.ForeignKey('user.userId'), nullable = False)
+    userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
     category = db.Column(db.String(50), nullable = False)
     content = db.Column(db.String(1000), nullable = False)
 

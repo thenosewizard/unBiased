@@ -3,6 +3,8 @@ main = Blueprint('main', __name__, template_folder= "templates")
 from reviews.main.forms import RegistrationForm, LoginForm
 from reviews.Data.models import User
 from reviews import db, bcrypt
+from flask_login import login_user
+
 
 
 @main.route('/')
@@ -31,8 +33,9 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.email.data == "Email@email.com" and form.password.data == "12345678":
-            flash(f"Welcome, {form.email.data}!", "success")
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user)
             return redirect(url_for("main.index"))
         else:
             flash("Incorrect email or password!","danger")
