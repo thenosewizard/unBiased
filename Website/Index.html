@@ -7,8 +7,7 @@
     <meta name="description" content="P2 project" />
     <title>Index.html</title>
 
-    <!--Montserrat Font-->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
 
     <!--Boot strap js-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -24,8 +23,14 @@
 
     <!--styles.css-->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <!--Montserrat Font-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <!--Favicon-->
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
+
+    <!--W3include-->
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
 
 </head>
 <body>
@@ -33,19 +38,8 @@
     <!--================================================================================-->
     <!--                                    Navbar                                      -->
     <!--================================================================================-->
-    <header id="nav">
-        <nav class="navbar">
-            <a class="navbar-brand" style="font-weight: normal; color: #c7d5e0;" href="Index.html">UNBIASED</a>
-            <div class="navLinks">
-                <a class="navLinks" href="Browse.html">Browse</a>
-                <a class="navLinks" href="#placeholder">Login/Signup</a>
-                <!--It used to be a form and not a div but the link does not work in a form-->
-                <div class="form-inline" style="display:inline-block;">
-                    <input class="form-control mr-sm-2" type="text" placeholder="search the database" />
-                    <button class="btn btn-outline-success fa fa-search" onclick="window.location.href = 'Review.html';"></button>
-                </div>
-            </div>
-        </nav>
+    <header>
+        <div w3-include-html="header.html"></div>
     </header>
 
     <main>
@@ -62,5 +56,11 @@
             </button>
         </div>
     </main>
+    <footer>
+
+    </footer>
+    <script>
+        w3.includeHTML();
+    </script>
 </body>
 </html>
