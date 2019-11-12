@@ -17,12 +17,22 @@ header {
     background-color: #1b2838;
 }
 
+/* attempted to create an embbeded navbar
+    <iframe src="Nav.html"></iframe>
+    iframe {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: none;
+}*/
+
 h1.title {
     font-size: 500%;
     margin: 20px;
 }
 
 .title-card {
+    margin: 10% 0 0 0;
     text-align: center;
 }
 
