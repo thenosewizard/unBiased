@@ -12,12 +12,20 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(100), unique = True, nullable = False)
     password = db.Column(db.String(50), nullable = False)
     role = db.Column(db.String(50), nullable = False)
+    comments = db.relationship('Comment', backref = 'user', lazy = True)
+    feedback = db.relationship('Feedback', backref = 'user', lazy = True)
 
     def __repr__(self):
-        return 'id = {0}, username = {1}, password = {2}, role = {3}'.format(self.id, self.username, self.password, self.role)
+        return 'userId = {0}, username = {1}, password = {2}, role = {3}'.format(self.id, self.username, self.password, self.role)
+
+GenreGame = db.Table('GenreGame',
+    db.Column('genreId', db.Integer, db.ForeignKey('genre.genreId'), primary_key = True),
+    db.Column('gameId', db.Integer, db.ForeignKey('game.gameId'), primary_key = True)
+)
 
 class Genre(db.Model):
-    genreId = db.Column(db.String(100), primary_key = True)
+    genreId = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(100), nullable = False)
     description = db.Column(db.String(50), nullable = True)
 
     def __repr__(self):
@@ -30,14 +38,11 @@ class Game(db.Model):
     description = db.Column(db.String(20000), nullable = True)
     credibility = db.Column(db.Float, nullable = True)
     reviewAI = db.Column(db.String(10000), nullable = True)
+    comments = db.relationship('Comment', backref = 'game', lazy = True)
+    genre = db.relationship('Genre', secondary = GenreGame, lazy = 'subquery', backref = db.backref('game', lazy = True))
 
     def __repr__(self):
         return 'gameId = {0}, title = {1}, rating = {2}, description = {3}, credibility = {4}, reviewAI = {5}'.format(self.gameId, self.title,self.rating,self.description,self.credibility,self.reviewAI)
-
-GenreGame = db.Table('GenreGame',
-    db.Column('genreId', db.String(100), db.ForeignKey('genre.genreId'), primary_key = True),
-    db.Column('gameId', db.Integer, db.ForeignKey('game.gameId'), primary_key = True)
-)
 
 class Comment(db.Model):
     commentId = db.Column(db.Integer, primary_key = True)
@@ -48,7 +53,7 @@ class Comment(db.Model):
 
     def __repr__(self):
         return 'commentId = {0}, userId = {1}, gameId = {2}, content = {3}, creationDateTime = {4}'.format(self.commentId, self.userId, self.gameId, self.content, self.creationDateTime)
-        
+
 class Feedback(db.Model):
     feedbackId = db.Column(db.Integer, primary_key = True)
     userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
@@ -58,21 +63,24 @@ class Feedback(db.Model):
     def __repr__(self):
         return '{}, {}, {}, {}'.format(self.feedbackId, self.userId, self.category, self.content)
 
-# db.create_all()
+db.create_all()
 
-# db.add_all(
-#     [
-#         User('abi.charan','abi@charan.com','Abi123','User'),
-#         User('MyNameJeff','myname@jeff.com','JeffJeffJeff','User'),
-#         Genre('Adventure','Go on a Journey and Explore!'),
-#         Genre('Action','Stunt, Explosions & Fights!'),
-#         Game('Legend of Zelda, Breath of the Wild', 5.0, 'Explore the world and Save it from Ganon\'s wrath', 5.0, 'PERFECT 10/10'),
-#         GenreGame(genreId = 'Action', gameId = 1),
-#         GenreGame(genreId = 'Adventure', gameId = 1),
-#         Comment(1, 1, 'Love it'),
-#         Comment(2, 1, '10/10'),
-#         Feedback(1, 'Technical', 'website too slow')
-#     ]
-# )
+db.session.add_all(
+    [
+        User(username = 'abi.charan', email = 'abi@charan.com', password = 'Abi123', role = 'User'),
+        User(username = 'MyNameJeff', email = 'myname@jeff.com', password = 'JeffJeffJeff', role = 'User'),
+        Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
+        Genre(name = 'Action', description = 'Stunt, Explosions & Fights!'),
+        Game(title = 'Legend of Zelda, Breath of the Wild', rating = 5.0, description = 'Explore the world and Save it from Ganon\'s wrath', credibility = 5.0, reviewAI = 'PERFECT 10/10'),
+        Comment(userId = 1, gameId = 1, content = 'Love it'),
+        Comment(userId = 2, gameId = 1, content = '10/10'),
+        Feedback(userId = 1, category = 'Technical', content = 'website too slow')
+    ]
+)
 
-# db.commit()
+insert = GenreGame.insert().values(genreId = 1, gameId = 1)
+insert2 = GenreGame.insert().values(genreId = 2, gameId = 1)
+db.session.execute(insert)
+db.session.execute(insert2)
+
+db.session.commit()
