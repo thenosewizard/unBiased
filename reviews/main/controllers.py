@@ -3,7 +3,7 @@ main = Blueprint('main', __name__, template_folder= "templates")
 from reviews.main.forms import RegistrationForm, LoginForm
 from reviews.Data.models import User
 from reviews import db, bcrypt
-from flask_login import login_user
+from flask_login import login_user, current_user, logout_user
 
 
 
@@ -19,6 +19,9 @@ def test():
 
 @main.route("/register", methods = ['GET', 'POST'])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for("main.index"))
+
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
@@ -31,12 +34,21 @@ def register():
 
 @main.route("/login", methods = ['GET','POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for("main.index"))
+
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
+            flash(f"Welcome {user.username}!","success")
             return redirect(url_for("main.index"))
         else:
             flash("Incorrect email or password!","danger")
     return render_template("login.html",title="Login", form=form)
+
+@main.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for("main.index"))

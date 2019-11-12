@@ -63,24 +63,24 @@ class Feedback(db.Model):
     def __repr__(self):
         return '{}, {}, {}, {}'.format(self.feedbackId, self.userId, self.category, self.content)
 
-db.create_all()
+# db.create_all()
 
-db.session.add_all(
-    [
-        User(username = 'abi.charan', email = 'abi@charan.com', password = 'Abi123', role = 'User'),
-        User(username = 'MyNameJeff', email = 'myname@jeff.com', password = 'JeffJeffJeff', role = 'User'),
-        Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
-        Genre(name = 'Action', description = 'Stunt, Explosions & Fights!'),
-        Game(title = 'Legend of Zelda, Breath of the Wild', rating = 5.0, description = 'Explore the world and Save it from Ganon\'s wrath', credibility = 5.0, reviewAI = 'PERFECT 10/10'),
-        Comment(userId = 1, gameId = 1, content = 'Love it'),
-        Comment(userId = 2, gameId = 1, content = '10/10'),
-        Feedback(userId = 1, category = 'Technical', content = 'website too slow')
-    ]
-)
+# db.session.add_all(
+#     [
+#         User(username = 'abi.charan', email = 'abi@charan.com', password = 'Abi123', role = 'User'),
+#         User(username = 'MyNameJeff', email = 'myname@jeff.com', password = 'JeffJeffJeff', role = 'User'),
+#         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
+#         Genre(name = 'Action', description = 'Stunt, Explosions & Fights!'),
+#         Game(title = 'Legend of Zelda, Breath of the Wild', rating = 5.0, description = 'Explore the world and Save it from Ganon\'s wrath', credibility = 5.0, reviewAI = 'PERFECT 10/10'),
+#         Comment(userId = 1, gameId = 1, content = 'Love it'),
+#         Comment(userId = 2, gameId = 1, content = '10/10'),
+#         Feedback(userId = 1, category = 'Technical', content = 'website too slow')
+#     ]
+# )
 
-insert = GenreGame.insert().values(genreId = 1, gameId = 1)
-insert2 = GenreGame.insert().values(genreId = 2, gameId = 1)
-db.session.execute(insert)
-db.session.execute(insert2)
+# insert = GenreGame.insert().values(genreId = 1, gameId = 1)
+# insert2 = GenreGame.insert().values(genreId = 2, gameId = 1)
+# db.session.execute(insert)
+# db.session.execute(insert2)
 
-db.session.commit()
+# db.session.commit()
