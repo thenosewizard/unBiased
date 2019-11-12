@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Unbiased login </title>
+    <title>Unbiased Error page </title>
     <meta name="author" content="Theodosius Chin GuoJun" />
-    <meta name="description" content="P2 project, Register page" />
+    <meta name="description" content="P2 project, feedback page" />
     <title>Index.html</title>
     <!--Montserrat Font-->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -39,37 +40,33 @@
         </nav>
     </header>
     <main>
-        <form action="action_page.php" method="post">
-            <div id="registerImage">
-                <img id="register" src="media/register.png" alt="RegisterLogo" />
-            </div> 
-            <div class="container">
-                <h1 id="title">Register</h1>
-                <br>
-                <label for="firstName"><b>First name: </b></label>
-                <input type="text" placeholder="Enter your first name" name="firstname" required />
-                <br />
-                <br>
-                <label for="lastName"><b>Last name: </b></label>
-                <input type="text" placeholder="Enter your last name" name="lastname" required />
-                <br />
-                <br>
-                <label for="email"><b>Email: </b></label>
-                <input type="text" placeholder="Enter your email" name="email" required />
-                <br />
-                <br>
-                <label for="psw"><b>Password:  </b></label>
-                <input type="password" placeholder="Enter Password" name="psword" required>
-                <br />
-                <br>
-                <label for="psw"><b>Confirm password:  </b></label>
-                <input type="password" placeholder="Confirm your password" name="confirmpsword" required>
-                <br />
-                <button type="reset" class="btn btn-info" onclick="alert('Reset button work!')">Reset</button>
-                <button type="button" class="btn btn-info" onclick="alert('Back to login page button work!')"><a href="login.html">Got an account?</a></button>
-                <button type="submit" class="btn btn-info" onclick="alert('Register work!')">Register!</button>
-            </div>
-        </form>
+        <div id="test" style="width:100%; text-align:center; height:20%">fggfdgdfgdfgdfgdg</div>
+        <div class="table-responsive">
+            <table id="viewfeedback" class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Created by</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>
+                            <button  class="btn btn-info" type="submit">Resolve</button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
     </main>
 </body>
-</html>

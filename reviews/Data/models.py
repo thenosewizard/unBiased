@@ -35,12 +35,12 @@ GenreGame = db.Table('GenreGame',
 )
 
 class Comment(db.Model):
-    commmentId = db.Column(db.Integer, primary_key=True)
+    commentId = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey('user.userId'), nullable = False)
     gameId = db.Column(db.Integer, db.ForeignKey('game.gameId'), nullable = False)
     content = db.Column(db.String(10000), nullable = False)
     creationDateTime = db.Column(db.DateTime, nullable = False, default=datetime.now())
 
     def __repr__(self):
-        return '<Comment %r>' % self.commentId
+        return 'commentId = {0}, userId = {1}, gameId = {2}, content = {3}, creationDateTime = {4}'.format(self.commentId, self.userId, self.gameId, self.content, self.creationDateTime)
         
