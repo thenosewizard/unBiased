@@ -62,4 +62,4 @@ def checkreview():
             
         else:
             flash("Please enter a review", "danger")
-    return render_template("checkreview.html", form=form, )
+    return render_template("checkreview.html", form=form, isbiased=isbiased)
