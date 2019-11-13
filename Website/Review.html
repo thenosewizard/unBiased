@@ -16,7 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    <script src="script.js"></script>
     <!--Style sheets-->
     <!--------------------------------------------------------------------------------------------------------------------------------->
     <!--Boot strap style sheets-->
@@ -33,9 +33,6 @@
     <style>
         main {
             display: inline-block;
-        }
-        ul, li {
-            padding: 0 0 0 1%;
         }
     </style>
 
@@ -135,23 +132,25 @@
             <h1 class="title-card">Get the game here!</h1>
             <div class="center">
                 <ul style="margin-bottom: 0; padding:0;">
-                    <li class="none"><h3 class="tabs">PC</h3></li>
-                    <li class="none"><h3 class="tabs">console</h3></li>
+                    <li><button class="tabs"><h3>PC</h3></button></li>
+                    <li><button class="tabs"><h3>Mobile</h3></button></li>
+                    <li><button class="tabs"><h3>Console</h3></button></li>
                 </ul>
-                
-                <ul class="storeLink">
+
+                <ul class="storeLink" style="display:none;" id="pc" onclick="change(this.id)">
                     <li class="listing"><a><img class="logo" src="media/logo/log_steam.png" alt="Steam Store" /></a></li>
                     <li class="listing"><a><img class="logo" src="media/logo/log_org.png" alt="Origin" /></a></li>
                     <li class="listing"><a><img class="logo" src="media/logo/log_blizz.png" alt="Blizzard" /></a></li>
                     <li class="listing"><a><img class="logo" src="media/logo/log_epic.png" alt="Epic Games" /></a></li>
                 </ul>
-            </div>
-            <div class="center">
-                <h3 class="tabs">Console</h3>
-                <ul class="storeLink">
+                <ul class="storeLink" style="display: flex;" id="console" onclick="change(this.id)">
                     <li class="listing"><a><img class="logo" src="media/logo/log_nin.png" alt="Nintendo eshop" />   </a></li>
                     <li class="listing"><a><img class="logo" src="media/logo/log_wind.png" alt="Microsoft store" /> </a></li>
                     <li class="listing"><a><img class="logo" src="media/logo/log_psp.png" alt="Playstation store" /></a></li>
+                </ul>
+                <ul class="storeLink" style="display: none;" id="mobile" onclick="change(this.id)">
+                    <li class="listing"><a><img class="logo" src="media/logo/log_ios.png" alt="AppStore" /></a></li>
+                    <li class="listing"><a><img class="logo" src="media/logo/log_android.png" alt="PlayStore" /></a></li>
                 </ul>
             </div>
         </section>
@@ -159,13 +158,11 @@
         <!--================================================================================-->
         <!--                                comment section                                 -->
         <!--================================================================================-->
-        
+
     </main>
 
     <footer>
-
-       
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
