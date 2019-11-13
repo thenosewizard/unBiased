@@ -41,10 +41,16 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
                 <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
             </form>
+            {% if current_user.is_authenticated %}
+            <a class="nav-item nav-link" href="{{url_for('main.logout')}}">Logout</a>
+            {% else %}
+                <a class="navLinks" href="{{url_for('main.login')}}">Login</a>
+                <a class="navLinks" href="{{ url_for('main.register')}}">Register</a>
+            {% endif %}
         </nav>
     </header>
     {% block content %}
-    
+
     {% endblock content %}
 </body>
 </html>
