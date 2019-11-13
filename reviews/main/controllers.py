@@ -4,6 +4,7 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.Data.models import User, Game, Feedback, GenreGame, Comment, GameLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
+import reviews.AI.predict
 import joblib
 import string 
 #!pip install spacy
@@ -18,6 +19,25 @@ from spacy.lang.en import English
 
 stopWords = spacy.lang.en.stop_words.STOP_WORDS
 engToken = English()
+
+def tokenizer(review):
+    tokens = engToken(review)
+    
+    #lemmitation
+    #Assigning the base forms of words. For example, 
+    #the lemma of “was” is “be”, and the lemma of “rats” is “rat”.
+    lemmi_tokens =[]
+    for word in tokens:
+        if word.lemma_ != "-PRON-":
+            lemmi_tokens.append(word.lemma_.lower().strip())
+        else:
+            lemmi_tokens.append(word.lower_)        
+    #removing the stop words
+    #stop words such as a, the, is, we, they
+    stop_words = [word for word in lemmi_tokens if not word in stopWords and word not in punc]
+            
+    #return the processed list of tokens
+    return stop_words
 
 @main.route('/', methods = ['GET', 'POST'])
 def index():
@@ -82,27 +102,8 @@ def checkreview():
     isbiased = False
     if form.is_submitted():
         if form.validate():
-            def tokenizer(review):
-                tokens = engToken(review)
-                
-                #lemmitation
-                #Assigning the base forms of words. For example, 
-                #the lemma of “was” is “be”, and the lemma of “rats” is “rat”.
-                lemmi_tokens =[]
-                for word in tokens:
-                    if word.lemma_ != "-PRON-":
-                        lemmi_tokens.append(word.lemma_.lower().strip())
-                    else:
-                        lemmi_tokens.append(word.lower_)        
-                #removing the stop words
-                #stop words such as a, the, is, we, they
-                stop_words = [word for word in lemmi_tokens if not word in stopWords and word not in punc]
-                        
-                #return the processed list of tokens
-                return stop_words
             review = form.content.data
-            loaded_pipe = joblib.load("reviews\\AI\\finalized_model.sav")
-            result = loaded_pipe.predict([review])
+            result = reviews.AI.predict.predict(review)
             if result == 1:
                 isbiased = False
             else:
