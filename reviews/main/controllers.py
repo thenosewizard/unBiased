@@ -4,6 +4,7 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.Data.models import User, Game, Feedback, GenreGame, Comment, GameLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
+import joblib
 
 
 @main.route('/', methods = ['GET', 'POST'])
@@ -70,9 +71,15 @@ def browse():
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
     form = CheckReviewForm()
-    isbiased = None
+    isbiased = False
     if form.is_submitted():
         if form.validate():
+            loaded_pipe = joblib.load("finalized_model.sav")
+            result = loaded_pipe.predict([test])
+            if result == 1:
+                isbiased = False
+            else:
+                isbiased = True
             flash("Please wait while we process your review", "success")
             
         else:

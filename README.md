@@ -6,18 +6,10 @@ In order to run this application here we need to do a few steps
 
 Navigate to the repository you have just cloned and type the following commands
 
-
-- **Firstly** we need to set up the virtual environment 
-`` py -3 -m venv venv ``
-- Now activate the virtual environment 
-`` .\venv\Scripts\activate ``
-- Now run this command 
-`` Pip install requirements.txt ``
-- If you don't have pip installed, run this command
-`` python get-pip.py ``
+`` pip install requirements.txt ``
 
 ## Running the program
-Just type **``python run.py``** in your cmd and you should be good to go!
+Just type **``python app.py``** in your cmd and you should be good to go!
 
 # File structure
 ````
@@ -44,6 +36,3 @@ Just type **``python run.py``** in your cmd and you should be good to go!
 4. Type `db.create_all()`
 5. You should see an __unbiased.db__ file in your __Data__ folder
 6. [Click here to learn - Flask-alchemy documentation](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)
-
-
-
