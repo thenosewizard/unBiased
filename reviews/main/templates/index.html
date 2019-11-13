@@ -7,19 +7,10 @@
 </head> -->
 
 {% block content %}
-{% with messages = get_flashed_messages(with_categories=true) %}
-{% if messages %}
-{% for category, message in messages %}
-<div class="alert alert-{{ category }}">
-    {{message}}
-</div>
-{% endfor %}
-{% endif %}
-{% endwith %}
 <main>
     <section>
         <div class="title-card">
-            <h1 class="title"><img src="media/UNBIASED.png" alt="If you can see this, something went wrong!"
+            <h1 class="title"><img src="../../static/img/icons/UNBIASED.png" alt="If you can see this, something went wrong!"
                     style="display:inline-block;" /></h1>
             <p> Automatically generated game reviews using machine learning </p>
         </div>
