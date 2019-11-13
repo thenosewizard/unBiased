@@ -1,44 +1,47 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<main>
-        <div class="flex-container">
-            <div id="title2">
-                <img id="lock" src="media/lock.png" alt="LockLogo" />
-                <h2>Login</h2>
-                <p>Login to your account</p>
+<main id="loginmain">
+        <!--================================================================================-->
+        <!--                                    Login Form                                  -->
+        <!--================================================================================-->
+        <form method="POST" action="" class="container">
+            {{ form.csrf_token }}
+            <div class="container" style="position:center; text-align:center;">
+                <img src="../../static/img/icons/UNBIASED.png" alt="Login" class="avatar" style="width:300px">
             </div>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
-                    {{message}}
+            <div class="container">
+                <div class="font-weight-bold">{{form.email.label}}</div>
+                {{form.email(class="logininput")}}
+                {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                        <span style="color: red;">{{errror}}</span>
+                    {% endfor %}
+                {% endif %}
+                <br>
+                {{form.password.label}}
+                {{form.password(class="logininput")}}
+                {{form.submit(class="loginbtn")}}
+                <!-- <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label> -->
+            </div>
+            <div class="container">
+                <p style="display:inline-block;"><b>or try login using  </b></p>
+                <div style="display:inline-block;">
+                    <ul style="display:inline-block;">
+                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="../../static/img/icons/steamlogo.png" alt="SteamLogo"></li>
+                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="../../static/img/icons/amazonlogo.png" alt="AmazonLogo"></li>
+                        <!-- <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/googlelogo.png" alt="GoogleLogo"></li>
+                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/facebooklogo.png" alt="FacebookLogo"></li>
+                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/twitterlogo.png" alt="TwitterLogo"></li>  -->
+                    </ul>
                 </div>
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-        <div id="logincontainer">
-            <form method="POST" action="">
-                {{ form.csrf_token }}
-                <div class="row">
-                    {{form.email.label(class="col-25")}}
-                    {{form.email(class="col-75")}}
-                    {% if form.email.errors %}
-                        {% for error in form.email.errors %}
-                            <div class="invalid-feedback">
-                                <span>{{errror}}</span>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                    {{form.password.label(class="col-25")}}
-                    {{form.password(class="col-75")}}
-                    <div class="form-group">
-                        {{form.submit(class="btn btn-outline-info")}}
-                    </div>
-                </div>
-            </form>
-        </div>
-        </div>
+            </div>
+            <div class="container">
+                <span class="psw"><a href="#">Forgot password?</a>	|   <a href="#">Create an account</a></span>
+            </div>
+        </form>
     </main>
 {% endblock content%}
 
