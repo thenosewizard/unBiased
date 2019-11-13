@@ -38,6 +38,7 @@ class LoginForm(FlaskForm):
                              validators=[DataRequired()])
     submit = SubmitField("Login")
 
+<<<<<<< HEAD
 
 class IndexForm(FlaskForm):
     query = StringField("Search for a game ...")
@@ -51,3 +52,9 @@ class IndexForm(FlaskForm):
             return(game)
         else:
             return []
+=======
+class CheckReviewForm(FlaskForm):
+    content = StringField("Review",
+        validators=[DataRequired()])
+    submit = SubmitField("Check")
+>>>>>>> 8081500f9f3b5ec72745fcb6fbacce68de1cfed3
