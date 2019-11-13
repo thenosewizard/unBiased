@@ -128,22 +128,27 @@ a {
     background-color: rgba( 255, 255, 255, 0.5);
 }
 
-.browse {
-    height: 500px;
-    max-width: 100%;
-    margin-top: 5%;
+/*=====================GuoJun Side========================================*/
+
+/*Everywhere*/
+
+body main #title {
+    width: 100%;
+    padding-top: 110px;
 }
 
-.bButton {
-    color: inherit;
-    border:none;
-    background-color:inherit;
+body main h2{
+    font-weight:bolder;
 }
 
+/*------------------*/
+/*    Feedback      */
+/*------------------*/
 
 
-.browseNav {
-    display: block;
+/*Dropdown textbox, col-25 & col-75 text style for feedback*/
+body main #feedbackcontainer .feedbackselect, body main #feedbackcontainer .row .col-25 label, body main #feedbackcontainer .row .col-75 label {
+    font-weight: bold;
 }
 
 .active {
@@ -160,11 +165,20 @@ a {
 
 
 
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/*@media screen and (max-width: 600px) {
+    body main #feedbackcontainer .col-25, body main #feedbackcontainer .col-75, body main #feedbackcontainer .rowbutton input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}*/
 
 
 /*/*======================Other pages========================================*/
 
-/*----Error Page----*/
+/*------------------*/
+/*    Error page      */
+/*------------------*/
 
 body main #errorImage {
     display: block;
@@ -189,71 +203,94 @@ body main #loginImage, body main #registerImage {
         width: 50%;
     }
 
+/*------------------*/
+/*    Login page      */
+/*------------------*/
 
-/*----Feedback-----*/
-
-* {
-    box-sizing: border-box;
-}
-
-input[type=text], select, textarea {
+/*logincontainer and textbox for login*/
+body main #logincontainer {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+    float:right;
 }
 
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
+/*Text Style for Feedback*/
+body main .flex-container #title2 {
+    width: 30%;
+    padding-top: 50px;
+    border: 1px dashed white;
+    float:left;
+    text-align:center;
 }
 
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
+body main .flex-container #title2 #lock{
+    width:100px;
+    position:center;
 }
 
-    input[type=submit]:hover {
-        background-color: #45a049;
+body main .flex-container #title2 h2 {
+    font-weight: bolder;
+}
+
+    /*Dropdown textbox, col-25 & col-75 text style for login*/
+    body main #logincontainer .feedbackselect, body main #logincontainer .row .col-25 label, body main #logincontainer .row .col-75 label {
+        font-weight: bold;
     }
 
-.container {
-    border-radius: 5px;
-    background-color: #171a21;
-    padding: 20px;
-}
-
-.col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-}
-
-.col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-        width: 100%;
-        margin-top: 0;
+    /*Padding/effect for textbox for both .col-25 and .col-75 for login*/
+    body main #logincontainer .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
     }
+
+    body main #logincontainer .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+
+    /* Clear floats after the columns  for login*/
+    body main #logincontainer .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /*button Div for login*/
+    body main #logincontainer #logindiv {
+        float: right;
+        padding-top: 20px;
+        border: 1px solid #ccc;
+        width:100%;
+    }
+
+        /*for login button for login*/
+        body main #logincontainer #logindiv #sendlogin {
+            float: right;
+        }
+
+        /*button hover effect for login*/
+    body main #logincontainer #logindiv #sendlogin:hover {
+        background-color: #138496;
+        font-weight: bolder;
+    }
+
+/*
+body main #loginImage, body main #registerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    margin: 0 auto;
+}
+
+
+body main #loginImage #lock, body main #registerImage #register {
+    width: 50%;
 }
 
 /*----Register Page----
