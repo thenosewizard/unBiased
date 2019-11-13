@@ -1,20 +1,23 @@
-from flask import Blueprint, render_template, flash, redirect, url_for
+from flask import Blueprint, render_template, flash, redirect, url_for, request
 main = Blueprint('main', __name__, template_folder= "templates")
-from reviews.main.forms import RegistrationForm, LoginForm
-from reviews.Data.models import User, Game, Feedback, GenreGame, Comment
+from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, IndexForm
+from reviews.Data.models import User, Game, Feedback, GenreGame, Comment, GameLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
+import joblib
 
 
-
-@main.route('/')
+@main.route('/', methods = ['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    form = IndexForm()
+    result = form.search(form.query.data)
+    return render_template("index.html",title="Index",form=form,result=result)
 
 @main.route('/test')
 def test():
     users = User.query.all()
     return users
+
 
 @main.route("/register", methods = ['GET', 'POST'])
 def register():
@@ -52,3 +55,33 @@ def logout():
     logout_user()
     return redirect(url_for("main.index"))
 
+
+@main.route("/browse")
+def browse():
+    page = request.args.get('page', 1, type=int)
+    games = Game.query.paginate(page= page, per_page=5)
+    links = GameLink.query.paginate(page=page, per_page=5)
+    print('---')
+    print(games.items)
+    print(links.items)
+    print('---')
+    # return render_template("browse.html", links=links, games=games)
+    return render_template("browse.html", games=games, data = zip(games.items, links.items))
+
+@main.route("/checkreview", methods = ['GET','POST'])
+def checkreview():
+    form = CheckReviewForm()
+    isbiased = False
+    if form.is_submitted():
+        if form.validate():
+            loaded_pipe = joblib.load("finalized_model.sav")
+            result = loaded_pipe.predict([test])
+            if result == 1:
+                isbiased = False
+            else:
+                isbiased = True
+            flash("Please wait while we process your review", "success")
+            
+        else:
+            flash("Please enter a review", "danger")
+    return render_template("checkreview.html", form=form, )
