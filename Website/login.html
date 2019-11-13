@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -22,19 +23,6 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <!--Favicon-->
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
-    <style>
-        /*
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap;
-            background-color: green;
-        }
-
-            .flex-container > div {
-                margin: 10px;
-            }
-            */
-    </style>
 </head>
 <body>
     <header id="nav">
@@ -49,45 +37,42 @@
             </form>
         </nav>
     </header>
-    <main>
-        <div class="flex-container">
-            <div id="title2">
-                <img id="lock" src="media/lock.png" alt="LockLogo" />
-                <h2>Login</h2>
-                <p>Login to your account</p>
+    <main id="loginmain">
+        <!--================================================================================-->
+        <!--                                    Login Form                                  -->
+        <!--================================================================================-->
+        <form action="/action_page.php" method="post" style="width:80%;border:dotted 3px blue; max-width:500px; margin:auto; background-color: black">
+            <div class="container" style="position:center; text-align:center;">
+                <img src="media/UNBIASED.png" alt="Login" class="avatar" style="width:300px">
             </div>
-        <div id="logincontainer">
-            <form action="action_page.php" method="post">
-                <div class="row">
-                    <div class="col-25">
-                        <label for="login"><b>Username: </b></label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" placeholder="Type in your email" name="uname" required />
-                        <p>
-                            <a href="#" onclick="alert('Register link work!')">Create an account</a>
-                        </p>
-                    </div>
-                    <div class="col-25">
-                        <label for="psw"><b>Password:  </b></label>
-                    </div>
-                    <div class="col-75">
-                        <input id="subject" type="password" placeholder="Enter Password" name="psword" required>
-                        <p>
-                            <a href="#" onclick="alert('Forget account link work!')">Forget account?</a>
-                            <br />
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label>
-                        </p>
-                    </div>
-                    <div id="logindiv">
-                        <button id="sendlogin" type="submit" class="btn btn-info" onclick="alert('Login button work!')">Login</button>
-                    </div>
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input class="logininput" type="text" placeholder="Enter Email" name="uname" required>
+                <br>
+                <label for="psw"><b>Password</b></label>
+                <input class="logininput" type="password" placeholder="Enter Password" name="psw" required>
+
+                <button class="loginbtn" type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+            <div class="container">
+                <p style="display:inline-block;"><b>or try login using  </b></p>
+                <div style="display:inline-block;">
+                    <ul style="display:inline-block;">
+                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/steamlogo.png" alt="SteamLogo"></li>
+                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/amazonlogo.png" alt="AmazonLogo"></li>
+                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/googlelogo.png" alt="GoogleLogo"></li>
+                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/facebooklogo.png" alt="FacebookLogo"></li>
+                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/twitterlogo.png" alt="TwitterLogo"></li> 
+                    </ul>
                 </div>
-            </form>
-        </div>
-        </div>
+            </div>
+            <div class="container">
+                <span class="psw">Forgot <a href="#">password?</a>	|	Create an <a href="#">account</a></span>
+            </div>
+        </form>
     </main>
 </body>
 </html>

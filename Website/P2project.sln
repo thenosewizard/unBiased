@@ -13,12 +13,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		login.html = login.html
 		register.html = register.html
 		Review.html = Review.html
+		reviewchecker.html = reviewchecker.html
 		superadmin.html = superadmin.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}"
 	ProjectSection(SolutionItems) = preProject
-		CopyOfStyle.css = CopyOfStyle.css
 		css\styles.css = css\styles.css
 	EndProjectSection
 EndProject
@@ -30,10 +30,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{4DE196EF-21F9-4F3D-B815-349F22ED12E5}"
 	ProjectSection(SolutionItems) = preProject
 		media\404logo.png = media\404logo.png
+		media\amazonlogo.png = media\amazonlogo.png
 		media\error404LogoFull.png = media\error404LogoFull.png
+		media\facebooklogo.png = media\facebooklogo.png
 		media\favIcon.png = media\favIcon.png
+		media\googlelogo.png = media\googlelogo.png
 		media\lock.png = media\lock.png
 		media\register.png = media\register.png
+		media\steamlogo.png = media\steamlogo.png
+		media\twitterlogo.png = media\twitterlogo.png
 		..\..\..\School\Year 2\2.2\P2\UNBIASED.png = ..\..\..\School\Year 2\2.2\P2\UNBIASED.png
 		media\wheelShadow.JPG = media\wheelShadow.JPG
 		media\white.jpg = media\white.jpg
