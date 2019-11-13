@@ -45,7 +45,7 @@ class IndexForm(FlaskForm):
     def search(self, query):
         if (query == None):
             query = ""
-        if (query != ""):
+        if (query != "" and query != " "):
             game = Game.query.filter(Game.title.contains(query)).all()
             return(game)
         else:
