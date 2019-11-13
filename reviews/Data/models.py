@@ -38,13 +38,24 @@ class Game(db.Model):
     description = db.Column(db.String(20000), nullable = True)
     credibility = db.Column(db.Float, nullable = True)
     reviewAI = db.Column(db.String(10000), nullable = True)
-    link = db.Column(db.String(1000), nullable = False)
+    link = db.relationship('GameLink', backref='game', lazy=True)
     image = db.Column(db.String(500), nullable = True)
     comments = db.relationship('Comment', backref = 'game', lazy = True)
     genre = db.relationship('Genre', secondary = GenreGame, lazy = 'subquery', backref = db.backref('game', lazy = True))
 
     def __repr__(self):
         return 'gameId = {0}, title = {1}, rating = {2}, description = {3}, credibility = {4}, reviewAI = {5}'.format(self.gameId, self.title,self.rating,self.description,self.credibility,self.reviewAI)
+
+class GameLink(db.Model):
+    __tablename__ = 'GameLink'
+    linkId = db.Column(db.Integer, primary_key = True)
+    gameId = db.Column(db.Integer, db.ForeignKey('game.gameId'), nullable = False)
+    platform = db.Column(db.String(50), nullable = False)
+    source = db.Column(db.String(100), nullable = False)
+    link = db.Column(db.String(1000), nullable = False)
+
+    def __repr__(self):
+        return '{}{}{}{}'.format(self.linkId, self.gameId, self.platform, self.source, self.link)
 
 class Comment(db.Model):
     commentId = db.Column(db.Integer, primary_key = True)
@@ -75,9 +86,10 @@ db.session.add_all(
         User(username = 'MyNameJeff', email = 'myname@jeff.com', password = 'JeffJeffJeff', role = 'User'),
         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
         Genre(name = 'Action', description = 'Stunt, Explosions & Fights!'),
-        Game(title = 'Legend of Zelda, Breath of the Wild', rating = 5.0, description = 'Explore the world and Save it from Ganon\'s wrath', credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'www.nintendo.com'),
+        Game(title = 'Legend of Zelda, Breath of the Wild', rating = 5.0, description = 'Explore the world and Save it from Ganon\'s wrath', credibility = 5.0, reviewAI = 'PERFECT 10/10'),
         Comment(userId = 1, gameId = 1, content = 'Love it'),
         Comment(userId = 2, gameId = 1, content = '10/10'),
+        GameLink(gameId = 1, platform = 'PC', source = 'Steam', link = 'www.steam.com'),
         Feedback(userId = 1, category = 'Technical', content = 'website too slow')
     ]
 )
