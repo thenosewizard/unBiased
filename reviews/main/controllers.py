@@ -99,15 +99,15 @@ def browse():
 #                 stop_words = [word for word in lemmi_tokens if not word in stopWords and word not in punc]
                         
                 #return the processed list of tokens
-                return stop_words
-            review = form.content.data
-            loaded_pipe = joblib.load("reviews\\AI\\finalized_model.sav")
-            result = loaded_pipe.predict([review])
-            if result == 1:
-                isbiased = False
-            else:
-                isbiased = True
-            flash("Please wait while we process your review", "success")
+            # return stop_words
+            # review = form.content.data
+            # loaded_pipe = joblib.load("reviews\\AI\\finalized_model.sav")
+            # result = loaded_pipe.predict([review])
+            # if result == 1:
+            #     isbiased = False
+            # else:
+            #     isbiased = True
+            # flash("Please wait while we process your review", "success")
             
 #         else:
 #             flash("Please enter a review", "danger")
