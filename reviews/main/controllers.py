@@ -1,15 +1,15 @@
 from flask import Blueprint, render_template, flash, redirect, url_for
 main = Blueprint('main', __name__, template_folder= "templates")
-from reviews.main.forms import RegistrationForm, LoginForm
+from reviews.main.forms import RegistrationForm, LoginForm, IndexForm
 from reviews.Data.models import User
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
 
-
-
-@main.route('/')
+@main.route('/', methods = ['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    form = IndexForm()
+    result = form.search(form.query.data)
+    return render_template("index.html",title="Index",form=form,result=result)
 
 @main.route('/test')
 def test():
