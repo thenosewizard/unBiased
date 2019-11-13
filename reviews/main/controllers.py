@@ -1,12 +1,7 @@
 from flask import Blueprint, render_template, flash, redirect, url_for
 main = Blueprint('main', __name__, template_folder= "templates")
-<<<<<<< HEAD
-from reviews.main.forms import RegistrationForm, LoginForm, IndexForm
-from reviews.Data.models import User
-=======
-from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm
+from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, IndexForm
 from reviews.Data.models import User, Game, Feedback, GenreGame, Comment
->>>>>>> 8081500f9f3b5ec72745fcb6fbacce68de1cfed3
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
 
