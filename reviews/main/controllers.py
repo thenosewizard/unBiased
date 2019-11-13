@@ -61,10 +61,6 @@ def browse():
     page = request.args.get('page', 1, type=int)
     games = Game.query.paginate(page= page, per_page=5)
     links = GameLink.query.paginate(page=page, per_page=5)
-    print('---')
-    print(games.items)
-    print(links.items)
-    print('---')
     # return render_template("browse.html", links=links, games=games)
     return render_template("browse.html", games=games, data = zip(games.items, links.items))
 
