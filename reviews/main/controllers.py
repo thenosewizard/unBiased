@@ -9,16 +9,16 @@ import joblib
 import string 
 #!pip install spacy
 #!python -m spacy download en
-import spacy
-from spacy.lang.en.stop_words import STOP_WORDS
+# import spacy
+# from spacy.lang.en.stop_words import STOP_WORDS
 #creating a list for punctuations
-punc = string.punctuation
+# punc = string.punctuation
 #list of stop_words
-nlp = spacy.load('en')
-from spacy.lang.en import English
+# nlp = spacy.load('en')
+# from spacy.lang.en import English
 
-stopWords = spacy.lang.en.stop_words.STOP_WORDS
-engToken = English()
+# stopWords = spacy.lang.en.stop_words.STOP_WORDS
+# engToken = English()
 
 def tokenizer(review):
     tokens = engToken(review)
@@ -110,6 +110,6 @@ def checkreview():
                 isbiased = True
             flash("Please wait while we process your review", "success")
             
-        else:
-            flash("Please enter a review", "danger")
-    return render_template("checkreview.html", form=form)
+#         else:
+#             flash("Please enter a review", "danger")
+#     return render_template("checkreview.html", form=form)
