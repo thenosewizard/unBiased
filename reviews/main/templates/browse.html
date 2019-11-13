@@ -2,15 +2,16 @@
 <html>
     <head></head>
     <body>
-        {% for game in games.items %}
+        {% for game, list in data %}
             {{game.title}}
             {{game.rating}}
             {{game.description}}
             {{game.credibility}}
             {{game.reviewAI}}
-            <a href="{{game.link}}" target="_blank">CS_Go Game</a>
             <a href="{{ url_for('evaluation.index') }}"><img src="../../static/game_images/{{game.image}}" alt="CS_GO"></a>
+            <a href="{{list.link}}" target="_blank">CS_Go Game</a>
         {% endfor %}
+
         {% for page_num in games.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
             {% if page_num %}
                 {% if games.page == page_num %}

@@ -8,6 +8,10 @@
     font-family: 'Montserrat';
 }
 
+.content {
+    font-family: 'Roboto';
+}
+
 header{
     position: absolute;
     margin: 0;
@@ -36,68 +40,67 @@ h1.title {
     text-align: center;
 }
 
-.content {
-    font-family: 'Roboto';
-}
-
 /*Using Font Awesome to get the icon*/
 .glyphicon-search:before {
     content: "\270f";
 }
 
 .gameName {
-    display: inline-block;
     margin: 3% 0 0 0;
+    display: inline-block;
 }
 
 .info {
-    display: inline-block;
-    overflow: hidden;
     width: 55%;
     float: left;
-}
-
-h1, h2 {
+    overflow: hidden;
     display: inline-block;
 }
 
 aside {
-    border-radius: 5px;
+    width: 40%;
     padding: 5px;
+    border-radius: 5px;
     margin: 0 0 0 3%;
     display: inline-block;
     border: 2px solid #57a64a;
-    width: 40%;
 }
 
 ul, li {
+    padding: 0;
     list-style: none;
+    display:inline-block;
     list-style-position: inside;
 }
 
+.default {
+    display:block;
+    padding: 0 0 0 1%;
+}
+
 .link {
-    display: inline-block;
-    color: #171a21;
-    background-color: #c7d5e0;
-    border-radius: 5px;
     padding: 5px;
+    color: #171a21;
     font-weight: bold;
+    border-radius: 5px;
     text-decoration: none;
+    display: inline-block;
+    background-color: #c7d5e0;
 }
 
     .link:hover {
         color: #171a21;
-        background-color: #f0f8ff;
         text-decoration: none;
+        background-color: #f0f8ff;
     }
 
 img {
-    max-height: 100%;
-    max-width: 100%;
-    margin: 5px 5px 5px 0;
     /*font size being changed to default is in case 
         the img fails*/
     font-size: 16px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 5px 5px 5px 0;
 }
 
 .navLinks {
@@ -110,8 +113,8 @@ a {
 }
 
     a:hover {
-        color: #c7d5e0;
         opacity: 0.5;
+        color: #c7d5e0;
         text-decoration: none;
     }
 
@@ -140,8 +143,6 @@ a {
     background-color:inherit;
 }
 
-
-
 .browseNav {
     display: block;
 }
@@ -151,25 +152,152 @@ a {
 }
 
 .tabs {
-    height: 100%;
+    margin: 0;
+    padding: 5px;
+    min-width: 100px;
+    text-align: center;
+    display:inline-block;
     background-color: #2a475e;
+    border-radius: 10px 10px 0 0;
 }
 
+.hold {
+    width: 100%;
+    display:flex;
+    flex-wrap:wrap; 
+    align-items:center;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.center {
+    flex: 1;
+    width: 70%;
+    margin: 0 0 20px 0;
+}
 
 .storeLink {
+    width: 100%;
+    margin-top:0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #2a475e;
+    border-radius: 0 10px 10px 10px;
+}
+
+.listing {
+    padding: 0;
+    flex: 1;
+    width: auto;
+    text-align: center;
+}
+
+.logo {
+    margin: 5px;
+    max-height: 50px;
+    max-width: 100px;
     display: inline-block;
 }
 
-
-.logo {
-    max-height: 100px;
-    max-width: 200px;
+button {
+    border: none;
+    color: inherit;
+    background: inherit;
 }
 
+/*=====================GuoJun Side========================================*/
+
+/*Everywhere*/
+
+body main #title {
+    width: 100%;
+    padding-top: 110px;
+}
+
+body main h2 {
+    font-weight: bolder;
+}
+
+/*-----------------------------------*/
+/*    Feedback and Review Checker    */
+/*----------------------------------*/
+
+
+/*feedbackcontainer, select dropdown box and textbox for feedback and review checker*/
+body main #feedbackcontainer, body main #feedbackcontainer .feedbackselect, body main #feedbackcontainer .feedbacktextbox {
+    width: 100%;
+    padding: 12px;
+    /*border: 1px solid #ccc;*/
+    border-radius: 4px;
+    resize: vertical;
+}
+
+    /*Dropdown textbox, col-25 & col-75 text style for feedback and review checker*/
+    body main #feedbackcontainer .feedbackselect, body main #feedbackcontainer .row .col-25 label, body main #feedbackcontainer .row .col-75 label {
+        font-weight: bold;
+    }
+
+    /*Padding/effect for textbox for both .col-25 and .col-75 for feedback and review checker*/
+    body main #feedbackcontainer .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+
+    body main #feedbackcontainer .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+
+    /* Clear floats after the columns for feedback and review checker*/
+    body main #feedbackcontainer .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /*button Div for feedback and review checker*/
+    body main #feedbackcontainer .rowbutton {
+        float: right;
+        padding-top: 20px;
+    }
+
+    /*for feedback button for feedback and review checker*/
+    body main #feedbackcontainer #rowbutton #sendfeedback {
+        background-color: #f0f8ff;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+    }
+
+        /*button hover effect for feedback and review checker*/
+        body main #feedbackcontainer #rowbutton #sendfeedback:hover {
+            background-color: #138496;
+            font-weight: bolder;
+            opacity: 0.7;
+        }
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    body main #feedbackcontainer .col-25, body main #feedbackcontainer .col-75, body main #feedbackcontainer .rowbutton input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
 
 /*/*======================Other pages========================================*/
 
-/*----Error Page----*/
+/*------------------*/
+/*    Error page      */
+/*------------------*/
 
 body main #errorImage {
     display: block;
@@ -194,72 +322,110 @@ body main #loginImage, body main #registerImage {
         width: 50%;
     }
 
+/*------------------*/
+/*    Login page      */
+/*------------------*/
 
-/*----Feedback-----*/
 
-* {
-    box-sizing: border-box;
+body #loginmain {
+    font-family: 'Montserrat';
 }
 
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-}
-
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-}
-
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-}
-
-    input[type=submit]:hover {
-        background-color: #45a049;
+    body #loginmain form {
+        border: 3px solid #f1f1f1;
     }
 
-.container {
-    border-radius: 5px;
-    background-color: #171a21;
-    padding: 20px;
-}
-
-.col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-}
-
-.col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
+    body #loginmain .logininput {
         width: 100%;
-        margin-top: 0;
+        max-width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        clear: both;
+    }
+
+    body #loginmain .loginbtn {
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        background-color: #17a2b8;
+        color: white;
+    }
+
+    body #loginmain button:hover {
+        opacity: 0.8;
+        background-color: #138496;
+        font-weight: bolder;
+    }
+
+    body #loginmain .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #17a2b8;
+    }
+
+    body #loginmain .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    body #loginmain img.avatar {
+        width: 40%;
+        position: center;
+    }
+
+    body #loginmain .container {
+        padding: 16px;
+        height: 100%;
+        width: 100%;
+        clear: both;
+    }
+
+        body #loginmain .container label {
+            color: white;
+            border: dotted 1px white;
+            width: 100%;
+        }
+
+    body #loginmain span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    body #loginmain span.psw {
+        display: block;
+        float: none;
+    }
+
+    body #loginmain .cancelbtn {
+        width: 100%;
+        height: 100%;
     }
 }
+
+body #loginmain .logobutton {
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    position: center;
+    margin: auto;
+}
+
+    body #loginmain .logobutton:hover {
+        opacity: 0.7;
+    }
+
+
 
 /*----Register Page----
 
@@ -281,4 +447,3 @@ body main .container #title{
 
 }
 */
-
