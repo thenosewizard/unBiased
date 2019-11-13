@@ -1,12 +1,11 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Unbiased login </title>
+    <title>Unbiased Error page </title>
     <meta name="author" content="Theodosius Chin GuoJun" />
-    <meta name="description" content="P2 project, Login page" />
-    <title>Index.html</title>
+    <meta name="description" content="P2 project, review checker page" />
+    <title>Feedback</title>
     <!--Montserrat Font-->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <!--Boot strap js-->
@@ -23,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <!--Favicon-->
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
+    <style>
+    </style>
 </head>
 <body>
     <header id="nav">
@@ -37,35 +38,28 @@
             </form>
         </nav>
     </header>
-    <main id="loginmain">
-        <!--================================================================================-->
-        <!--                                    Register Form                                  -->
-        <!--================================================================================-->
-        <form action="/action_page.php" method="post" style="width:80%;border:dotted 3px blue; max-width:500px; margin:auto; background-color: black">
-            <div class="container" style="position:center; text-align:center;">
-                <img src="media/UNBIASED.png" alt="Login" class="avatar" style="width:300px">
-            </div>
-            <div class="container">
-                <h2>Create an account</h2>
-                <br />
-                <label for="uname"><b>Username</b></label>
-                <input class="logininput" type="text" placeholder="Enter your username" name="uname" required>
-                <br>
-                <label for="psw"><b>Email</b></label>
-                <input class="logininput" type="email" placeholder="Enter your email" name="email" required>
-                <br />
-                <label for="psw"><b>Password</b></label>
-                <input class="logininput" type="password" placeholder="Enter Password" name="psw" required>
-                <br />
-                <label for="psw"><b>Confirm password</b></label>
-                <input class="logininput" type="password" placeholder="Confirm your password" name="psw2" required>
-
-                <button class="loginbtn" type="submit">Create my account!</button>
-            </div>
-            <div class="container">
-                <span class="psw">Got an account? <a href="#">Login now</a></span>
-            </div>
-        </form>
+    <main>
+        <div id="title">
+            <h2>Review checker</h2>
+            <p>Checks if your review is legitimate </p>
+        </div>
+        <div id="feedbackcontainer">
+            <form action="/action_page.php">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea class="feedbacktextbox" name="subject" placeholder="What's up ?" style="height:200px"></textarea>
+                        Results: 
+                    </div>
+                </div>
+                <div class="rowbutton">
+                    <button id="sendfeedback" class="btn btn-info" type="submit" value="Submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </main>
+    <footer></footer>
 </body>
 </html>

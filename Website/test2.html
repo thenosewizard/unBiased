@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Unbiased login </title>
+	<meta name="author" content="Theodosius Chin GuoJun" />
+	<meta name="description" content="P2 project, Login page" />
+	<title>Index.html</title>
+	<!--Montserrat Font-->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<!--Boot strap js-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!--Style sheets-->
+	<!--------------------------------------------------------------------------------------------------------------------------------->
+	<!--Boot strap style sheets-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!--Font Awesome for icons-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--styles.css-->
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<!--Favicon-->
+	<link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
+	<style>
+		body #loginmain {
+			font-family: 'Montserrat';
+		}
+
+		body #loginmain form {
+			border: 3px solid #f1f1f1;
+		}
+
+		body #loginmain logininput {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+		}
+
+		body #loginmain button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		body #loginmain button:hover {
+			opacity: 0.8;
+		}
+
+			body #loginmain .cancelbtn {
+				width: auto;
+				padding: 10px 18px;
+				background-color: #f44336;
+			}
+
+			body #loginmain .imgcontainer {
+				text-align: center;
+				margin: 24px 0 12px 0;
+			}
+
+		body #loginmain img.avatar {
+			width: 40%;
+			position: center;
+		}
+
+			body #loginmain .container {
+				padding: 16px;
+				height: 100%;
+			}
+
+				body #loginmain .container label {
+					color: white;
+				}
+
+		body #loginmain span.psw {
+			float: right;
+			padding-top: 16px;
+		}
+
+		/* Change styles for span and cancel button on extra small screens */
+		@media screen and (max-width: 300px) {
+			body #loginmain span.psw {
+				display: block;
+				float: none;
+			}
+
+			body #loginmain .cancelbtn {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		body #loginmain .logobutton {
+			padding: 20px;
+			font-size: 30px;
+			width: 30px;
+			text-align: center;
+			text-decoration: none;
+			margin: 5px 2px;
+			border-radius: 50%;
+			position: center;
+			margin: auto;
+		}
+
+			body #loginmain .logobutton:hover {
+				opacity: 0.7;
+			}
+	</style>
+</head>
+<body>
+	<header id="nav">
+		<!--================================================================================-->
+		<!--                                    Navbar                                      -->
+		<!--================================================================================-->
+		<nav class="navbar">
+			<a class="navbar-brand">UNBIASED</a>
+			<form class="form-inline">
+				<input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
+				<button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
+			</form>
+		</nav>
+	</header>
+	<main>
+
+		<!--================================================================================-->
+		<!--                                    Login Form                                  -->
+		<!--================================================================================-->
+		<form action="/action_page.php" method="post" style="width:80%;border:dotted 3px blue; max-width:500px; margin:auto; background-color: black">
+			<div class="container">
+				<img src="media/UNBIASED.png" alt="Login" class="avatar" style="width:300px">
+			</div>
+
+			<div class="container">
+				<label for="uname"><b>Username</b></label>
+				<input class="logininput" type="text" placeholder="Enter Email" name="uname" required>
+
+				<label for="psw"><b>Password</b></label>
+				<input class="logininput" type="password" placeholder="Enter Password" name="psw" required>
+
+				<button type="submit">Login</button>
+				<label>
+					<input type="checkbox" checked="checked" name="remember"> Remember me
+				</label>
+			</div>
+			<div class="container">
+				<label><b>or try login using  </b></label>
+			</div>
+			<div class="container" style="position:center; margin: auto;">
+				<input class="logobutton" type="image" src="media/amazonlogo.png" alt="AmazonLogo">
+				<input class="logobutton" type="image" src="media/facebooklogo.png" alt="FacebookLogo">
+				<input class="logobutton" type="image" src="media/twitterlogo.png" alt="TwitterLogo">
+				<input class="logobutton" type="image" src="media/googlelogo.png" alt="GoogleLogo">
+				<input class="logobutton" type="image" src="media/steamlogo.png" alt="SteamLogo">
+			</div>
+			<div class="container" style="background-color:#f1f1f1">
+				<button type="button" class="cancelbtn">Cancel</button>
+				<span class="psw">Forgot <a href="#">password?</a>	|	Create <a href="#">account</a></span>
+			</div>
+		</form>
+	</main>
+</body>
+</html>
