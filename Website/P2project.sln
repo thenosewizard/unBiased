@@ -8,9 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Browse.html = Browse.html
 		Error.html = Error.html
 		feedback.html = feedback.html
+		header.html = header.html
 		Index.html = Index.html
 		login.html = login.html
-		Nav.html = Nav.html
 		register.html = register.html
 		Review.html = Review.html
 		superadmin.html = superadmin.html
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{CC5E2E39-80C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{D28BBF3B-A89E-484C-A475-BD67260B0171}"
 	ProjectSection(SolutionItems) = preProject
-		nav.js = nav.js
+		js\Script.js = js\Script.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{4DE196EF-21F9-4F3D-B815-349F22ED12E5}"
