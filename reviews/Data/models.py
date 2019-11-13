@@ -89,91 +89,91 @@ db.session.add_all(
         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
                         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
         Comment(userId = 1, gameId = 1, content = 'Love it'),
         Comment(userId = 2, gameId = 1, content = '10/10'),
         GameLink(gameId = 1, platform = 'PC', source = 'Steam', link = 'www.steam.com'),
