@@ -38,6 +38,7 @@ class Game(db.Model):
     description = db.Column(db.String(20000), nullable = True)
     credibility = db.Column(db.Float, nullable = True)
     reviewAI = db.Column(db.String(10000), nullable = True)
+    link = db.Column(db.String(1000), nullable = False)
     comments = db.relationship('Comment', backref = 'game', lazy = True)
     genre = db.relationship('Genre', secondary = GenreGame, lazy = 'subquery', backref = db.backref('game', lazy = True))
 
@@ -73,7 +74,7 @@ db.session.add_all(
         User(username = 'MyNameJeff', email = 'myname@jeff.com', password = 'JeffJeffJeff', role = 'User'),
         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
         Genre(name = 'Action', description = 'Stunt, Explosions & Fights!'),
-        Game(title = 'Legend of Zelda, Breath of the Wild', rating = 5.0, description = 'Explore the world and Save it from Ganon\'s wrath', credibility = 5.0, reviewAI = 'PERFECT 10/10'),
+        Game(title = 'Legend of Zelda, Breath of the Wild', rating = 5.0, description = 'Explore the world and Save it from Ganon\'s wrath', credibility = 5.0, reviewAI = 'PERFECT 10/10', link = 'www.nintendo.com'),
         Comment(userId = 1, gameId = 1, content = 'Love it'),
         Comment(userId = 2, gameId = 1, content = '10/10'),
         Feedback(userId = 1, category = 'Technical', content = 'website too slow')
