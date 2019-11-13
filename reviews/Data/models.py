@@ -63,6 +63,8 @@ class Feedback(db.Model):
     def __repr__(self):
         return '{}, {}, {}, {}'.format(self.feedbackId, self.userId, self.category, self.content)
 
+db.drop_all()
+
 db.create_all()
 
 db.session.add_all(
