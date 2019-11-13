@@ -156,10 +156,15 @@ a {
 }
 
 
+.storeLink {
+    display: inline-block;
+}
 
 
-
-
+.logo {
+    max-height: 100px;
+    max-width: 200px;
+}
 
 
 /*/*======================Other pages========================================*/
