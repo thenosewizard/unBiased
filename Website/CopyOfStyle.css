@@ -32,16 +32,16 @@ h1.title {
 
 /*Using Font Awesome to get the icon*/
 .glyphicon-search:before {
-    content:"\270f";
+    content: "\270f";
 }
 
 .gameName {
-    display:inline-block;
+    display: inline-block;
     margin: 3% 0 0 0;
 }
 
 .info {
-    display:inline-block;
+    display: inline-block;
     overflow: hidden;
     width: 55%;
     float: left;
@@ -84,7 +84,7 @@ ul, li {
 
 img {
     object-fit: contain;
-    max-height:100%;
+    max-height: 100%;
     max-width: 100%;
     display: block;
     margin: 5px 5px 5px 0;
@@ -93,7 +93,7 @@ img {
     font-size: 16px;
 }
 
-.navLinks{
+.navLinks {
     margin: 0 10px 0 0;
 }
 
@@ -101,6 +101,7 @@ a {
     color: #c7d5e0;
     text-decoration: none;
 }
+
     a:hover {
         color: #c7d5e0;
         opacity: 0.5;
@@ -124,10 +125,17 @@ a {
 
 /*Everywhere*/
 
+body main #title {
+    width: 100%;
+    padding-top: 110px;
+}
 
+body main h2 {
+    font-weight: bolder;
+}
 
 /*------------------*/
-/*    Feedback (DONE)     */
+/*    Feedback      */
 /*------------------*/
 
 /*feedbackcontainer, select dropdown box and textbox for feedback*/
@@ -139,77 +147,63 @@ body main #feedbackcontainer, body main #feedbackcontainer .feedbackselect, body
     resize: vertical;
 }
 
-body main
+    /*Dropdown textbox, col-25 & col-75 text style for feedback*/
+    body main #feedbackcontainer .feedbackselect, body main #feedbackcontainer .row .col-25 label, body main #feedbackcontainer .row .col-75 label {
+        font-weight: bold;
+    }
 
-/*Dropdown textbox, col-25 & col-75 text style for feedback*/
-body main #feedbackcontainer .feedbackselect, body main #feedbackcontainer .row .col-25 label, body main #feedbackcontainer .row .col-75 label {
-    font-weight: bold;
-}
+    /*Padding/effect for textbox for both .col-25 and .col-75 for feedback*/
+    body main #feedbackcontainer .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
 
-/*Padding/effect for textbox for both .col-25 and .col-75 for feedback*/
-body main #feedbackcontainer .col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-}
+    body main #feedbackcontainer .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
 
-body main #feedbackcontainer .col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-}
+    /* Clear floats after the columns for feedback*/
+    body main #feedbackcontainer .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
-/* Clear floats after the columns for feedback*/
-body main #feedbackcontainer .row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+    /*button Div for feedback*/
+    body main #feedbackcontainer .rowbutton {
+        float: right;
+        padding-top: 20px;
+    }
 
-/*button Div for feedback*/
-body main #feedbackcontainer .rowbutton {
-    float: right;
-    padding-top: 20px;
-}
+    /*for feedback button for feedback*/
+    body main #feedbackcontainer #rowbutton #sendfeedback {
+        background-color: #f0f8ff;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+    }
 
-/*for feedback button for feedback*/
-body main #feedbackcontainer #rowbutton #sendfeedback {
-    background-color: #f0f8ff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-    font-weight:bold;
-}
-
-/*button hover effect for feedback*/
-body main #feedbackcontainer #rowbutton #sendfeedback:hover {
-    background-color: #138496;
-    font-weight:bolder;
-}
-
-
-/*Text Style for Feedback*/
-body main #title {
-    width: 100%;
-    padding-top: 110px;
-    border: 1px dashed white;
-}
-
-body main h2 {
-    font-weight: bolder;
-}
+        /*button hover effect for feedback*/
+        body main #feedbackcontainer #rowbutton #sendfeedback:hover {
+            background-color: #138496;
+            font-weight: bolder;
+        }
 
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
     body main #feedbackcontainer .col-25, body main #feedbackcontainer .col-75, body main #feedbackcontainer .rowbutton input[type=submit] {
         width: 100%;
         margin-top: 0;
     }
-}
+}*/
 
 /*Unknown*/
 /*
@@ -230,7 +224,7 @@ body main h2 {
     */
 
 /*------------------*/
-/*    Error page  (DONE)    */
+/*    Error page      */
 /*------------------*/
 
 body main #errorImage {
@@ -243,102 +237,61 @@ body main #errorImage {
 }
 
 /*------------------*/
-/*    Login page    (FIXING)  */
+/*    Login page      */
 /*------------------*/
 
-
-/*Flex-wrap div*/
-body main .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: green;
-    border:1px groove red;
-}
-
-    body main .flex-container > body main .flex-container div {
-        color: blue;
-        width: 100px;
-        margin: 10px;
-        text-align: center;
-        line-height: 75px;
-        font-size: 30px;
-    }
-
 /*logincontainer and textbox for login*/
-body main .flex-container #logincontainer {
-    width: 70%;
-    //padding: 12px;
-    border: 1px solid yellow;
+body main #logincontainer {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-    float:right;
-}
-
-/*Text Style for Feedback*/
-body main .flex-container #title2 {
-    width: 30%;
-    padding-top: 50px;
-    border: 1px dashed white;
-    float:left;
-    text-align:center;
-}
-
-body main .flex-container #title2 #lock{
-    width:100px;
-    position:center;
-}
-
-body main .flex-container #title2 h2 {
-    font-weight: bolder;
 }
 
     /*Dropdown textbox, col-25 & col-75 text style for login*/
-body main .flex-container #logincontainer .row .col-25 label, body main .flex-container #logincontainer .row .col-75 label {
-    font-weight: bold;
-}
+    body main #logincontainer .feedbackselect, body main #logincontainer .row .col-25 label, body main #logincontainer .row .col-75 label {
+        font-weight: bold;
+    }
 
     /*Padding/effect for textbox for both .col-25 and .col-75 for login*/
-body main .flex-container #logincontainer .col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-}
+    body main #logincontainer .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
 
-body main .flex-container #logincontainer .col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-}
-
-body main .flex-container #logincontainer .row{
-    width:100%;
-}
+    body main #logincontainer .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
 
     /* Clear floats after the columns  for login*/
-    body main .flex-container #logincontainer .row:after {
+    body main #logincontainer .row:after {
         content: "";
         display: table;
         clear: both;
     }
 
-    /*button Div for login  ==*/
-body main .flex-container #logincontainer #logindiv {
-    float: right;
-    padding-top: 20px;
-    border: 1px solid blue;
-    width: 100%;
-}
-
-        /*for login button for login*/
-    body main .flex-container #logincontainer #logindiv #sendlogin {
+    /*button Div for login*/
+    body main #logincontainer #logindiv {
         float: right;
+        padding-top: 20px;
+        border: 1px solid #ccc;
+        width: 100%;
     }
 
-        /*button hover effect for login*/
-        body main .flex-container #logincontainer #logindiv #sendlogin:hover {
-            background-color: #138496;
-            font-weight: bolder;
+        /*for login button for login*/
+        body main #logincontainer #logindiv #sendlogin {
+            float: right;
         }
+
+            /*button hover effect for login*/
+            body main #logincontainer #logindiv #sendlogin:hover {
+                background-color: #138496;
+                font-weight: bolder;
+            }
 
 /*
 body main #loginImage, body main #registerImage {

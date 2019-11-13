@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Website",
+    "\\Website\\css",
     "\\Website\\media"
   ],
-  "SelectedNode": "\\Website\\Nav.html",
+  "SelectedNode": "\\Website\\css",
   "PreviewInSolutionExplorer": false
 }
