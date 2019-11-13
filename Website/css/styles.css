@@ -8,6 +8,10 @@
     font-family: 'Montserrat';
 }
 
+.content {
+    font-family: 'Roboto';
+}
+
 header{
     position: absolute;
     margin: 0;
@@ -36,10 +40,6 @@ h1.title {
     text-align: center;
 }
 
-.content {
-    font-family: 'Roboto';
-}
-
 /*Using Font Awesome to get the icon*/
 .glyphicon-search:before {
     content: "\270f";
@@ -57,10 +57,6 @@ h1.title {
     float: left;
 }
 
-h1, h2 {
-    display: inline-block;
-}
-
 aside {
     border-radius: 5px;
     padding: 5px;
@@ -71,6 +67,7 @@ aside {
 }
 
 ul, li {
+    display:inline-block;
     list-style: none;
     list-style-position: inside;
 }
@@ -140,8 +137,6 @@ a {
     background-color:inherit;
 }
 
-
-
 .browseNav {
     display: block;
 }
@@ -151,19 +146,53 @@ a {
 }
 
 .tabs {
-    height: 100%;
+    min-width: 100px;
+    border-radius: 10px 10px 0 0;
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    display:inline-block;
     background-color: #2a475e;
 }
 
-
-.storeLink {
-    display: inline-block;
+.hold {
+    width: 100%;
+    display:flex;
+    flex-wrap:wrap; 
+    align-items:center;
+    flex-direction:column;
+    justify-content:center;
 }
 
+.center {
+    flex: 1;
+    width: 70%;
+    margin: 0 0 20px 0;
+}
+
+.storeLink {
+    margin-top:0;
+    padding: 10px;
+    background-color: #2a475e;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 0 10px 10px 10px;
+}
+
+.listing {
+    padding: 0;
+    flex: 1;
+    width: auto;
+    text-align: center;
+}
 
 .logo {
-    max-height: 100px;
-    max-width: 200px;
+    margin: 5px;
+    display: inline-block;
+    max-height: 50px;
+    max-width: 100px;
 }
 
 
