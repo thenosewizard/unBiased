@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, flash, redirect, url_for
+from flask import Blueprint, render_template, flash, redirect, url_for, request
 main = Blueprint('main', __name__, template_folder= "templates")
 from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, IndexForm
 from reviews.Data.models import User, Game, Feedback, GenreGame, Comment
@@ -15,6 +15,7 @@ def index():
 def test():
     users = User.query.all()
     return users
+
 
 @main.route("/register", methods = ['GET', 'POST'])
 def register():
@@ -51,6 +52,14 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for("main.index"))
+
+
+@main.route("/browse")
+def browse():
+    page = request.args.get('page', 1, type=int)
+    games = Game.query.paginate(page= page, per_page=5)
+    return render_template("browse.html", games=games)
+
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
