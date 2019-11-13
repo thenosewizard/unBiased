@@ -191,7 +191,6 @@ a {
     padding: 0;
     flex: 1;
     width: auto;
-    height: 50px;
     text-align: center;
 }
 
@@ -294,8 +293,10 @@ body main #feedbackcontainer, body main #feedbackcontainer .feedbackselect, body
     }
 }
 
+/*/*======================Other pages========================================*/
+
 /*------------------*/
-/*    Error page    */
+/*    Error page      */
 /*------------------*/
 
 body main #errorImage {
@@ -307,10 +308,7 @@ body main #errorImage {
     margin: 0 auto;
 }
 
-
-/*------------------------------------------------*/
-/*    Login, Register and Forget password page    */
-/*------------------------------------------------*/
+/*----Login Page----*/
 
 body main #loginImage, body main #registerImage {
     display: block;
@@ -324,16 +322,17 @@ body main #loginImage, body main #registerImage {
         width: 50%;
     }
 
+/*------------------*/
+/*    Login page      */
+/*------------------*/
+
+
 body #loginmain {
     font-family: 'Montserrat';
 }
 
     body #loginmain form {
-        border: none;
-        width: 80%;
-        max-width:500px;
-        margin:auto;
-        background-color:black;
+        border: 3px solid #f1f1f1;
     }
 
     body #loginmain .logininput {
@@ -342,6 +341,7 @@ body #loginmain {
         padding: 12px 20px;
         margin: 8px 0;
         display: inline-block;
+        border: 1px solid #ccc;
         box-sizing: border-box;
         clear: both;
     }
@@ -388,6 +388,7 @@ body #loginmain {
 
         body #loginmain .container label {
             color: white;
+            border: dotted 1px white;
             width: 100%;
         }
 
@@ -423,3 +424,26 @@ body #loginmain .logobutton {
     body #loginmain .logobutton:hover {
         opacity: 0.7;
     }
+
+
+
+/*----Register Page----
+
+/*Div and img alightment
+body main #registerImage {
+    display: block;
+    margin-left: 38%;
+    margin-right: 40%;
+    width: 50%;
+}
+
+body main #registerImage #register {
+    width: 50%;
+}
+
+/*Font style and text alightment
+body main .container #title{
+    text-align:center;
+
+}
+*/

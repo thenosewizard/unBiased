@@ -8,45 +8,6 @@
                 <h2>Login</h2>
                 <p>Login to your account</p>
             </div>
-        <div id="logincontainer">
-            <form action="action_page.php" method="post">
-                <div class="row">
-                    <div class="col-25">
-                        <label for="login"><b>Username: </b></label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" placeholder="Type in your email" name="uname" required />
-                        <p>
-                            <a href="#" onclick="alert('Register link work!')">Create an account</a>
-                        </p>
-                    </div>
-                    <div class="col-25">
-                        <label for="psw"><b>Password:  </b></label>
-                    </div>
-                    <div class="col-75">
-                        <input id="subject" type="password" placeholder="Enter Password" name="psword" required>
-                        <p>
-                            <a href="#" onclick="alert('Forget account link work!')">Forget account?</a>
-                            <br />
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label>
-                        </p>
-                    </div>
-                    <div id="logindiv">
-                        <button id="sendlogin" type="submit" class="btn btn-info" onclick="alert('Login button work!')">Login</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        </div>
-    </main>
-{% endblock content%}
-
-<html>
-    <head></head>
-    <body>
-        <header>Login</header>
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
@@ -56,6 +17,37 @@
             {% endfor %}
         {% endif %}
         {% endwith %}
+        <div id="logincontainer">
+            <form method="POST" action="">
+                {{ form.csrf_token }}
+                <div class="row">
+                    {{form.email.label(class="col-25")}}
+                    {{form.email(class="col-75")}}
+                    {% if form.email.errors %}
+                        {% for error in form.email.errors %}
+                            <div class="invalid-feedback">
+                                <span>{{errror}}</span>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {{form.password.label(class="col-25")}}
+                    {{form.password(class="col-75")}}
+                    <div class="form-group">
+                        {{form.submit(class="btn btn-outline-info")}}
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+    </main>
+{% endblock content%}
+
+
+<!-- 
+<html>
+    <head></head>
+    <body>
+        
         <form method="POST" action="">
             {{ form.csrf_token }}
             <fieldset>
@@ -74,6 +66,5 @@
             </button>
         </form>
     </body>
-</html>
-
+</html> -->
 
