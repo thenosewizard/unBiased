@@ -37,3 +37,8 @@ class LoginForm(FlaskForm):
     password = PasswordField("Password",
         validators=[DataRequired()])
     submit = SubmitField("Login")
+
+class CheckReviewForm(FlaskForm):
+    content = StringField("Review",
+        validators=[DataRequired()])
+    submit = SubmitField("Check")
