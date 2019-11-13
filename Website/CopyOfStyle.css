@@ -1,0 +1,341 @@
+﻿body {
+    /*Page layout*/
+    margin: 5% 10% 0 10%;
+    background-color: #171a21;
+    /*Text display*/
+    color: #c7d5e0;
+    line-height: 1.6;
+    font-family: 'Montserrat';
+}
+
+header {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1b2838;
+}
+
+h1.title {
+    font-size: 500%;
+    margin: 20px;
+}
+
+.title-card {
+    text-align: center;
+}
+
+.content {
+    font-family: 'Roboto';
+}
+
+/*Using Font Awesome to get the icon*/
+.glyphicon-search:before {
+    content: "\270f";
+}
+
+.gameName {
+    display: inline-block;
+    margin: 3% 0 0 0;
+}
+
+.info {
+    display: inline-block;
+    overflow: hidden;
+    width: 55%;
+    float: left;
+}
+
+h1, h2 {
+    display: inline-block;
+}
+
+aside {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 0 0 3%;
+    display: inline-block;
+    border: 2px solid #57a64a;
+    width: 40%;
+}
+
+ul, li {
+    padding: 0 0 0 1%;
+    list-style: none;
+    list-style-position: inside;
+}
+
+.link {
+    display: inline-block;
+    color: #171a21;
+    background-color: #c7d5e0;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .link:hover {
+        color: #171a21;
+        background-color: #f0f8ff; /*Try*/
+        text-decoration: none;
+    }
+
+img {
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 5px 5px 5px 0;
+    /*font size being changed to default is in case 
+        the img fails*/
+    font-size: 16px;
+}
+
+.navLinks {
+    margin: 0 10px 0 0;
+}
+
+a {
+    color: #c7d5e0;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #c7d5e0;
+        opacity: 0.5;
+        text-decoration: none;
+    }
+
+
+.carousel-info {
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    padding: 5px;
+    color: black;
+    position: absolute;
+    overflow-wrap: break-word;
+    background-color: rgba( 255, 255, 255, 0.5);
+}
+
+/*=====================GuoJun Side========================================*/
+
+/*Everywhere*/
+
+body main #title {
+    width: 100%;
+    padding-top: 110px;
+}
+
+body main h2 {
+    font-weight: bolder;
+}
+
+/*------------------*/
+/*    Feedback      */
+/*------------------*/
+
+/*feedbackcontainer, select dropdown box and textbox for feedback*/
+body main #feedbackcontainer, body main #feedbackcontainer .feedbackselect, body main #feedbackcontainer .feedbacktextbox {
+    width: 100%;
+    padding: 12px;
+    /*border: 1px solid #ccc;*/
+    border-radius: 4px;
+    resize: vertical;
+}
+
+    /*Dropdown textbox, col-25 & col-75 text style for feedback*/
+    body main #feedbackcontainer .feedbackselect, body main #feedbackcontainer .row .col-25 label, body main #feedbackcontainer .row .col-75 label {
+        font-weight: bold;
+    }
+
+    /*Padding/effect for textbox for both .col-25 and .col-75 for feedback*/
+    body main #feedbackcontainer .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+
+    body main #feedbackcontainer .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+
+    /* Clear floats after the columns for feedback*/
+    body main #feedbackcontainer .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /*button Div for feedback*/
+    body main #feedbackcontainer .rowbutton {
+        float: right;
+        padding-top: 20px;
+    }
+
+    /*for feedback button for feedback*/
+    body main #feedbackcontainer #rowbutton #sendfeedback {
+        background-color: #f0f8ff;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+    }
+
+        /*button hover effect for feedback*/
+        body main #feedbackcontainer #rowbutton #sendfeedback:hover {
+            background-color: #138496;
+            font-weight: bolder;
+        }
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/*@media screen and (max-width: 600px) {
+    body main #feedbackcontainer .col-25, body main #feedbackcontainer .col-75, body main #feedbackcontainer .rowbutton input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}*/
+
+/*Unknown*/
+/*
+        body main #feedbackcontainer label {
+        padding: 12px 12px 12px 0;
+        /*display: inline-block;
+    }
+
+    body main #feedbackcontainer .container {
+    border-radius: 5px;
+    background-color: #171a21;
+    padding: 20px;
+    }
+
+    * {
+    box-sizing: border-box;
+}
+    */
+
+/*------------------*/
+/*    Error page      */
+/*------------------*/
+
+body main #errorImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    position: center;
+    margin: 0 auto;
+}
+
+/*------------------*/
+/*    Login page      */
+/*------------------*/
+
+/*logincontainer and textbox for login*/
+body main #logincontainer {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+    /*Dropdown textbox, col-25 & col-75 text style for login*/
+    body main #logincontainer .feedbackselect, body main #logincontainer .row .col-25 label, body main #logincontainer .row .col-75 label {
+        font-weight: bold;
+    }
+
+    /*Padding/effect for textbox for both .col-25 and .col-75 for login*/
+    body main #logincontainer .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+
+    body main #logincontainer .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+
+    /* Clear floats after the columns  for login*/
+    body main #logincontainer .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /*button Div for login*/
+    body main #logincontainer #logindiv {
+        float: right;
+        padding-top: 20px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+
+        /*for login button for login*/
+        body main #logincontainer #logindiv #sendlogin {
+            float: right;
+        }
+
+            /*button hover effect for login*/
+            body main #logincontainer #logindiv #sendlogin:hover {
+                background-color: #138496;
+                font-weight: bolder;
+            }
+
+/*
+body main #loginImage, body main #registerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    margin: 0 auto;
+}
+
+
+body main #loginImage #lock, body main #registerImage #register {
+    width: 50%;
+}
+*/
+
+
+/*----Register Page----
+
+/*Div and img alightment
+body main #registerImage {
+    display: block;
+    margin-left: 38%;
+    margin-right: 40%;
+    width: 50%;
+}
+
+body main #registerImage #register {
+    width: 50%;
+}
+
+/*Font style and text alightment
+body main .container #title{
+    text-align:center;
+
+}
+*/
+
+
+
+
+
+/*
+
+
+*/
+
