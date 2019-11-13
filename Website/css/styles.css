@@ -67,9 +67,14 @@ aside {
 }
 
 ul, li {
+    padding: 0;
     display:inline-block;
     list-style: none;
     list-style-position: inside;
+}
+
+.default {
+    display:block;
 }
 
 .link {
