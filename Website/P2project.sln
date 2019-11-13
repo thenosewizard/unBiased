@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Browse.html = Browse.html
 		Error.html = Error.html
 		feedback.html = feedback.html
+		forgetpassword.html = forgetpassword.html
 		header.html = header.html
 		header_logIn.html = header_logIn.html
 		Index.html = Index.html
@@ -15,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		register.html = register.html
 		Review.html = Review.html
 		superadmin.html = superadmin.html
+		test.html = test.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}"
