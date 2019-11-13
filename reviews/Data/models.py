@@ -39,6 +39,7 @@ class Game(db.Model):
     credibility = db.Column(db.Float, nullable = True)
     reviewAI = db.Column(db.String(10000), nullable = True)
     link = db.Column(db.String(1000), nullable = False)
+    image = db.Column(db.String(500), nullable = True)
     comments = db.relationship('Comment', backref = 'game', lazy = True)
     genre = db.relationship('Genre', secondary = GenreGame, lazy = 'subquery', backref = db.backref('game', lazy = True))
 
