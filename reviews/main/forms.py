@@ -3,6 +3,7 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from reviews.Data.models import User, Game
 
+
 class RegistrationForm(FlaskForm):
     # firstName = StringField('FirstName',
     #     validators=[DataRequired(), Length(min=2, max=20)])
@@ -10,11 +11,11 @@ class RegistrationForm(FlaskForm):
     #     validators=[DataRequired(), Length(min=2, max=20)])
     username = StringField("Username", validators=[DataRequired()])
     email = StringField("Email",
-        validators=[DataRequired(), Email()])
+                        validators=[DataRequired(), Email()])
     password = PasswordField("Password",
-        validators=[DataRequired(), Length(min=8)])
+                             validators=[DataRequired(), Length(min=8)])
     confirmPassword = PasswordField("Confirm_Password",
-        validators=[DataRequired(), EqualTo("password")])
+                                    validators=[DataRequired(), EqualTo("password")])
     submit = SubmitField("Sign Up")
 
     def validate_username(self, username):
@@ -32,9 +33,9 @@ class RegistrationForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     email = StringField("Email",
-        validators=[DataRequired(), Email()])
+                        validators=[DataRequired(), Email()])
     password = PasswordField("Password",
-        validators=[DataRequired()])
+                             validators=[DataRequired()])
     submit = SubmitField("Login")
 
 
@@ -45,5 +46,8 @@ class IndexForm(FlaskForm):
     def search(self, query):
         if (query == None):
             query = ""
-        game = Game.query.filter(Game.title.contains(query)).all()
-        return(game)
+        if (query != ""):
+            game = Game.query.filter(Game.title.contains(query)).all()
+            return(game)
+        else:
+            return []
