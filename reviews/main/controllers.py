@@ -104,9 +104,9 @@ def checkreview():
                         
                 #return the processed list of tokens
                 return stop_words
-            test = "hello"
-            loaded_pipe = joblib.load("finalized_model.sav")
-            result = loaded_pipe.predict([test])
+            review = form.content.data
+            loaded_pipe = joblib.load("reviews\\AI\\finalized_model.sav")
+            result = loaded_pipe.predict([review])
             if result == 1:
                 isbiased = False
             else:
