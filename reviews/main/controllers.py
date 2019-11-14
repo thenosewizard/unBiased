@@ -65,6 +65,10 @@ def browse():
     links = GameLink.query.paginate(page=page, per_page=5)
     return render_template("browse.html", games=games, data = zip(games.items, links.items))
 
+@main.route("/review")
+def review():
+    games = Game
+
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
     form = CheckReviewForm()

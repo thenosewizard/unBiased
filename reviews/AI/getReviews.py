@@ -7,10 +7,10 @@ filename = "csgo1.json"
 appid = "730"
 ################
 
-#filename = os.getcwd() + "/reviews/AI/" + filename + '.json'
+filename = os.getcwd() + "/reviews/AI/" + filename + '.json'
+weights = os.getcwd() + "/reviews/AI/textgenrnn_weights.hdf5"
 
 #getting the reviews from the steam api
-
 
 def get_reviews_2(appid, num_iterations=0, filename=""):
     f = open(filename, 'w+')
@@ -58,7 +58,7 @@ def clean_reviews(filename):
 #read_reviews(filename)
 #clean_reviews(filename)
 from textgenrnn import textgenrnn
-textgen = textgenrnn('C:\\Users\\abich\\OneDrive\\School Stuff\\P2\\Assignment 1\\fsd-p2\\reviews\\AI\\textgenrnn_weights.hdf5')
+textgen = textgenrnn(weights)
 def generate_text():
     text = textgen.generate(return_as_list=True)
     return text
