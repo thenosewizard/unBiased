@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
-import firebase_admin
-from firebase_admin import db
+# import firebase_admin
+# from firebase_admin import db
 
 # firebase_admin.initialize_app(options={
 #     'databaseURL': 'https://unbiased-ded52.firebaseio.com'
