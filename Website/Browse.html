@@ -61,6 +61,9 @@
             .carousel-item img {
                 margin: 0;
             }
+        .center {
+            width: 100%;
+        }
     </style>
 
 </head>
@@ -245,21 +248,42 @@
                                         Browsing information
     ========================================================================================================-->
 
-        <section class="browse">
+        <!--<section class="browse">
             <nav class="browseNav">
                 <div>
                     <ul id="tabs">
                         <li class="active"><button class="bButton" id="0" onclick="">(month) reviews</button></li>
                         <li><button class="bButton" id="2" onclick="">Genre</button></li>
-                    </ul>    
+                    </ul>
                 </div>
             </nav>
             <article style="height:100%; width:100%; background-color: #2a475e">
                 test
             </article>
+        </section>-->
+
+        <section class="hold">
+            <div class="center">
+                <ul style="margin-bottom: 0; padding:0;">
+                    <li><button class="tabs" id="month" onclick="change(this.id)"><h3>(month) reviews</h3></button></li>
+                    <li><button class="tabs" id="genre" onclick="change(this.id)"><h3>Genre</h3></button></li>
+                </ul>
+
+                <ul class="storeLink" id="l_pc" style="display:flex;">
+                    <li class="listing"><a><img class="logo" src="media/logo/log_steam.png" alt="Steam Store" /></a></li>
+                    <li class="listing"><a><img class="logo" src="media/logo/log_org.png" alt="Origin" /></a></li>
+                    <li class="listing"><a><img class="logo" src="media/logo/log_blizz.png" alt="Blizzard" /></a></li>
+                    <li class="listing"><a><img class="logo" src="media/logo/log_epic.png" alt="Epic Games" /></a></li>
+                </ul>
+                <ul class="storeLink" id="l_console" style="display: none;">
+                    <li class="listing"><a><img class="logo" src="media/logo/log_nin.png" alt="Nintendo eshop" />   </a></li>
+                    <li class="listing"><a><img class="logo" src="media/logo/log_wind.png" alt="Microsoft store" /> </a></li>
+                    <li class="listing"><a><img class="logo" src="media/logo/log_psp.png" alt="Playstation store" /></a></li>
+                </ul>
+            </div>
         </section>
+
     </main>
 
-    <script src="js/Functions.js"></script>
 </body>
 </html>
