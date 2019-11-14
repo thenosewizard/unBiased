@@ -14,39 +14,42 @@
             <div class="font-weight-bold">{{form.username.label}}</div>
             {{form.username(class="logininput")}}
             {% if form.username.errors %}
-                {% for error in form.username.errors %}
-                    <span style="color: red;">{{errror}}</span>
-                {% endfor %}
+            {% for error in form.username.errors %}
+            <span style="color: red;">{{errror}}</span>
+            {% endfor %}
             {% endif %}
             <br>
             <div class="font-weight-bold">{{form.email.label}}</div>
             {{form.email(class="logininput")}}
             {% if form.email.errors %}
-                {% for error in form.email.errors %}
-                    <span style="color: red;">{{errror}}</span>
-                {% endfor %}
+            {% for error in form.email.errors %}
+            <span style="color: red;">{{errror}}</span>
+            {% endfor %}
             {% endif %}
             <br>
             <div class="font-weight-bold">{{form.password.label}}</div>
             {{form.password(class="logininput")}}
             {% if form.password.errors %}
-                {% for error in form.password.errors %}
-                    <span style="color: red;">{{errror}}</span>
-                {% endfor %}
+            {% for error in form.password.errors %}
+            <span style="color: red;">{{errror}}</span>
+            {% endfor %}
             {% endif %}
             <br>
             <div class="font-weight-bold">{{form.confirmPassword.label}}</div>
             {{form.confirmPassword(class="logininput")}}
             {% if form.confirmPassword.errors %}
-                {% for error in form.confirmPassword.errors %}
-                    <span style="color: red;">{{errror}}</span>
-                {% endfor %}
+            {% for error in form.confirmPassword.errors %}
+            <span style="color: red;">{{errror}}</span>
+            {% endfor %}
             {% endif %}
             <br>
             {{form.submit(class="loginbtn")}}
             <!-- <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label> -->
+            <div class="container">
+                <span class="psw">Got an account? <a href="#">Login now</a></span>
+            </div>
         </div>
     </form>
 </main>

@@ -25,16 +25,7 @@ import string
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 
-
-
-
-
-
-
-
-
-
-
+import os
 
 #creating a list for punctuations
 punc = string.punctuation
@@ -86,7 +77,7 @@ def tokenizer(review):
 
 
 def run():
-    df_steam = pd.read_csv("C:\\Users\\abich\OneDrive\\School Stuff\\P2\Assignment 1\\fsd-p2\\reviews\\AI\\large.csv")
+    df_steam = pd.read_csv(os.getcwd() + "/reviews/AI/large.csv")
     df_steam["weighted_vote_score"].astype(float)
     df_steam["weighted_vote_score"] = df_steam["weighted_vote_score"].round(decimals=3)
 
@@ -136,7 +127,7 @@ def run():
     joblib.dump(pipe, 'scaled_tree_clf.pkl') 
 
 def predicter(test):
-    filename = 'C:\\Users\\abich\OneDrive\\School Stuff\\P2\Assignment 1\\fsd-p2\\reviews\\AI\\scaled_tree_clf.pkl'
+    filename = os.getcwd() + "/reviews/AI/scaled_tree_clf.pkl"
     loaded_model = joblib.load(filename)
     result = loaded_model.predict([test])
     return result

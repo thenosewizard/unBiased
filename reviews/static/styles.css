@@ -390,6 +390,7 @@ body #loginmain {
     body #loginmain span.psw {
         float: right;
         padding-top: 16px;
+        margin-bottom: 10vh;
     }
 
 /* Change styles for span and cancel button on extra small screens */
