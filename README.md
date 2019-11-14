@@ -7,6 +7,7 @@ In order to run this application here we need to do a few steps
 Navigate to the repository you have just cloned and type the following commands
 
 `` pip install requirements.txt ``
+`` python -m spacy download en ``
 
 ## Running the program
 Just type **``python app.py``** in your cmd and you should be good to go!

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+<!-- <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Zechariah Wong" />
+    <meta name="description" content="P2 project" />
+</head> -->
+
+{% block content %}
+
+<h1>
+    What aspect of this product would you like to know about?
+</h1>
+<h4>{{text1}}</h4>
+
+
+<br>
+<br>
+Enter attributes you would like to know:
+
+<form method="POST" action="">
+    {{ form.csrf_token }}
+    <fieldset>
+        {{form.content.label}}
+        {{form.content}}
+        {% if form.content.errors %}
+            {% for error in form.content.errors %}
+                <span style="color: red;">{{error}}</span>
+            {% endfor %}
+        {% endif %}
+    </fieldset>
+    <button>
+        {{form.submit}}
+    </button>
+</form>
+
+
+
+{% endblock content%}

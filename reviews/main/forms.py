@@ -55,3 +55,9 @@ class CheckReviewForm(FlaskForm):
     content = StringField("Review",
         validators=[DataRequired()])
     submit = SubmitField("Check")
+
+
+
+class genForm(FlaskForm):
+    content = StringField("Enter an attribute")
+    submit = SubmitField("Check")

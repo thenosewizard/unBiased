@@ -1,10 +1,11 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 main = Blueprint('main', __name__, template_folder= "templates")
-from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, IndexForm
+from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, IndexForm, genForm
 from reviews.Data.models import User, Game, Feedback, GenreGame, Comment, GameLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
 import reviews.AI.train
+import reviews.AI.getReviews
 import joblib
 import string 
 
@@ -86,3 +87,16 @@ def checkreview():
 #         else:
 #             flash("Please enter a review", "danger")
     return render_template("checkreview.html", form=form , biased = isbiased)
+
+
+
+@main.route("/reviewGen", methods = ['GET','POST'])
+def genReview():
+    form = genForm()
+    if form.is_submitted():
+        if form.validate():
+                text = reviews.AI.getReviews.generate_text_attr(form.content.data)
+                return render_template("textGen.html",form = form, text1 =text)
+    text = reviews.AI.getReviews.generate_text()
+    print(text)
+    return render_template("textGen.html",form = form, text1 =text)
