@@ -40,7 +40,7 @@ class LoginForm(FlaskForm):
 
 class IndexForm(FlaskForm):
     query = StringField("Search for a game ...")
-    submit = SubmitField("Search for a game")
+    submit = SubmitField("Search")
 
     def search(self, query):
         if (query == None):
@@ -55,8 +55,6 @@ class CheckReviewForm(FlaskForm):
     content = StringField("Review",
         validators=[DataRequired()])
     submit = SubmitField("Check")
-
-
 
 class genForm(FlaskForm):
     content = StringField("Enter an attribute")
