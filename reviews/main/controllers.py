@@ -60,7 +60,7 @@ def logout():
 @main.route("/browse")
 def browse():
     page = request.args.get('page', 1, type=int)
-    games = Game.query.order_by(Game.rating.desc()).paginate(page= page, per_page=5)
+    games = Game.query.order_by(Game.rating.desc()).paginate(page= page, per_page=3)
     return render_template("browse.html", games=games)
 
 @main.route("/review")
