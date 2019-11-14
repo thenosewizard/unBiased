@@ -17,3 +17,10 @@ function change(id) {
         document.getElementById("l_mobile").style.display = "flex";
     }
 }
+
+
+function scene() {
+    i = document.getElementById(norm);
+    check = i.style.display;
+    alert(check);
+}
