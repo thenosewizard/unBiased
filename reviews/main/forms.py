@@ -5,10 +5,6 @@ from reviews.Data.models import User, Game
 
 
 class RegistrationForm(FlaskForm):
-    # firstName = StringField('FirstName',
-    #     validators=[DataRequired(), Length(min=2, max=20)])
-    # lastName = StringField('LastName',
-    #     validators=[DataRequired(), Length(min=2, max=20)])
     username = StringField("Username", validators=[DataRequired()])
     email = StringField("Email",
                         validators=[DataRequired(), Email()])

@@ -109,10 +109,14 @@ db.session.add_all(
                 that have their own economy for Skins, Case keys and etc. For those who have 5 to 10 dollars to spend and havent yet buy this game. \
                 I would recommend you to buy this. :)',
                  image = "cs_go.jpg"),
-        Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
-            team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
-                and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10',  image = "cs_go.jpg"),
+        Game(title = 'Overcooked! 2', rating = 5.0, description = 'Overcooked returns with a brand-new helping of chaotic \
+            cooking action! Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to \
+                four players. Hold onto your aprons… it’s time to save the world again!', 
+                credibility = 4.0, reviewAI = 'This game has online coop now. There are a ton of levels, different settings the map to explore \
+                    is huge. There is a new throwing mechanic super fun. Levels are super dynamic, new styles like one person has to control a \
+                        platform to get everyone else to a specific place. There are these like secret "Kevin" levels. Tons of new recipes, sushi \
+                            and stuff. If you loved the first overcooked you will love this one. If you havent played overcooked 1, if you want a \
+                                good couch coop this is the best you can get.',  image = "overcooked2.jpg"),
         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
