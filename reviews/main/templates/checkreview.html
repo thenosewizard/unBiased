@@ -1,24 +1,39 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html>
-    <head>
-    </head>
-    <body>
-        <header>Register</header>
-        <form method="POST" action="">
-            {{ form.csrf_token }}
-            <fieldset>
-                {{form.content.label}}
-                {{form.content}}
-                {% if form.content.errors %}
-                    {% for error in form.content.errors %}
-                        <span style="color: red;">{{error}}</span>
-                    {% endfor %}
-                {% endif %}
-            </fieldset>
-            <button>
-                {{form.submit}}
-            </button>
-        </form>
-    </body>
-</html>
+<!-- <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Zechariah Wong" />
+    <meta name="description" content="P2 project" />
+</head> -->
+
+{% block content %}
+
+       
+
+        <div class="card p-3 mb-2 bg-dark text-light">
+            <div class="card-header">
+              Check your reviews here
+            </div>
+            <div class="card-body">
+                    <form method="POST" action="">
+                            {{ form.csrf_token }}
+                            <fieldset>
+                                {{form.content.label}}
+                                {{form.content}}
+                                {% if form.content.errors %}
+                                    {% for error in form.content.errors %}
+                                        <span style="color: red;">{{error}}</span>
+                                    {% endfor %}
+                                {% endif %}
+                            </fieldset>
+                            <br>
+                            <br>
+                            <button class="btn btn-danger">
+                                {{form.submit}}
+                            </button>
+                            {{biased}}
+                        </form>
+            </div>
+          </div>
+
+{% endblock content%}

@@ -83,10 +83,10 @@ def checkreview():
             else:
                 isbiased = True
             flash("Please wait while we process your review", "success")
-            
+            return render_template("checkreview.html", form=form , biased = isbiased)
 #         else:
 #             flash("Please enter a review", "danger")
-    return render_template("checkreview.html", form=form , biased = isbiased)
+    return render_template("checkreview.html", form=form)
 
 
 
