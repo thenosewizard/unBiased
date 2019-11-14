@@ -18,9 +18,9 @@ function change(id) {
     }
 }
 
-
 function scene() {
-    i = document.getElementById(norm);
+    i = document.getElementById("norm");
     check = i.style.display;
     alert(check);
 }
+alert(test);
