@@ -33,7 +33,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash(f"Account created for {form.email.data}!","success")
-        return redirect(url_for('main.login'))   
+        return redirect(url_for('main.login'))
     return render_template("register.html",title="register",form=form)
 
 @main.route("/login", methods = ['GET','POST'])
@@ -87,8 +87,6 @@ def checkreview():
 #         else:
 #             flash("Please enter a review", "danger")
     return render_template("checkreview.html", form=form)
-
-
 
 @main.route("/reviewGen", methods = ['GET','POST'])
 def genReview():
