@@ -20,7 +20,6 @@ def test():
     users = User.query.all()
     return users
 
-
 @main.route("/register", methods = ['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -61,13 +60,16 @@ def logout():
 @main.route("/browse")
 def browse():
     page = request.args.get('page', 1, type=int)
-    games = Game.query.paginate(page= page, per_page=5)
-    links = GameLink.query.paginate(page=page, per_page=5)
-    return render_template("browse.html", games=games, data = zip(games.items, links.items))
+    games = Game.query.order_by(Game.rating.desc()).paginate(page= page, per_page=3)
+    return render_template("browse.html", games=games)
 
 @main.route("/review")
 def review():
-    games = Game
+    index = request.args.get("index", type=int)
+    game = Game.query.filter_by(gameId=index).first()
+    link = GameLink.query.filter_by(gameId=index).first()
+    return render_template("review.html", game=game, link=link)
+
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
@@ -86,7 +88,7 @@ def checkreview():
             return render_template("checkreview.html", form=form , biased = isbiased)
 #         else:
 #             flash("Please enter a review", "danger")
-    return render_template("checkreview.html", form=form)
+    return render_template("checkreview.html", form=form , biased = isbiased)
 
 @main.route("/reviewGen", methods = ['GET','POST'])
 def genReview():
