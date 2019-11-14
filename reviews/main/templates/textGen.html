@@ -8,18 +8,24 @@
 
 {% block content %}
 
-<h1>
+<h1 style="margin-bottom:2em;">
     What aspect of this product would you like to know about?
 </h1>
 
-Generated review:
-<p>{{text1[0]}}</p>
+
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title" style="color: cornflowerblue;">Generated review:</h4>
+          <p class="card-text">
+                <p style="color: black;">{{text1[0]}}</p>
+          </p>
+        </div>
+</div>
 
 
 <br>
 <br>
-Enter attributes you would like to know:
-
 <form method="POST" action="">
     {{ form.csrf_token }}
     <fieldset>
