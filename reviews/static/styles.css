@@ -329,10 +329,12 @@ body main #loginImage, body main #registerImage {
 
 body #loginmain {
     font-family: 'Montserrat';
+    padding-top: 50px;
 }
 
     body #loginmain form {
         border: 3px solid #f1f1f1;
+        max-width: 70%;
     }
 
     body #loginmain .logininput {
@@ -357,7 +359,7 @@ body #loginmain {
         color: white;
     }
 
-    body #loginmain button:hover {
+    body #loginmain .loginbtn:hover {
         opacity: 0.8;
         background-color: #138496;
         font-weight: bolder;
@@ -379,16 +381,9 @@ body #loginmain {
         position: center;
     }
 
-    body #loginmain .container {
-        padding: 16px;
-        height: 100%;
-        width: 100%;
-        clear: both;
-    }
-
         body #loginmain .container label {
             color: white;
-            border: dotted 1px white;
+            /* border: dotted 1px white; */
             width: 100%;
         }
 

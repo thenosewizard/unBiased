@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head></head>
+{% extends "layout.html" %}
+
+<!-- <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Zechariah Wong" />
+    <meta name="description" content="P2 project" />
+</head> -->
+
+{% block content %}
     <body>
         {% for game, list in data %}
-            {{game.title}}
-            {{game.rating}}
-            {{game.description}}
-            {{game.credibility}}
-            {{game.reviewAI}}
-            <a href="{{ url_for('evaluation.index') }}"><img src="../../static/img/game_images/{{game.image}}" alt="CS_GO"></a>
-            <a href="{{list.link}}" target="_blank">CS_Go Game</a>
+        <a href="{{ url_for('evaluation.index') }}"><img src="../../static/img/game_images/{{game.image}}"  class="card-img-top" alt="CS_GO"></a>
+        <div class="card-body">
+                {{game.title}}
+                {{game.rating}}
+                {{game.description}}
+                {{game.credibility}}
+                {{game.reviewAI}}
+                <a href="{{list.link}}" target="_blank">CS_Go Game</a>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
         {% endfor %}
-
         {% for page_num in games.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
             {% if page_num %}
                 {% if games.page == page_num %}
@@ -23,4 +30,7 @@
             {% endif %}
         {% endfor %}
     </body>
+
+
+    {% endblock content%}
 </html>

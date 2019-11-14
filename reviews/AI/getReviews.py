@@ -54,6 +54,17 @@ def clean_reviews(filename):
     with open('edited.json', 'w') as file:
         file.write(filedata)
 
-get_reviews_2(appid, 30, filename)
+#get_reviews_2(appid, 30, filename)
 #read_reviews(filename)
 #clean_reviews(filename)
+from textgenrnn import textgenrnn
+textgen = textgenrnn('C:\\Users\\abich\\OneDrive\\School Stuff\\P2\\Assignment 1\\fsd-p2\\reviews\\AI\\textgenrnn_weights.hdf5')
+def generate_text():
+    text = textgen.generate(return_as_list=True)
+    return text
+generate_text()
+
+
+def generate_text_attr(req):
+    text = textgen.generate(return_as_list=True,prefix = req)
+    return text
