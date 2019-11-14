@@ -104,7 +104,11 @@ db.session.add_all(
         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
-                credibility = 5.0, reviewAI = 'PERFECT 10/10', image = "cs_go.jpg"),
+                credibility = 5.0, reviewAI = 'Recommend this game to anyone who wants to take an FPS game more competitively.\
+                Game is absolutely addicting especially with a well balanced ranking system after the update and it is very cheap. A unique market \
+                that have their own economy for Skins, Case keys and etc. For those who have 5 to 10 dollars to spend and havent yet buy this game. \
+                I would recommend you to buy this. :)',
+                 image = "cs_go.jpg"),
         Game(title = 'Counter-Strike: Global Offensive', rating = 5.0, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 

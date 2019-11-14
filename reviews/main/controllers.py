@@ -4,10 +4,10 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.Data.models import User, Game, Feedback, GenreGame, Comment, GameLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
-# import reviews.AI.train
-# import reviews.AI.getReviews
-# import joblib
-# import string 
+import reviews.AI.train
+import reviews.AI.getReviews
+import joblib
+import string 
 
 @main.route('/', methods = ['GET', 'POST'])
 def index():

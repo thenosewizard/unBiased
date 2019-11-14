@@ -37,9 +37,8 @@
         </div> -->
         <img src="../../static/img/game_images/{{game.image}}"  class="card-img-top" alt="CS_GO">
         <h1 class="gameName">{{game.title}}</h1>
-        <h2>UNBIASED</h2>
-
-        <h3>{{game.rating}}</h3>
+        <h3>Game Rating: {{game.rating}}</h3>
+        <br>
     </section>
 
 
@@ -47,7 +46,11 @@
     <!--       Content info / review description or whatever you want to put here       -->
     <!--================================================================================-->
     <section class="info content">
-        <div>{{game.description}}</div>
+        <h4>Game Description</h2>
+        <p>{{game.description}}</p>
+        <br>
+        <h4>Summaried AI review</h4>
+        <p>{{game.reviewAI}}</p>
     </section>
 
 
@@ -58,11 +61,14 @@
         <div>
             <h3>Rating Breakdown:</h3>
             <ul>
-                <li class="default">Gameplay:</li>
-                <li class="default">Graphics: </li>
-                <li class="default">Story: </li>
-                <li class="default">AVG:</li>
+                <li class="default">Credibility: {{game.credibility}}</li>
+                <li class="default">Placeholder: </li>
+                <li class="default">Placeholder: </li>
+                <li class="default">Placeholder:</li>
             </ul>
+        </div>
+        <div class="comp">
+            <button class="btn btn-outline-success"><a href="{{url_for('main.genReview')}}">Get Product Specifics</a></button>
         </div>
     </aside>
 
@@ -79,19 +85,19 @@
             </ul>
 
             <ul class="storeLink" id="l_pc" style="display:flex;">
-                <li class="listing"><a><img class="logo" src="media/logo/log_steam.png" alt="Steam Store" /></a></li>
-                <li class="listing"><a><img class="logo" src="media/logo/log_org.png" alt="Origin" /></a></li>
-                <li class="listing"><a><img class="logo" src="media/logo/log_blizz.png" alt="Blizzard" /></a></li>
-                <li class="listing"><a><img class="logo" src="media/logo/log_epic.png" alt="Epic Games" /></a></li>
+                <li class="listing"><a href="{{link.link}}"><img class="logo" src="../../static/img/logo_reviews/log_steam.png" alt="Steam Store" /></a></li>
+                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_org.png" alt="Origin" /></a></li>
+                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_blizz.png" alt="Blizzard" /></a></li>
+                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_epic.png" alt="Epic Games" /></a></li>
             </ul>
             <ul class="storeLink" id="l_console" style="display: none;">
-                <li class="listing"><a><img class="logo" src="media/logo/log_nin.png" alt="Nintendo eshop" />   </a></li>
-                <li class="listing"><a><img class="logo" src="media/logo/log_wind.png" alt="Microsoft store" /> </a></li>
-                <li class="listing"><a><img class="logo" src="media/logo/log_psp.png" alt="Playstation store" /></a></li>
+                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_nin.png" alt="Nintendo eshop" />   </a></li>
+                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_wind.png" alt="Microsoft store" /> </a></li>
+                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_psp.png" alt="Playstation store" /></a></li>
             </ul>
             <ul class="storeLink" id="l_mobile" style="display: none;">
-                <li class="listing"><a><img class="logo" src="media/logo/log_ios.png" alt="AppStore" /></a></li>
-                <li class="listing"><a><img class="logo" src="media/logo/log_android.png" alt="PlayStore" /></a></li>
+                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_ios.png" alt="AppStore" /></a></li>
+                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_android.png" alt="PlayStore" /></a></li>
             </ul>
         </div>
     </section>
