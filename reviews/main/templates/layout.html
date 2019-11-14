@@ -53,13 +53,13 @@
                 <a class="navLinks" href="{{url_for('main.login')}}">Login</a>
                 <a class="navLinks" href="{{ url_for('main.register')}}">Register</a>
                 {% endif %}
-                {%if request.path != "/"%}
+                <!-- {%if request.path != "/"%}
                 <div class="form-inline" style="display:inline-block;">
                     <input class="form-control mr-sm-2" type="text" placeholder="search the database" />
                     <button class="btn btn-outline-success fa fa-search"
                         onclick="window.location.href = 'Review.html';"></button>
                 </div>
-                {%endif%}
+                {%endif%} -->
             </div>
         </nav>
     </header>

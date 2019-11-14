@@ -20,7 +20,6 @@ def test():
     users = User.query.all()
     return users
 
-
 @main.route("/register", methods = ['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
