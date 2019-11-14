@@ -49,19 +49,20 @@
         <nav class="navbar">
             <a class="navbar-brand" href="{{url_for('main.index')}}">UNBIASED</a>
             <div class="navLinks">
+                <a class="navLinks" href="{{url_for('main.browse')}}">Browse</a>
                 {% if current_user.is_authenticated %}
                 <a class="navLinks" href="{{url_for('main.logout')}}">Logout</a>
                 {% else %}
                 <a class="navLinks" href="{{url_for('main.login')}}">Login</a>
                 <a class="navLinks" href="{{ url_for('main.register')}}">Register</a>
                 {% endif %}
-                {%if request.path != "/"%}
+                <!-- {%if request.path != "/"%}
                 <div class="form-inline" style="display:inline-block;">
                     <input class="form-control mr-sm-2" type="text" placeholder="search the database" />
                     <button class="btn btn-outline-success fa fa-search"
                         onclick="window.location.href = 'Review.html';"></button>
                 </div>
-                {%endif%}
+                {%endif%} -->
             </div>
         </nav>
     </header>
