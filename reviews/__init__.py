@@ -29,8 +29,8 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 
 from reviews.main.controllers import main
-from reviews.evaluation.controllers import evaluation
+# from reviews.evaluation.controllers import evaluation
 app.register_blueprint(main, url_prefix='/')
-app.register_blueprint(evaluation, url_prefix='/reviews')
+# app.register_blueprint(evaluation, url_prefix='/reviews')
 
 
