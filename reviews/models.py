@@ -82,8 +82,6 @@ db.create_all()
 
 db.session.add_all(
     [
-        User(username = 'abi.charan', email = 'abi@charan.com', password = 'Abi123', role = 'User'),
-        User(username = 'MyNameJeff', email = 'myname@jeff.com', password = 'JeffJeffJeff', role = 'User'),
         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
         Genre(name = 'Action', description = 'Stunt, Explosions & Fights!'),
         GameLink(gameId=1, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/'),
