@@ -27,12 +27,18 @@
         "content" : "",
         "likes" : ["userId"],
         "dislikes" : ["userId"],
-        "flags" : ["userId"]
+        "flags" : ["userId"],
+        "replyto" : "CommentId"
     }],
     "Feedback" : [{
         "email" : "",
         "name" : "",
         "content" : ""
+    }],
+    "Forum" : [{
+        "title" : "",
+        "tags" : ["genreId / gameId / restaurantId"],
+        "comments" : ["commentsId"]
     }],
 
     "Restaurants" : [{
