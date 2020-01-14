@@ -30,7 +30,9 @@ login_manager = LoginManager(app)
 
 from reviews.main.controllers import main
 from reviews.food.controllers import food
+from reviews.forum.controllers import forum
 app.register_blueprint(main, url_prefix='/')
 app.register_blueprint(food)
+app.register_blueprint(forum)
 
 
