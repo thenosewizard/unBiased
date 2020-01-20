@@ -1,0 +1,32 @@
+﻿ul {
+    margin-bottom: 0;
+    padding: 10px 10px 0 0;
+}
+
+li {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.month {
+    padding: 5px;
+    border-radius: 20px;
+    font-family: 'Roboto';
+    display: inline-block;
+}
+
+.carousel-inner {
+    box-shadow: 3px 3px 10px #c7d5e0;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+    .carousel-item img {
+        margin: 0;
+    }
+
+.center {
+    width: 100%;
+}

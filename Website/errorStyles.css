@@ -1,0 +1,12 @@
+﻿/*------------------*/
+/*    Error page    */
+/*------------------*/
+
+body main #errorImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    position: center;
+    margin: 0 auto;
+}
