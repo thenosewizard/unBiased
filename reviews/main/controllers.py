@@ -1,13 +1,10 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
-main = Blueprint('main', __name__, template_folder= "templates")
 from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, IndexForm, genForm
-from reviews.Data.models import User, Game, Feedback, GenreGame, Comment, GameLink
+from reviews.models import User, Game, Feedback, GenreGame, Comment, GameLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
-import reviews.AI.train
-import reviews.AI.getReviews
-import joblib
-import string 
+
+main = Blueprint('main', __name__, template_folder= "templates")
 
 @main.route('/', methods = ['GET', 'POST'])
 def index():
@@ -69,6 +66,7 @@ def review():
     game = Game.query.filter_by(gameId=index).first()
     link = GameLink.query.filter_by(gameId=index).first()
     return render_template("review.html", game=game, link=link)
+
 
 
 @main.route("/checkreview", methods = ['GET','POST'])

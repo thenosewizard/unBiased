@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from reviews.Data.models import User, Game
+from reviews.models import User, Game
 
 
 class RegistrationForm(FlaskForm):

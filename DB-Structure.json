@@ -1,0 +1,59 @@
+{
+    "User" : [{
+        "username" : "",
+        "email" : "",
+        "password" : "",
+        "role" : ""
+    }],
+    "Genre" : [{
+        "genre" : "",
+        "description" : ""
+    }],
+    "Game" : [{
+        "title" : "",
+        "rating" : 0.0,
+        "credibility" : 0.0,
+        "link" : [{
+            "platform" : "",
+            "source" : "",
+            "link" : ""
+        }],
+        "image" : [""],
+        "genreId" : ["GenreID"]
+    }],
+    "Comments" : [{
+        "userId" : "",
+        "disscussionId" : "",
+        "content" : "",
+        "likes" : ["userId"],
+        "dislikes" : ["userId"],
+        "flags" : ["userId"],
+        "replyto" : "CommentId"
+    }],
+    "Feedback" : [{
+        "email" : "",
+        "name" : "",
+        "content" : ""
+    }],
+    "Forum" : [{
+        "title" : "",
+        "tags" : ["genreId / gameId / restaurantId"],
+        "comments" : ["commentsId"]
+    }],
+
+    "Restaurants" : [{
+        "title" : "",
+        "rating" : 0.0,
+        "credibility" : 0.0,
+        "link" : [{
+            "source" : "",
+            "link" : ""
+        }],
+        "image" : [""],
+        "cuisineId" : ["cuisineID"]
+    }],
+    "Cuisine" : [{
+        "cuisine" : "",
+        "description" : ""
+    }]
+}
