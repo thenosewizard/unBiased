@@ -1,37 +1,8 @@
-﻿main {
-    display: inline-block;
-}
-
-.comp {
-    text-align: center;
-}
-
-    .comp button {
-        font-size: large;
-        font-weight: bolder;
-    }
-
-.gameName {
-    margin: 3% 0 0 0;
-    display: inline-block;
-}
-
-.info {
-    width: 55%;
-    float: left;
-    overflow: hidden;
-    display: inline-block;
-}
-
-.default {
-    display: block;
-    padding: 0 0 0 1%;
-}
 
 body {
     /*Page layout*/
     margin: 5% 10% 0 10%;
-    background-color: #171a21;
+    background-color: #ffa5a5;
     /*Text display*/
     color: #c7d5e0;
     line-height: 1.6;

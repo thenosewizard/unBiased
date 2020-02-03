@@ -4,10 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="author" content="Zechariah Wong" />
-    <meta name="description" content="P2 project" />
-    <title>Game Index</title>
-
-
+    <meta name="description" content="uReview Discussion Board"
+    <title>Discussion Board</title>
     <!--Montserrat Font-->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <!--Roboto Font-->
@@ -25,64 +23,22 @@
     <!--
                     Local sheets
     -->
-    <!--styles.css-->
-    <link href="css/indexStyles.css" rel="stylesheet" type="text/css"  />
-    <!--Favicon-->
-    <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
-    <!--JavaScript-->
-    <script src="script.js"></script>
+    <link href="css/discussionStyles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-    <!--================================================================================-->
-    <!--                                    Navbar                                      -->
-    <!--================================================================================-->
     <header id="nav">
         <nav class="navbar">
             <a class="navbar-brand" style="font-weight: normal; color: #c7d5e0;" href="Index.html">UNBIASED</a>
-            <div>
+            <div class="navLinks">
                 <a class="navLinks" href="Browse.html">Browse</a>
                 <a class="navLinks" href="#placeholder">Login</a>
                 <a class="navLinks" href="#placeholder">Signup</a>
                 <form class="form-inline" style="display:inline-block;">
                     <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
-                    <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
+                    <button class="btn btn-outline-success fa fa-search" type="submit"></button>
                 </form>
             </div>
         </nav>
     </header>
-
-    <main>
-        <section>
-            <div class="title-card">
-                <h1 class="title"><img src="media/UNBIASED.png" alt="If you can see this, something went wrong!" style="display:inline-block;" /></h1>
-                <p> Automatically generated game reviews using machine learning </p>
-            </div>
-            <div class="input-group">
-                <input type="text" placeholder="Search for a game..." class="form-control" />
-                <button class="btn btn-info" onclick="window.location.href = 'Review.html';">
-                    <span>
-                        <i class="fa fa-search"></i>
-                    </span>Search
-                </button>
-            </div>
-        </section>
-
-        <section class="content">
-            <div class="title-card">
-                <h3>
-                    How it works?
-                </h3>
-            </div>
-            <article>
-                UNBIASED works by using a machine learning AI to find good games. It has a 98% accuracy...
-            </article>
-        </section>
-    </main>
-    <footer>
-    </footer>
-    <script>
-        w3.includeHTML();
-    </script>
 </body>
 </html>
