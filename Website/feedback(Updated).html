@@ -16,34 +16,6 @@
     <!--------------------------------------------------------------------------------------------------------------------------------->
     <!--Boot strap style sheets-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!--Bootstrap feedback style sheets-->
-    <!--Start-->
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <!--===============================================================================================-->
-
-    <!--End-->
-
     <!--Font Awesome for icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--styles.css-->
@@ -51,6 +23,22 @@
     <!--Favicon-->
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
     <style>
+        body #nav, body .page-footer {
+            background-color: black;
+            padding: 0px;
+        }
+
+        body footer {
+            color: white;
+        }
+
+        body main {
+            padding:40px;
+        }
+
+        body main #feedbackcontainer {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -85,24 +73,12 @@
                         <a class="nav-link" href="#">Contact Us</a>
                         <span class="sr-only">(current)</span>
                     </li>
-
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>-->
                 </ul>
                 <ul class="navbar-nav ml-auto nav-flex-icons">
-                    <li form class="form-inline my-2 my-lg-0">
+                    <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
                         <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
-                    </li form>
+                    </form>
                     <li class="nav-item avatar dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
@@ -122,93 +98,39 @@
         <!--/.Navbar -->
     </header>
     <main>
-
-
-        <div class="container-contact100">
-            <div class="wrap-contact100">
-                <form class="contact100-form validate-form">
-                    <span class="contact100-form-title">
-                        Send Us A Message
-                    </span>
-
-                    <label class="label-input100" for="first-name">Tell us your name *</label>
-                    <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-                        <input id="first-name" class="input100" type="text" name="first-name" placeholder="First name">
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-                        <input class="input100" type="text" name="last-name" placeholder="Last name">
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <label class="label-input100" for="email">Enter your email *</label>
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <label class="label-input100" for="email">Message type *</label>
-                    <div class="wrap-input100 validate-input" data-validate="Select type">
-                        <select class="custom-select" required>
-                            <option selected>Request</option>
-                            <option value="1">Report</option>
-                            <option value="2">Feedback</option>
-                            <option value="3">Technical issue</option>
-                        </select>
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <label class="label-input100" for="email">Targeted*</label>
-                    <div class="wrap-input100 validate-input" data-validate="Select type">
-                        <select class="custom-select" required>
-                            <option selected>Food</option>
-                            <option value="1">Games</option>
-                            <option value="2">General</option>
-                        </select>
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <label class="label-input100" for="message">Message *</label>
-                    <div class="wrap-input100 validate-input" data-validate="Message is required">
-                        <textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <div class="container-contact100-form-btn">
-                        <button class="contact100-form-btn">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
-
-                <div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
-                    <div class="dis-flex size1 p-b-47">
-                        <div class="txt1 p-r-25">
-                            <span class="lnr lnr-envelope"></span>
-                        </div>
-
-                        <div class="flex-col size2">
-                            <span class="txt1 p-b-20">
-                                Contact us 
-                            </span>
-
-                            <span class="txt3">
-                                contactus@unbiased.com
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="title">
+            <h2>Let us know</h2>
+            <p>if you have any feedbacks or requests
+            <br/>or simply just contact us at connect@unbaised.com </p>
         </div>
+        <div id="feedbackcontainer">
+            <form>
+                <fieldset>
+                    <div class="form-group">
+                        <label for="typeSelect">Feedback type</label>
+                        <select id="disabledSelect" class="form-control">
+                            <option value="request">Request</option>
+                            <option value="report">Report</option>
+                            <option value="report">Feedback</option>
+                            <option value="technicalissue">Technical issue</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="TextInput">Title</label>
+                        <input type="text" id="titleTextInput" class="form-control" placeholder="Message title">
+                    </div>
+                    <div class="form-group">
+                        <label for="TextInput">Message</label>
+                        <input type="text" id="messageTextInput" class="form-control" placeholder="What's up?" style="height:200px">
+                    </div>
 
 
-
-        <div id="dropDownSelect1"></div>
-
-
+                    <button type="submit" class="btn btn-primary" style="float:right">Submit</button>
+                    <br />
+                </fieldset>
+            </form>
+        </div>
     </main>
-
-
     <!-- Footer -->
     <footer class="page-footer font-small indigo">
 
@@ -281,97 +203,17 @@
                 <!-- Grid column -->
 
             </div>
-            <!-- Grid row-->
-            <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
-
-            <!-- Grid row-->
-            <div class="row pb-3">
-
-                <!-- Grid column -->
-                <div class="col-md-12">
-
-                    <div class="mb-5 flex-center">
-
-                        <!-- Facebook -->
-                        <a class="fb-ic">
-                            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
-                        </a>
-                        <!-- Twitter -->
-                        <a class="tw-ic">
-                            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
-                        </a>
-                        <!-- Google +-->
-                        <a class="gplus-ic">
-                            <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
-                        </a>
-                        <!--Linkedin -->
-                        <a class="li-ic">
-                            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
-                        </a>
-                        <!--Instagram-->
-                        <a class="ins-ic">
-                            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
-                        </a>
-                        <!--Pinterest-->
-                        <a class="pin-ic">
-                            <i class="fab fa-pinterest fa-lg white-text"> </i>
-                        </a>
-
-                    </div>
-
-                </div>
-                <!-- Grid column -->
-
-            </div>
-            <!-- Grid row-->
-
         </div>
         <!-- Footer Links -->
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            © 2020 Copyright:
-            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+            © 2020 Copyright
+            <!--:<a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>-->
         </div>
         <!-- Copyright -->
 
     </footer>
     <!-- Footer -->
     <!-- https://mdbootstrap.com/docs/jquery/navigation/footer/-->
-    <!--Script for feedback-->
-    <!-- Start -->
-    <!--===============================================================================================-->
-    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/bootstrap/js/popper.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script>
-        $(".selection-2").select2({
-            minimumResultsForSearch: 20,
-            dropdownParent: $('#dropDownSelect1')
-        });
-    </script>
-    <!--===============================================================================================-->
-    <script src="vendor/daterangepicker/moment.min.js"></script>
-    <script src="vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
-    <script src="js/main.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-23581568-13');
-    </script>
-
-    <!--End-->
-
 </body>
 </html>
