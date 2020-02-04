@@ -69,12 +69,28 @@ class Comment(db.Model):
 
 class Feedback(db.Model):
     feedbackId = db.Column(db.Integer, primary_key = True)
-    userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
-    category = db.Column(db.String(50), nullable = False)
+    email = db.Column(db.String(200), nullable = False)
+    name = db.Column(db.String(50), nullable = True)
     content = db.Column(db.String(1000), nullable = False)
 
     def __repr__(self):
-        return '{}, {}, {}, {}'.format(self.feedbackId, self.userId, self.category, self.content)
+        return '{}, {}, {}, {}'.format(self.feedbackId, self.email, self.name, self.content)
+
+class Food(db.Model):
+    foodId = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100), nullable = False)
+    rating = db.Column(db.Float, nullable = True)
+    description = db.Column(db.String(20000), nullable = True)
+    credibility = db.Column(db.Float, nullable = True)
+    reviewAI = db.Column(db.String(10000), nullable = True)
+    link = db.Column(db.String(300), nullable = True)
+    image = db.Column(db.String(500), nullable = True)
+    comments = db.relationship('Comment', backref = 'game', lazy = True)
+    genre = db.relationship('Genre', secondary = GenreGame, lazy = 'subquery', backref = db.backref('game', lazy = True))
+
+    def __repr__(self):
+        return 'gameId = {0}, title = {1}, rating = {2}, description = {3}, credibility = {4}, reviewAI = {5}'.format(self.foodId, self.title,self.rating,self.description,self.credibility,self.reviewAI)
+
 
 db.drop_all()
 
