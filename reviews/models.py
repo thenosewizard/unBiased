@@ -6,6 +6,7 @@ from flask_login import UserMixin
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+#Games
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True, nullable = False)
     username = db.Column(db.String(50), unique = True, nullable = False)
@@ -14,6 +15,8 @@ class User(db.Model, UserMixin):
     role = db.Column(db.String(50), nullable = False)
     comments = db.relationship('Comment', backref = 'user', lazy = True)
     feedback = db.relationship('Feedback', backref = 'user', lazy = True)
+    posts = db.relationship("Post", backref='author', lazy = True)
+    threads = db.relationship("Thread", backref = "author", lazy = True)
 
     def __repr__(self):
         return 'userId = {0}, username = {1}, password = {2}, role = {3}'.format(self.id, self.username, self.password, self.role)
@@ -75,6 +78,31 @@ class Feedback(db.Model):
 
     def __repr__(self):
         return '{}, {}, {}, {}'.format(self.feedbackId, self.userId, self.category, self.content)
+
+#Forum
+class Thread(db.Model):
+    threadId = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(50), nullable = False)
+    category = db.Column(db.String(50), nullable=False)
+    userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    datetimeCreated = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    posts = db.relationship("Post", backref="Thread", lazy=True)
+
+    def __repr__(self):
+        return '{}, {}, {}, {}'.format(self.threadId, self.title, self.category, self.datetimeCreated)
+
+class Post(db.Model):
+    postId = db.Column(db.Integer,primary_key=True)
+    title = db.Column(db.String(50))
+    authorId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    threadId = db.Column(db.Integer, db.ForeignKey('thread.threadId'), nullable=False)
+    content = db.Column(db.String(5000), nullable=False)
+    dateTimePosted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"Post('{self.postId}', '{self.title}', '{self.threadId}', '{self.dateTimePosted}')"
+
+    
 
 db.drop_all()
 
@@ -170,9 +198,14 @@ db.session.add_all(
         Comment(userId = 1, gameId = 1, content = 'Love it'),
         Comment(userId = 2, gameId = 1, content = '10/10'),
         GameLink(gameId = 1, platform = 'PC', source = 'Steam', link = 'www.steam.com'),
-        Feedback(userId = 1, category = 'Technical', content = 'website too slow')
+        Feedback(userId = 1, category = 'Technical', content = 'website too slow'),
+        Thread(threadId = 1, title = "What games are worth buying?", category= "Games", userId = 1),
+        Thread(threadId = 2, title = "Where to find good food?", category="Food", userId = 2),
+        Post(postId = 1, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
+        Post(postId = 2, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269")
     ]
 )
+
 
 db.session.execute(GenreGame.insert().values(genreId = 1, gameId = 1))
 db.session.execute(GenreGame.insert().values(genreId = 2, gameId = 1))

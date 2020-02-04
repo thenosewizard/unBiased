@@ -4,7 +4,7 @@ forum = Blueprint("forum",__name__,template_folder="templates")
 
 @forum.route('/forum')
 def index():
-    return render_template("forum_layout.html")
+    return render_template("forum_index.html")
     
 @forum.route('/forum/food')
 def food():
