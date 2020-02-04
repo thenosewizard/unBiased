@@ -76,6 +76,7 @@ class Feedback(db.Model):
     email = db.Column(db.String(200), nullable = False)
     name = db.Column(db.String(50), nullable = True)
     content = db.Column(db.String(1000), nullable = False)
+    userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
         return '{}, {}, {}, {}'.format(self.feedbackId, self.email, self.name, self.content)
@@ -199,7 +200,7 @@ db.session.add_all(
         Comment(userId = 1, itemId = 1, content = 'Love it'),
         Comment(userId = 2, itemId = 1, content = '10/10'),
         ItemLink(itemId = 1, platform = 'PC', source = 'Steam', link = 'www.steam.com'),
-        Thread(threadId = 1, title = "What Items are worth buying?", category= "Items", userId = 1),
+        Thread(threadId = 1, title = "What Items are worth buying?", category= "Games", userId = 1),
         Thread(threadId = 2, title = "Where to find good food?", category="Food", userId = 2),
         Post(postId = 1, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
         Post(postId = 2, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269")
