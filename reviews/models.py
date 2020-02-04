@@ -200,9 +200,9 @@ db.session.add_all(
             team-based action Itemplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
                 and Item modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
                 credibility = 5.0, reviewAI = 'PERFECT 10/10',  image = "cs_go.jpg"),
-        Comment(userId = 1, gameId = 1, content = 'Love it'),
-        Comment(userId = 2, gameId = 1, content = '10/10'),
-        GameLink(gameId = 1, platform = 'PC', source = 'Steam', link = 'www.steam.com'),
+        Comment(userId = 1, itemId = 1, content = 'Love it'),
+        Comment(userId = 2, itemId = 1, content = '10/10'),
+        ItemLink(itemId = 1, platform = 'PC', source = 'Steam', link = 'www.steam.com'),
         Thread(threadId = 1, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!",category= "Game", userId = 1),
         Thread(threadId = 2, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
              Suggestions?", category="Food", userId = 2),
@@ -218,11 +218,6 @@ db.session.add_all(
         Thread(threadId = 9, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!", category= "Game", userId = 1),
         Thread(threadId = 10, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
              Suggestions?",  category="Food", userId = 2),
-        Comment(userId = 1, itemId = 1, content = 'Love it'),
-        Comment(userId = 2, itemId = 1, content = '10/10'),
-        ItemLink(itemId = 1, platform = 'PC', source = 'Steam', link = 'www.steam.com'),
-        Thread(threadId = 1, title = "What Items are worth buying?", category= "Games", userId = 1),
-        Thread(threadId = 2, title = "Where to find good food?", category="Food", userId = 2),
         Post(postId = 1, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
         Post(postId = 2, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
         Post(postId = 3, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
