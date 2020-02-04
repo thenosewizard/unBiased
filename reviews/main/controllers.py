@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, IndexForm, genForm
-from reviews.models import User, Game, Feedback, GenreGame, Comment, GameLink
+from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
 
