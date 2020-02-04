@@ -19,7 +19,7 @@ class User(db.Model, UserMixin):
     threads = db.relationship("Thread", backref = "author", lazy = True)
 
     def __repr__(self):
-        return 'userId = {0}, username = {1}, password = {2}, role = {3}'.format(self.id, self.username, self.password, self.role)
+        return 'userId = {0}, username = {1}, role = {2}'.format(self.id, self.username, self.role)
 
 GenreGame = db.Table('GenreGame',
     db.Column('genreId', db.Integer, db.ForeignKey('genre.genreId'), primary_key = True),
@@ -101,13 +101,14 @@ class Feedback(db.Model):
 class Thread(db.Model):
     threadId = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(50), nullable = False)
+    content = db.Column(db.String(5000))
     category = db.Column(db.String(50), nullable=False)
     userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    datetimeCreated = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    dateTimeCreated = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     posts = db.relationship("Post", backref="Thread", lazy=True)
 
     def __repr__(self):
-        return '{}, {}, {}, {}'.format(self.threadId, self.title, self.category, self.datetimeCreated)
+        return '{}, {}, {}, {}'.format(self.threadId, self.title, self.category, self.dateTimeCreated)
 
 class Post(db.Model):
     postId = db.Column(db.Integer,primary_key=True)
@@ -128,6 +129,8 @@ db.create_all()
 
 db.session.add_all(
     [
+        User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member'),
+        User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Member'),
         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
         Genre(name = 'Action', description = 'Stunt, Explosions & Fights!'),
         GameLink(gameId=1, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/'),
@@ -216,10 +219,29 @@ db.session.add_all(
         Comment(userId = 1, gameId = 1, content = 'Love it'),
         Comment(userId = 2, gameId = 1, content = '10/10'),
         GameLink(gameId = 1, platform = 'PC', source = 'Steam', link = 'www.steam.com'),
-        Thread(threadId = 1, title = "What games are worth buying?", category= "Games", userId = 1),
-        Thread(threadId = 2, title = "Where to find good food?", category="Food", userId = 2),
+        Thread(threadId = 1, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!",category= "Game", userId = 1),
+        Thread(threadId = 2, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
+             Suggestions?", category="Food", userId = 2),
+        Thread(threadId = 3, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!", category= "Game", userId = 1),
+        Thread(threadId = 4, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
+             Suggestions?",  category="Food", userId = 2),
+        Thread(threadId = 5, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!", category= "Game", userId = 1),
+        Thread(threadId = 6, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
+             Suggestions?",  category="Food", userId = 2),
+        Thread(threadId = 7, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!", category= "Game", userId = 1),
+        Thread(threadId = 8, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
+             Suggestions?",  category="Food", userId = 2),
+        Thread(threadId = 9, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!", category= "Game", userId = 1),
+        Thread(threadId = 10, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
+             Suggestions?",  category="Food", userId = 2),
         Post(postId = 1, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
-        Post(postId = 2, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269")
+        Post(postId = 2, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
+        Post(postId = 3, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
+        Post(postId = 4, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
+        Post(postId = 5, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
+        Post(postId = 6, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
+        Post(postId = 7, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
+        Post(postId = 8, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269")
     ]
 )
 

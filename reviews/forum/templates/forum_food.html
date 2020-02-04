@@ -1,9 +1,10 @@
-{% extends "forum_layout.html" %}
+{% extends 'forum_layout.html' %}
 
 {% block content %}
 <div class="list-group">
+    <blockquote class="blockquote list-group-item">Food</blockquote>
     {% for thread in threads.items %}
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    <a href="{{ url_for('forum.thread',index = thread.threadId) }}" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{thread.title}}</h5>
             <small>{{thread.datetimeCreated}}</small>
