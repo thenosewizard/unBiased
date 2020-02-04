@@ -63,7 +63,8 @@ class GameLink(db.Model):
 class Comment(db.Model):
     commentId = db.Column(db.Integer, primary_key = True)
     userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
-    gameId = db.Column(db.Integer, db.ForeignKey('game.gameId'), nullable = False)
+    gameId = db.Column(db.Integer, db.ForeignKey('game.gameId'))
+    #foodId = db.Column(db.Integer, db.ForeignKey('food.foodId'))
     content = db.Column(db.String(10000), nullable = False)
     creationDateTime = db.Column(db.DateTime, nullable = False, default = datetime.now())
 
@@ -75,24 +76,25 @@ class Feedback(db.Model):
     email = db.Column(db.String(200), nullable = False)
     name = db.Column(db.String(50), nullable = True)
     content = db.Column(db.String(1000), nullable = False)
+    userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
         return '{}, {}, {}, {}'.format(self.feedbackId, self.email, self.name, self.content)
 
-class Food(db.Model):
-    foodId = db.Column(db.Integer, primary_key = True)
-    title = db.Column(db.String(100), nullable = False)
-    rating = db.Column(db.Float, nullable = True)
-    description = db.Column(db.String(20000), nullable = True)
-    credibility = db.Column(db.Float, nullable = True)
-    reviewAI = db.Column(db.String(10000), nullable = True)
-    link = db.Column(db.String(300), nullable = True)
-    image = db.Column(db.String(500), nullable = True)
-    comments = db.relationship('Comment', backref = 'game', lazy = True)
-    genre = db.relationship('Genre', secondary = GenreGame, lazy = 'subquery', backref = db.backref('game', lazy = True))
+# class Food(db.Model):
+#     foodId = db.Column(db.Integer, primary_key = True)
+#     title = db.Column(db.String(100), nullable = False)
+#     rating = db.Column(db.Float, nullable = True)
+#     description = db.Column(db.String(20000), nullable = True)
+#     credibility = db.Column(db.Float, nullable = True)
+#     reviewAI = db.Column(db.String(10000), nullable = True)
+#     link = db.Column(db.String(300), nullable = True)
+#     image = db.Column(db.String(500), nullable = True)
+#     comments = db.relationship('Comment', backref = 'food', lazy = True)
+#     genre = db.relationship('Genre', secondary = GenreGame, lazy = 'subquery', backref = db.backref('food', lazy = True))
 
-    def __repr__(self):
-        return 'gameId = {0}, title = {1}, rating = {2}, description = {3}, credibility = {4}, reviewAI = {5}'.format(self.foodId, self.title,self.rating,self.description,self.credibility,self.reviewAI)
+#     def __repr__(self):
+#         return 'gameId = {0}, title = {1}, rating = {2}, description = {3}, credibility = {4}, reviewAI = {5}'.format(self.foodId, self.title,self.rating,self.description,self.credibility,self.reviewAI)
 
 
 #Forum
@@ -214,7 +216,6 @@ db.session.add_all(
         Comment(userId = 1, gameId = 1, content = 'Love it'),
         Comment(userId = 2, gameId = 1, content = '10/10'),
         GameLink(gameId = 1, platform = 'PC', source = 'Steam', link = 'www.steam.com'),
-        Feedback(userId = 1, category = 'Technical', content = 'website too slow'),
         Thread(threadId = 1, title = "What games are worth buying?", category= "Games", userId = 1),
         Thread(threadId = 2, title = "Where to find good food?", category="Food", userId = 2),
         Post(postId = 1, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),

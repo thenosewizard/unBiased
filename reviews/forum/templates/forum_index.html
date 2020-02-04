@@ -1,18 +1,16 @@
 {% extends "forum_layout.html" %}
 
 {% block content %}
-<table class="table my-table">
-  <thead>
-      <tr>
-          <th>No.</th>
-          <th>Status</th>
-          <th>Student</th>
-          <th>Description</th>
-          <th>Date Created</th>
-          <th>Options</th>
-      </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+<div class="list-group">
+    {% for thread in threads.items %}
+    <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{thread.title}}</h5>
+            <small>{{thread.datetimeCreated}}</small>
+        </div>
+        <p class="mb-1"> Some extra p text</p>
+        <small>thread.author</small>
+    </a>
+    {% endfor %}
+</div>
 {% endblock content %}
