@@ -44,7 +44,7 @@ class Item(db.Model):
     link = db.relationship('ItemLink', backref='item', lazy=True)
     image = db.Column(db.String(500), nullable = True)
     comments = db.relationship('Comment', backref = 'item', lazy = True)
-    map = db.Column(db.String(500), nullable = True)
+    address = db.Column(db.String(500), nullable = True)
     genre = db.relationship('Genre', secondary = GenreItem, lazy = 'subquery', backref = db.backref('item', lazy = True))
 
     def __repr__(self):

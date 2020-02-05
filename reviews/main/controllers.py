@@ -57,15 +57,25 @@ def logout():
 
 @main.route("/browse")
 def browse():
-    page = request.args.get('page', 1, type=int)
+    page = request.args.get("page", 1, type=int)
     games = Item.query.order_by(Item.rating.desc()).paginate(page= page, per_page=3)
     return render_template("browse.html", games=games)
 
 @main.route("/review")
 def review():
     index = request.args.get("index", type=int)
-    game = Item.query.filter_by(gameId=index).first()
-    link = ItemLink.query.filter_by(gameId=index).first()
+    game = Item.query.filter_by(itemId=index).first()
+    link = ItemLink.query.filter_by(itemId=index).first()
+    if game.address == None:
+        section = "steam"
+    else:
+        section = "yelp"
+    requestjson = {
+        "section" : section,
+        "id" : "1"
+    }
+    reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
+    game.reviewAI = removeExtra(reviewAI)
     return render_template("review.html", game=game, link=link)
 
 
@@ -91,8 +101,24 @@ def genReview():
     form = genForm()
     if form.is_submitted():
         if form.validate():
-                text = reviews.AI.getReviews.generate_text_attr(form.content.data)
-                return render_template("textGen.html",form = form, text1 =text)
-    text = reviews.AI.getReviews.generate_text()
-    print(text)
-    return render_template("textGen.html",form = form, text1 =text)
+            index = request.args.get("index", type=int)
+            item = Item.query.filter_by(itemId=index).first()
+            if item.address == None:
+                section = "steam"
+            else:
+                section = "yelp"
+            requestjson = {
+                "section" : section,
+                "id" : "1",
+                "keyword" : form.content.data
+            }
+            review = requests.get("http://35.240.189.97/contextGen", json = requestjson)
+            text = removeExtra(review.content)
+            print(text)
+            return render_template("textGen.html",form = form, text1 = text)
+    return render_template("textGen.html",form = form, text1 = "")
+
+def removeExtra(i):
+    text = str(i)
+    list = text.split("\"")
+    return list[-2]
