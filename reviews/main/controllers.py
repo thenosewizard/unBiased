@@ -3,7 +3,7 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
-import json
+import json, requests
 
 main = Blueprint('main', __name__, template_folder= "templates")
 
@@ -70,15 +70,15 @@ def review():
 
 
 
-@main.route("/checkreview", methods = ['GET'])
+@main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
     form = CheckReviewForm()
     isbiased = False
     if form.is_submitted():
         if form.validate():
-            request.json = { "review" : form.content.data }
-            result = request.get("http://35.240.189.97/classifyYelp")
-            if result == {"1"}:
+            requestjson = { "review" : form.content.data }
+            result = requests.get("http://35.240.189.97/classifyYelp", json = requestjson)
+            if result.content == 1:
                 isbiased = False
             else:
                 isbiased = True
