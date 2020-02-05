@@ -33,6 +33,12 @@ class Genre(db.Model):
     def __repr__(self):
         return 'genreId = {0}, description = {1}'.format(self.genreId,self.description)
 
+class Feature(db.Nodel):
+    featureId = db.Column(db.Integer, primary_key = True)
+    itemId = db.Column(db.Integer, db.ForeignKey(item.itemId), nullable = False)
+    description = db.Column(db.String(500), nullable = False)
+    positive = db.Column(db.Boolean, nullable = False)
+
 class Item(db.Model):
     itemId = db.Column(db.Integer, primary_key = True)
     refid = db.Column(db.Integer, nullable = True)
@@ -83,7 +89,7 @@ class Feedback(db.Model):
 
 #Forum
 class Thread(db.Model):
-    threadId = db.Column(db.Integer, primary_key = True, nullable=False)
+    threadId = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(50), nullable = False)
     content = db.Column(db.String(5000))
     category = db.Column(db.String(50), nullable=False)
@@ -95,7 +101,7 @@ class Thread(db.Model):
         return '{}, {}, {}, {}'.format(self.threadId, self.title, self.category, self.dateTimeCreated)
 
 class Post(db.Model):
-    postId = db.Column(db.Integer,primary_key=True, nullable=False)
+    postId = db.Column(db.Integer,primary_key=True)
     title = db.Column(db.String(50))
     authorId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     threadId = db.Column(db.Integer, db.ForeignKey('thread.threadId'), nullable=False)
@@ -134,7 +140,7 @@ db.session.add_all(
         ItemLink(itemId=2, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/8930/Sid_Meiers_Civilization_V/'),
         ItemLink(itemId=3, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/728880/Overcooked_2/'),
         ItemLink(itemId=4, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/'),
-        Item(itemId = 1, title = 'Counter-Strike: Global Offensive', refid = 1, rating = 4.37, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
+        Item(title = 'Counter-Strike: Global Offensive', refid = 1, rating = 4.37, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action Itemplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
             and Item modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', image = "cs_go.jpg", itemType = "Game"),
         Item(title = 'Civilization V', refid = 2, rating = 4.80, description = 'Create, discover, and download new player-created maps, scenarios, interfaces, and more!', 
@@ -146,6 +152,9 @@ db.session.add_all(
             contract of your life — tracking down the Child of Prophecy, a living weapon that can alter the shape of the world.', image = "witcher3.jpg", itemType = "Game"),
         
         #Food Genres
+        Genre(name = "American", description = "Classic American food"),
+        Genre(name = "Vegetarian Option", description = "For vegetarians"),
+        Genre(name = "Wifi", description = "Who doesn't want free wifi?"),
 
         #Food
         Item(title = "Secret Pizza", refid = 111, rating = 4.0, description = 'With the feel of a small New York corner pizza shop, this hidden late night spot offers \
@@ -162,6 +171,18 @@ db.session.add_all(
         Item(title = "Wicked Spoon", refid = 444, rating = 3.5, description = "A bustling culinary food hall, the Wicked Spoon delivers well-crafted original selections for \
         every appetite. With its mix of top quality, familiar staples and imaginative seasonal dishes, this Las Vegas buffet satisfies cravings and invites discovery.", 
         image = "wickedspoon.jpg", address = "The Cosmopolitan Of Las Vegas, Level 2, The Chelsea Tower, Las Vegas, NV 89109, United States", itemType = "Food"),
+
+        #Feature
+        Feature(itemId = 5, description = "late night", positive = True),
+        Feature(itemId = 5, description = "pizza delicious", positive = True),
+        Feature(itemId = 5, description = "3rd Floor", positive = True),
+        Feature(itemId = 5, description = "Hidden Gem", positive = True),
+        Feature(itemId = 5, description = "Last Bubble Gum on the floor", positive = True),
+        Feature(itemId = 5, description = "'Las Vegas", positive = True),
+        Feature(itemId = 5, description = "White tissue", positive = True),
+        Feature(itemId = 5, description = "'pizza delicious", positive = True),
+        Feature(itemId = 5, description = "'pizza delicious", positive = True),
+        Feature(itemId = 5, description = "'pizza delicious", positive = True),
 
         Comment(userId = 1, itemId = 1, content = 'Love it'),
         Comment(userId = 2, itemId = 1, content = '10/10'),
@@ -207,5 +228,15 @@ db.session.execute(GenreItem.insert().values(genreId = 7, itemId = 4))
 db.session.execute(GenreItem.insert().values(genreId = 8, itemId = 3))
 db.session.execute(GenreItem.insert().values(genreId = 9, itemId = 4))
 db.session.execute(GenreItem.insert().values(genreId = 10, itemId = 4))
+db.session.execute(GenreItem.insert().values(genreId = 11, itemId = 5))
+db.session.execute(GenreItem.insert().values(genreId = 11, itemId = 6))
+db.session.execute(GenreItem.insert().values(genreId = 11, itemId = 7))
+db.session.execute(GenreItem.insert().values(genreId = 11, itemId = 8))
+db.session.execute(GenreItem.insert().values(genreId = 12, itemId = 5))
+db.session.execute(GenreItem.insert().values(genreId = 12, itemId = 6))
+db.session.execute(GenreItem.insert().values(genreId = 12, itemId = 7))
+db.session.execute(GenreItem.insert().values(genreId = 12, itemId = 8))
+db.session.execute(GenreItem.insert().values(genreId = 13, itemId = 6))
+db.session.execute(GenreItem.insert().values(genreId = 13, itemId = 7))
 
 db.session.commit()
