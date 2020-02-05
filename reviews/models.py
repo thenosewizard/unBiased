@@ -140,23 +140,25 @@ db.session.add_all(
             four players. Hold onto your aprons… it’s time to save the world again!', image = "overcooked2.jpg", itemType = "Game"),
         Item(title = 'Witcher 3', refid = 4, rating = 4.9, description = 'As war rages on throughout the Northern Realms, you take on the greatest \
             contract of your life — tracking down the Child of Prophecy, a living weapon that can alter the shape of the world.', image = "witcher3.jpg", itemType = "Game"),
-        GenreItem(genreId = 1, itemId = 3),
-        GenreItem(genreId = 1, itemId = 4),
-        GenreItem(genreId = 2, itemId = 1),
-        GenreItem(genreId = 2, itemId = 4),
-        GenreItem(genreId = 3, itemId = 1),
-        GenreItem(genreId = 4, itemId = 1),
-        GenreItem(genreId = 4, itemId = 2),
-        GenreItem(genreId = 4, itemId = 3),
-        GenreItem(genreId = 5, itemId = 1),
-        GenreItem(genreId = 5, itemId = 3),
-        GenreItem(genreId = 6, itemId = 2),
-        GenreItem(genreId = 7, itemId = 2),
-        GenreItem(genreId = 7, itemId = 3),
-        GenreItem(genreId = 7, itemId = 4),
-        GenreItem(genreId = 8, itemId = 3),
-        GenreItem(genreId = 9, itemId = 4),
-        GenreItem(genreId = 10, itemId = 4),
+        # GenreItem(genreId = 1, itemId = 3),
+        # GenreItem(genreId = 1, itemId = 4),
+        # GenreItem(genreId = 2, itemId = 1),
+        # GenreItem(genreId = 2, itemId = 4),
+        # GenreItem(genreId = 3, itemId = 1),
+        # GenreItem(genreId = 4, itemId = 1),
+        # GenreItem(genreId = 4, itemId = 2),
+        # GenreItem(genreId = 4, itemId = 3),
+        # GenreItem(genreId = 5, itemId = 1),
+        # GenreItem(genreId = 5, itemId = 3),
+        # GenreItem(genreId = 6, itemId = 2),
+        # GenreItem(genreId = 7, itemId = 2),
+        # GenreItem(genreId = 7, itemId = 3),
+        # GenreItem(genreId = 7, itemId = 4),
+        # GenreItem(genreId = 8, itemId = 3),
+        # GenreItem(genreId = 9, itemId = 4),
+        # GenreItem(genreId = 10, itemId = 4),
+        
+        #Food
         Item(title = "Secret Pizza", refid = 111, rating = 4.0, description = 'With the feel of a small New York corner pizza shop, this hidden late night spot offers \
         high counters to stand and eat while people watching. Classic video games and a pinball machine are available for guests to play with, as well as two flat screen \
         TVs showing the latest sporting events.', image = 'secretpizza.jpg', address = '3708 Las Vegas Blvd S, Level 3, The Boulevard Tower, Las Vegas, NV 89109', itemType = "Food"),
@@ -196,16 +198,6 @@ db.session.add_all(
         Post(postId = 6, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
         Post(postId = 7, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
         Post(postId = 8, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
-
-        #Food
-        Item(title = 'Overcooked! 2',refid = 3, rating = 5.0, description = 'Overcooked returns with a brand-new helping of chaotic \
-            cooking action! Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to \
-                four players. Hold onto your aprons… it’s time to save the world again!', 
-                credibility = 4.0, reviewAI = 'This Item has online coop now. There are a ton of levels, different settings the map to explore \
-                    is huge. There is a new throwing mechanic super fun. Levels are super dynamic, new styles like one person has to control a \
-                        platform to get everyone else to a specific place. There are these like secret "Kevin" levels. Tons of new recipes, sushi \
-                            and stuff. If you loved the first overcooked you will love this one. If you havent played overcooked 1, if you want a \
-                                good couch coop this is the best you can get.',  image = "overcooked2.jpg", itemType = "game"),
     ]
 )
 
