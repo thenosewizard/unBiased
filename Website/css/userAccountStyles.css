@@ -12,11 +12,25 @@ img {
 
 .ban{
     margin: 15px;
-    min-width: 10%;
+    min-width: 20%;
 }
 
 .info {
     text-align:left;
+}
+
+
+.col {
+    text-align:left;
+    padding: 2%;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.header {
+    font-size: larger;
+    font-weight: bold;
 }
 
 body {
