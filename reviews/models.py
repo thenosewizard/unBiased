@@ -83,7 +83,7 @@ class Feedback(db.Model):
 
 #Forum
 class Thread(db.Model):
-    threadId = db.Column(db.Integer, primary_key = True)
+    threadId = db.Column(db.Integer, primary_key = True, nullable=False)
     title = db.Column(db.String(50), nullable = False)
     content = db.Column(db.String(5000))
     category = db.Column(db.String(50), nullable=False)
@@ -95,7 +95,7 @@ class Thread(db.Model):
         return '{}, {}, {}, {}'.format(self.threadId, self.title, self.category, self.dateTimeCreated)
 
 class Post(db.Model):
-    postId = db.Column(db.Integer,primary_key=True)
+    postId = db.Column(db.Integer,primary_key=True, nullable=False)
     title = db.Column(db.String(50))
     authorId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     threadId = db.Column(db.Integer, db.ForeignKey('thread.threadId'), nullable=False)

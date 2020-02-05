@@ -2,7 +2,14 @@
 
 {% block content %}
 <div class="list-group">
-    <blockquote class="blockquote list-group-item">Food</blockquote>
+    <div class="card">
+        <div class="card-body">
+            <h3>{{title}}</h3>
+            <p class="lead">
+                <a class="btn btn-outline-success" href="{{ url_for('forum.newThread')}}" role="button">Add New Thread</a>
+            </p>
+        </div>
+    </div>
     {% for thread in threads.items %}
     <a href="{{ url_for('forum.thread',index = thread.threadId) }}" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
