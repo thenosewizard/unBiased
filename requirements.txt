@@ -51,7 +51,7 @@ google-auth==1.7.0
 google-auth-httplib2==0.0.3
 google-auth-oauthlib==0.4.1
 google-cloud-core==1.0.3
-google-cloud-firestore==1.6.0
+google-cloud-firestore==1.6.2
 google-cloud-storage==1.22.0
 google-pasta==0.1.8
 google-resumable-media==0.4.1
