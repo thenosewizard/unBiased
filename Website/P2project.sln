@@ -36,7 +36,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{4DE196EF
 		media\favIcon.png = media\favIcon.png
 		media\lock.png = media\lock.png
 		media\register.png = media\register.png
-		media\uReview.jpg = media\uReview.jpg
 		media\uReview_round.png = media\uReview_round.png
 		media\wheelShadow.JPG = media\wheelShadow.JPG
 		media\white.jpg = media\white.jpg
@@ -58,7 +57,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logo", "logo", "{466F1C1B-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_food", "pages_food", "{E6196AD0-A612-483D-B2D5-5C4B2AFF2E9C}"
 	ProjectSection(SolutionItems) = preProject
-		foodIndex.html = foodIndex.html
+		foodBrowse.html = foodBrowse.html
 		foodReview.html = foodReview.html
 	EndProjectSection
 EndProject
@@ -69,7 +68,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_shared", "pages_share
 		Error.html = Error.html
 		feedback.html = feedback.html
 		forgetpassword.html = forgetpassword.html
-		mainIndex.html = mainIndex.html
+		landing.html = landing.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_games", "pages_games", "{3588D20E-54FB-4F99-A4E6-A1DEB50D7063}"
@@ -87,7 +86,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_admin", "pages_admin"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "food", "food", "{ED593DE5-85A0-456B-BFFD-65148066787C}"
 	ProjectSection(SolutionItems) = preProject
-		css\foodIndexStyles.css = css\foodIndexStyles.css
+		css\foodBrowseStyles.css = css\foodBrowseStyles.css
 		css\foodReviewStyles.css = css\foodReviewStyles.css
 	EndProjectSection
 EndProject
@@ -110,6 +109,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{A2082ACE
 		css\userAccountStyles.css = css\userAccountStyles.css
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uReviewLogos", "uReviewLogos", "{A9400824-300B-4AF4-999B-4FD8755486D4}"
+	ProjectSection(SolutionItems) = preProject
+		media\food.png = media\food.png
+		media\games.png = media\games.png
+		media\uReview.jpg = media\uReview.jpg
+		media\uReview_round.png = media\uReview_round.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +133,7 @@ Global
 		{82A8E831-5981-4D6C-AB38-1316543E5698} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
 		{16BF7979-A9B0-4E0B-9EEA-6FE69299898E} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
 		{A2082ACE-25FB-49F0-8A21-763A966345BD} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
+		{A9400824-300B-4AF4-999B-4FD8755486D4} = {4DE196EF-21F9-4F3D-B815-349F22ED12E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CA796463-EC8E-437B-9535-C2E8E5BE8DC9}
