@@ -1,4 +1,17 @@
+.jumbotron {
+    display: inline-block;
+}
+
+.jumbo {
+    max-width: 100%;
+}
+
+.select {
+    width: 55%;
+}
+
 main {
+    width: 100%;
     display: inline-block;
 }
 
@@ -11,7 +24,7 @@ main {
         font-weight: bolder;
     }
 
-.gameName {
+.restaurantName {
     margin: 3% 0 0 0;
     display: inline-block;
 }
@@ -31,7 +44,7 @@ main {
 body {
     /*Page layout*/
     margin: 5% 10% 0 10%;
-    background-color: #ffa5a5;
+    background-color: #ffb5b5;
     /*Text display*/
     color: #361134;
     line-height: 1.6;
@@ -48,7 +61,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #1b2838;
+    background-color: #5d4242;
 }
 
 /*Using Font Awesome to get the icon*/
@@ -107,7 +120,7 @@ a {
     }
 
 .active {
-    background-color: #2a475e;
+    background-color: #5d4242;
 }
 
 .tabs {
@@ -116,7 +129,7 @@ a {
     min-width: 100px;
     text-align: center;
     display: inline-block;
-    background-color: #2a475e;
+    background-color: #ffcfcf;
     border-radius: 10px 10px 0 0;
 }
 
@@ -135,7 +148,7 @@ a {
     margin: 0 0 20px 0;
 }
 
-.storeLink {
+/*.storeLink {
     width: 100%;
     margin-top: 0;
     padding: 10px;
@@ -144,7 +157,7 @@ a {
     justify-content: center;
     background-color: #2a475e;
     border-radius: 0 10px 10px 10px;
-}
+}*/
 
 .listing {
     padding: 0;
