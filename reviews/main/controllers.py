@@ -72,7 +72,7 @@ def review():
         section = "yelp"
     requestjson = {
         "section" : section,
-        "id" : "1"
+        "id" : str(game.refid)
     }
     reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
     game.reviewAI = removeExtra(reviewAI)
@@ -109,7 +109,7 @@ def genReview():
                 section = "yelp"
             requestjson = {
                 "section" : section,
-                "id" : "1",
+                "id" : str(item.refid),
                 "keyword" : form.content.data
             }
             review = requests.get("http://35.240.189.97/contextGen", json = requestjson)
