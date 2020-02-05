@@ -157,13 +157,14 @@ db.session.add_all(
         GenreItem(genreId = 8, itemId = 3),
         GenreItem(genreId = 9, itemId = 4),
         GenreItem(genreId = 10, itemId = 4),
+        
+        #Food
         Item(title = "Secret Pizza", refid = 111, rating = 4.0, description = 'With the feel of a small New York corner pizza shop, this hidden late night spot offers \
         high counters to stand and eat while people watching. Classic video games and a pinball machine are available for guests to play with, as well as two flat screen \
         TVs showing the latest sporting events.', image = 'secretpizza.jpg', address = '3708 Las Vegas Blvd S, Level 3, The Boulevard Tower, Las Vegas, NV 89109'),
         Item(title = "Earl of Sandwich", refid = 222, rating = 4.5, description = "Welcome to Earl of Sandwich® Las Vegas. Our menu pays tribute to the art of the sandwich. \
         We feature a wide variety of sandwiches on fresh-baked artisan bread, hand-tossed salads, wraps, soups and more. We maintain our brand’s exceptional taste by using \
-        only the finest, freshest ingredients available for everything we serve.", image = "earlofsandwich.jpg", address = "3667 Las Vegas Blvd S, Las Vegas, NV 89109"),
-        
+        only the finest, freshest ingredients available for everything we serve.", image = "earlofsandwich.jpg", address = "3667 Las Vegas Blvd S, Las Vegas, NV 89109"),  
         Comment(userId = 1, itemId = 1, content = 'Love it'),
         Comment(userId = 2, itemId = 1, content = '10/10'),
         Thread(threadId = 1, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!",category= "Game", userId = 1),
@@ -189,16 +190,6 @@ db.session.add_all(
         Post(postId = 6, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
         Post(postId = 7, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
         Post(postId = 8, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
-
-        #Food
-        Item(title = 'Overcooked! 2',refid = 3, rating = 5.0, description = 'Overcooked returns with a brand-new helping of chaotic \
-            cooking action! Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to \
-                four players. Hold onto your aprons… it’s time to save the world again!', 
-                credibility = 4.0, reviewAI = 'This Item has online coop now. There are a ton of levels, different settings the map to explore \
-                    is huge. There is a new throwing mechanic super fun. Levels are super dynamic, new styles like one person has to control a \
-                        platform to get everyone else to a specific place. There are these like secret "Kevin" levels. Tons of new recipes, sushi \
-                            and stuff. If you loved the first overcooked you will love this one. If you havent played overcooked 1, if you want a \
-                                good couch coop this is the best you can get.',  image = "overcooked2.jpg", itemType = "game"),
     ]
 )
 
