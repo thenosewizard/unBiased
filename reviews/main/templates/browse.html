@@ -7,35 +7,36 @@
 </head> -->
 
 {% block content %}
-    <body>
-        <h2>Browse</h2>
-        {% for game in games.items %}
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                            <a href="{{ url_for('main.review', index = game.itemId) }}"><img src="../../static/img/game_images/{{game.image}}"  
-                                alt="game_img"></a>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                        <h4>{{game.title}}</h4>
-                        <p>Rating : {{game.rating}}</p>
-                        {{game.description}}
-                </div>
+
+<body>
+    <h2>Browse</h2>
+    {% for game in games.items %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <a href="{{ url_for('main.review', index = game.itemId) }}"><img
+                        src="../../static/img/game_images/{{game.image}}" alt="game_img"></a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <h4>{{game.title}}</h4>
+                <p>Rating : {{game.rating}}</p>
+                {{game.description}}
             </div>
         </div>
-        {% endfor %}
+    </div>
+    {% endfor %}
 
-        {% for page_num in games.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-            {% if page_num %}
-                {% if games.page == page_num %}
-                    <a class="btn btn-info mb-4" href="{{ url_for('main.browse', page=page_num) }}">{{ page_num }}</a>
-                {% else %}
-                    <a class="btn btn-outline-info mb-4" href="{{ url_for('main.browse', page=page_num) }}">{{ page_num }}</a>
-                {% endif %}
-            {% else %}
-            {% endif %}
-        {% endfor %}
-    </body>
+    {% for page_num in games.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+    {% if page_num %}
+    {% if games.page == page_num %}
+    <a class="btn btn-info mb-4" href="{{ url_for('main.browse', page=page_num) }}">{{ page_num }}</a>
+    {% else %}
+    <a class="btn btn-outline-info mb-4" href="{{ url_for('main.browse', page=page_num) }}">{{ page_num }}</a>
+    {% endif %}
+    {% else %}
+    {% endif %}
+    {% endfor %}
+</body>
 
 
-    {% endblock content%}
+{% endblock content%}
