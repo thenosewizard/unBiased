@@ -11,7 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		login.html = login.html
 		register.html = register.html
 		reviewcases.html = reviewcases.html
-		script.js = script.js
 		templateIndex@Jeff.html = templateIndex@Jeff.html
 	EndProjectSection
 EndProject
@@ -25,7 +24,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{CC5E2E39-80C
 		css\loginForgotRegister.css = css\loginForgotRegister.css
 		css\main.css = css\main.css
 		css\reviewcasesStyles.css = css\reviewcasesStyles.css
-		css\reviewStyles.css = css\reviewStyles.css
 		css\styles.css = css\styles.css
 		css\test.css = css\test.css
 		css\util.css = css\util.css
@@ -87,7 +85,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "food", "food", "{ED593DE5-85A0-456B-BFFD-65148066787C}"
 	ProjectSection(SolutionItems) = preProject
 		css\foodIndexStyles.css = css\foodIndexStyles.css
-		foodReview.css = foodReview.css
+		css\foodReviewStyles.css = css\foodReviewStyles.css
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "games", "games", "{82A8E831-5981-4D6C-AB38-1316543E5698}"
@@ -99,6 +97,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{16BF79
 	ProjectSection(SolutionItems) = preProject
 		css\discussionStyles.css = css\discussionStyles.css
 		css\landingStyles.css = css\landingStyles.css
+		css\reviewStyles.css = css\reviewStyles.css
 	EndProjectSection
 EndProject
 Global

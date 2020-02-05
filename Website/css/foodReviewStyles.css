@@ -1,46 +1,44 @@
-ul {
-    margin-bottom: 0;
-    padding: 10px 10px 0 0;
-}
-
-li {
-    font-size: 20px;
+.jumbotron {
     display: inline-block;
 }
 
-.month {
-    padding: 5px;
-    border-radius: 20px;
-    font-family: 'Roboto';
+.jumbo {
+    max-width: 100%;
+}
+
+.select {
+    width: 55%;
+}
+
+main {
+    width: 100%;
     display: inline-block;
 }
 
-.carousel-inner {
-    box-shadow: 3px 3px 10px #c7d5e0;
+.comp {
+    text-align: center;
 }
 
-.carousel-item {
-    position: relative;
-}
-
-    .carousel-item img {
-        margin: 0;
+    .comp button {
+        font-size: large;
+        font-weight: bolder;
     }
 
-.center {
-    width: 100%;
+.restaurantName {
+    margin: 3% 0 0 0;
+    display: inline-block;
 }
 
-.carousel-info {
-    top: 0;
-    right: 0;
-    width: 40%;
-    height: 100%;
-    padding: 5px;
-    color: black;
-    position: absolute;
-    overflow-wrap: break-word;
-    background-color: rgba( 255, 255, 255, 0.5);
+.info {
+    width: 55%;
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.default {
+    display: block;
+    padding: 0 0 0 1%;
 }
 
 body {
@@ -63,7 +61,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #1b2838;
+    background-color: #5d4242;
 }
 
 /*Using Font Awesome to get the icon*/
@@ -122,7 +120,7 @@ a {
     }
 
 .active {
-    background-color: #2a475e;
+    background-color: #5d4242;
 }
 
 .tabs {
@@ -131,7 +129,7 @@ a {
     min-width: 100px;
     text-align: center;
     display: inline-block;
-    background-color: #2a475e;
+    background-color: #ffcfcf;
     border-radius: 10px 10px 0 0;
 }
 
@@ -150,7 +148,7 @@ a {
     margin: 0 0 20px 0;
 }
 
-.storeLink {
+/*.storeLink {
     width: 100%;
     margin-top: 0;
     padding: 10px;
@@ -159,7 +157,7 @@ a {
     justify-content: center;
     background-color: #2a475e;
     border-radius: 0 10px 10px 10px;
-}
+}*/
 
 .listing {
     padding: 0;
