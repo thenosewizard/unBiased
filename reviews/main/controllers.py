@@ -3,6 +3,7 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
+import json
 
 main = Blueprint('main', __name__, template_folder= "templates")
 
@@ -57,35 +58,32 @@ def logout():
 @main.route("/browse")
 def browse():
     page = request.args.get('page', 1, type=int)
-    games = Game.query.order_by(Game.rating.desc()).paginate(page= page, per_page=3)
+    games = Item.query.order_by(Item.rating.desc()).paginate(page= page, per_page=3)
     return render_template("browse.html", games=games)
 
 @main.route("/review")
 def review():
     index = request.args.get("index", type=int)
-    game = Game.query.filter_by(gameId=index).first()
-    link = GameLink.query.filter_by(gameId=index).first()
+    game = Item.query.filter_by(gameId=index).first()
+    link = ItemLink.query.filter_by(gameId=index).first()
     return render_template("review.html", game=game, link=link)
 
 
 
-@main.route("/checkreview", methods = ['GET','POST'])
+@main.route("/checkreview", methods = ['GET'])
 def checkreview():
     form = CheckReviewForm()
     isbiased = False
     if form.is_submitted():
         if form.validate():
-            review = form.content.data
-            result = reviews.AI.train.predicter(review)
-            print(result)
-            if result == 1:
+            request.json = { "review" : form.content.data }
+            result = request.get("http://35.240.189.97/classifyYelp")
+            if result == {"1"}:
                 isbiased = False
             else:
                 isbiased = True
             flash("Please wait while we process your review", "success")
             return render_template("checkreview.html", form=form , biased = isbiased)
-#         else:
-#             flash("Please enter a review", "danger")
     return render_template("checkreview.html", form=form , biased = isbiased)
 
 @main.route("/reviewGen", methods = ['GET','POST'])
