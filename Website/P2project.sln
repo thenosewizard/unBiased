@@ -31,11 +31,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{4DE196EF-21F9-4F3D-B815-349F22ED12E5}"
 	ProjectSection(SolutionItems) = preProject
 		media\404logo.png = media\404logo.png
+		media\defaultProfile.png = media\defaultProfile.png
 		media\error404LogoFull.png = media\error404LogoFull.png
 		media\favIcon.png = media\favIcon.png
 		media\lock.png = media\lock.png
 		media\register.png = media\register.png
-		..\..\School\Year 2\2.2\P2\UNBIASED.png = ..\..\School\Year 2\2.2\P2\UNBIASED.png
 		media\uReview.jpg = media\uReview.jpg
 		media\uReview_round.png = media\uReview_round.png
 		media\wheelShadow.JPG = media\wheelShadow.JPG
@@ -82,6 +82,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_admin", "pages_admin", "{706BF9B0-91D7-40BC-9411-91E073C1F5ED}"
 	ProjectSection(SolutionItems) = preProject
 		reviewUsers.html = reviewUsers.html
+		userAccount.html = userAccount.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "food", "food", "{ED593DE5-85A0-456B-BFFD-65148066787C}"
@@ -106,6 +107,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{A2082ACE
 	ProjectSection(SolutionItems) = preProject
 		css\reviewcasesStyles.css = css\reviewcasesStyles.css
 		css\reviewUserStyles.css = css\reviewUserStyles.css
+		css\userAccountStyles.css = css\userAccountStyles.css
 	EndProjectSection
 EndProject
 Global
