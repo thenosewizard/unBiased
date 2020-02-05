@@ -44,6 +44,7 @@ class Item(db.Model):
     image = db.Column(db.String(500), nullable = True)
     comments = db.relationship('Comment', backref = 'item', lazy = True)
     address = db.Column(db.String(500), nullable = True)
+    itemType = db.Column(db.String(500), nullable = False)
     genre = db.relationship('Genre', secondary = GenreItem, lazy = 'subquery', backref = db.backref('item', lazy = True))
 
     def __repr__(self):
@@ -112,6 +113,7 @@ db.create_all()
 
 db.session.add_all(
     [
+        # Games
         User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member'),
         User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Admin'),
         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
@@ -130,6 +132,7 @@ db.session.add_all(
         ItemLink(itemId=4, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/'),
         Item(title = 'Counter-Strike: Global Offensive', refid = 1, rating = 4.37, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action Itemplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
+<<<<<<< HEAD
             and Item modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', image = "cs_go.jpg"),
         Item(title = 'Civilization V', refid = 2, rating = 4.80, description = 'Create, discover, and download new player-created maps, scenarios, interfaces, and more!', 
             image = "civv.jpg"),
@@ -162,6 +165,22 @@ db.session.add_all(
         We feature a wide variety of sandwiches on fresh-baked artisan bread, hand-tossed salads, wraps, soups and more. We maintain our brand’s exceptional taste by using \
         only the finest, freshest ingredients available for everything we serve.", image = "earlofsandwich.jpg", address = "3667 Las Vegas Blvd S, Las Vegas, NV 89109"),
         
+=======
+                and Item modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', 
+                credibility = 5.0, reviewAI = 'Recommend this Item to anyone who wants to take an FPS Item more competitively.\
+                Item is absolutely addicting especially with a well balanced ranking system after the update and it is very cheap. A unique market \
+                that have their own economy for Skins, Case keys and etc. For those who have 5 to 10 dollars to spend and havent yet buy this Item. \
+                I would recommend you to buy this. :)',
+                 image = "cs_go.jpg", itemType = "game"),
+        Item(title = 'Overcooked! 2',refid = 3, rating = 5.0, description = 'Overcooked returns with a brand-new helping of chaotic \
+            cooking action! Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to \
+                four players. Hold onto your aprons… it’s time to save the world again!', 
+                credibility = 4.0, reviewAI = 'This Item has online coop now. There are a ton of levels, different settings the map to explore \
+                    is huge. There is a new throwing mechanic super fun. Levels are super dynamic, new styles like one person has to control a \
+                        platform to get everyone else to a specific place. There are these like secret "Kevin" levels. Tons of new recipes, sushi \
+                            and stuff. If you loved the first overcooked you will love this one. If you havent played overcooked 1, if you want a \
+                                good couch coop this is the best you can get.',  image = "overcooked2.jpg", itemType = "game"),
+>>>>>>> a4a961e36fc3fe943082231528cafe81fd6cf39a
         Comment(userId = 1, itemId = 1, content = 'Love it'),
         Comment(userId = 2, itemId = 1, content = '10/10'),
         Thread(threadId = 1, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!",category= "Game", userId = 1),
@@ -186,7 +205,17 @@ db.session.add_all(
         Post(postId = 5, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
         Post(postId = 6, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
         Post(postId = 7, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
-        Post(postId = 8, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269")
+        Post(postId = 8, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
+
+        #Food
+        Item(title = 'Overcooked! 2',refid = 3, rating = 5.0, description = 'Overcooked returns with a brand-new helping of chaotic \
+            cooking action! Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to \
+                four players. Hold onto your aprons… it’s time to save the world again!', 
+                credibility = 4.0, reviewAI = 'This Item has online coop now. There are a ton of levels, different settings the map to explore \
+                    is huge. There is a new throwing mechanic super fun. Levels are super dynamic, new styles like one person has to control a \
+                        platform to get everyone else to a specific place. There are these like secret "Kevin" levels. Tons of new recipes, sushi \
+                            and stuff. If you loved the first overcooked you will love this one. If you havent played overcooked 1, if you want a \
+                                good couch coop this is the best you can get.',  image = "overcooked2.jpg", itemType = "game"),
     ]
 )
 
