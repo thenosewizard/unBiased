@@ -1,17 +1,55 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/css/ol.css" type="text/css">
-    <style>
-      .map {
-        height: 80vh;
-        width: 80vw;
-      }
-    </style>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/build/ol.js"></script>
-  </head>
-  <body>
-    <div id="map" class="map"></div>
-    <script type="text/javascript" src="./js/map.js"></script>
-  </body>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Change a map's style</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+    }
+
+    #menu {
+      position: absolute;
+      background: #fff;
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    #marker {
+      background-image: url('./maps-and-flags.png');
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .mapboxgl-popup {
+      max-width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="map"></div>
+  <div id="menu">
+    <input id="light-v10" type="button" value="light" />
+    <input id="dark-v10" type="button" value="dark" />
+  </div>
+
+  <script src="js/map.js"></script>
+</body>
+
 </html>
