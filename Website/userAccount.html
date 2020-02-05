@@ -69,14 +69,16 @@
                     </div>
 
                 </div>
-
+                <!--Note class="disabled" and data-toggle="popover" are for buttons that CANNOT be clicked-->
                 <button type="button" class="btn btn-primary ban" data-toggle="modal" data-target="#banModal">
                     Ban
                 </button>
-                <button type="button" class="btn btn-primary ban" data-toggle="modal" data-target="#unBanModal">
+                <button type="button" class="btn btn-success ban disabled" data-toggle="popover" data-target="#unBanModal" 
+                        data-trigger="focus" title="Whoops!" data-content="User account is NOT banned.">
                     unBan
                 </button>
-                <button type="button" class="btn btn-primary ban" data-toggle="modal" data-target="#deleteModal">
+                <br />
+                <button type="button" class="btn btn-danger ban" data-toggle="modal" data-target="#deleteModal">
                     DELETE ACCOUNT
                 </button>
                 <!-- Ban Modal -->
@@ -145,5 +147,10 @@
 
         </main>
     
+        <script>
+            $(function(){
+                $('[data-toggle="popover"]').popover()
+            });
+        </script>
     </body>
     </html>
