@@ -132,14 +132,14 @@ db.session.add_all(
         ItemLink(itemId=4, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/'),
         Item(title = 'Counter-Strike: Global Offensive', refid = 1, rating = 4.37, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action Itemplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
-            and Item modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', image = "cs_go.jpg"),
+            and Item modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', image = "cs_go.jpg", itemType = "Game"),
         Item(title = 'Civilization V', refid = 2, rating = 4.80, description = 'Create, discover, and download new player-created maps, scenarios, interfaces, and more!', 
-            image = "civv.jpg"),
+            image = "civv.jpg", itemType = "Game"),
         Item(title = 'Overcooked! 2',refid = 3, rating = 4.37, description = 'Overcooked returns with a brand-new helping of chaotic \
             cooking action! Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to \
-            four players. Hold onto your aprons… it’s time to save the world again!', image = "overcooked2.jpg"),
+            four players. Hold onto your aprons… it’s time to save the world again!', image = "overcooked2.jpg", itemType = "Game"),
         Item(title = 'Witcher 3', refid = 4, rating = 4.9, description = 'As war rages on throughout the Northern Realms, you take on the greatest \
-            contract of your life — tracking down the Child of Prophecy, a living weapon that can alter the shape of the world.', image = "witcher3.jpg"),
+            contract of your life — tracking down the Child of Prophecy, a living weapon that can alter the shape of the world.', image = "witcher3.jpg", itemType = "Game"),
         GenreItem(genreId = 1, itemId = 3),
         GenreItem(genreId = 1, itemId = 4),
         GenreItem(genreId = 2, itemId = 1),
@@ -159,11 +159,18 @@ db.session.add_all(
         GenreItem(genreId = 10, itemId = 4),
         Item(title = "Secret Pizza", refid = 111, rating = 4.0, description = 'With the feel of a small New York corner pizza shop, this hidden late night spot offers \
         high counters to stand and eat while people watching. Classic video games and a pinball machine are available for guests to play with, as well as two flat screen \
-        TVs showing the latest sporting events.', image = 'secretpizza.jpg', address = '3708 Las Vegas Blvd S, Level 3, The Boulevard Tower, Las Vegas, NV 89109'),
+        TVs showing the latest sporting events.', image = 'secretpizza.jpg', address = '3708 Las Vegas Blvd S, Level 3, The Boulevard Tower, Las Vegas, NV 89109', itemType = "Food"),
         Item(title = "Earl of Sandwich", refid = 222, rating = 4.5, description = "Welcome to Earl of Sandwich® Las Vegas. Our menu pays tribute to the art of the sandwich. \
         We feature a wide variety of sandwiches on fresh-baked artisan bread, hand-tossed salads, wraps, soups and more. We maintain our brand’s exceptional taste by using \
-        only the finest, freshest ingredients available for everything we serve.", image = "earlofsandwich.jpg", address = "3667 Las Vegas Blvd S, Las Vegas, NV 89109"),
-        
+        only the finest, freshest ingredients available for everything we serve.", image = "earlofsandwich.jpg", address = "3667 Las Vegas Blvd S, Las Vegas, NV 89109", itemType = "Food"),
+        Item(title = "Gordan Ramsay Burger", refid = 333, rating = 4.0, description = "From traditional to unique burgers, the menu items at this Las Vegas restaurant use the \
+        freshest, quality ingredients. Beef patties are cooked over an open flame fuelled by hard woods — Gordon Ramsay Burger is the only gourmet burger restaurant on the \
+        Strip to use this method — creating a more complex and powerful flavor. In addition to juicy burgers, this popular Vegas restaurant also offers sweet potato fries \
+        with vanilla powdered sugar and pork belly bao buns. Looking for some spice? The Devil Dog will do it. These all-beef dogs are simmered in devilish hot sauce, then \
+        fire-kissed on the open grill.", image = "gordanramsayburger.jpg", address = "3667 S Las Vegas Blvd, Las Vegas, NV 89109", itemType = "Food"),
+        Item(title = "Wicked Spoon", refid = 444, rating = 3.5, description = "A bustling culinary food hall, the Wicked Spoon delivers well-crafted original selections for \
+        every appetite. With its mix of top quality, familiar staples and imaginative seasonal dishes, this Las Vegas buffet satisfies cravings and invites discovery.", 
+        image = "wickedspoon.jpg", address = "The Cosmopolitan Of Las Vegas, Level 2, The Chelsea Tower, Las Vegas, NV 89109, United States", itemType = "Food"),
         Comment(userId = 1, itemId = 1, content = 'Love it'),
         Comment(userId = 2, itemId = 1, content = '10/10'),
         Thread(threadId = 1, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!",category= "Game", userId = 1),
