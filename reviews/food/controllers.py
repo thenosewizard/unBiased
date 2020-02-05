@@ -5,4 +5,4 @@ food = Blueprint("food", __name__, template_folder="templates")
 
 @food.route('/food')
 def index():
-    return render_template("foodReview.html", title="Index")
+    return render_template("foodIndex.html", title="Index")

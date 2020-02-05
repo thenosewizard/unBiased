@@ -42,7 +42,7 @@ class IndexForm(FlaskForm):
         if (query == None):
             query = ""
         if (query != "" and query != " "):
-            game = Game.query.filter(Game.title.contains(query)).all()
+            game = Item.query.filter(Item.title.contains(query)).filter(Item.itemType == "game").all()
             return(game)
         else:
             return []
