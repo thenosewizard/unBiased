@@ -76,20 +76,6 @@ a {
         text-decoration: none;
     }
 
-.active {
-    background-color: #2a475e;
-}
-
-.tabs {
-    margin: 0;
-    padding: 5px;
-    min-width: 100px;
-    text-align: center;
-    display: inline-block;
-    background-color: #2a475e;
-    border-radius: 10px 10px 0 0;
-}
-
 .hold {
     width: 100%;
     display: flex;
