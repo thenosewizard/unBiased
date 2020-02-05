@@ -141,3 +141,4 @@ edited.json
 .vscode
 .vs
 reviews/unbiased.db
+node_modules

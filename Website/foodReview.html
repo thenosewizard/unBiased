@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Zechariah Wong" />
     <meta name="description" content="P2 project" />
-    <title>Game review</title>
+    <title>Food review</title>
 
 
     <!--Montserrat Font-->
@@ -23,10 +23,10 @@
     <!--Font Awesome for icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--
-                    Local sheets     
+                    Local sheets
     -->
     <!--styles.css-->
-    <link rel="stylesheet" type="text/css" href="css/reviewStyles.css" />
+    <link rel="stylesheet" type="text/css" href="css/foodReviewStyles.css" />
     <!--Favicon-->
     <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
     <!--JavaScript-->
@@ -54,7 +54,7 @@
 
     <main>
         <!--================================================================================-->
-        <!--           Game name, preview image / carousel and uReview rating              -->
+        <!--           restaurant name, preview image / carousel and uReview rating              -->
         <!--================================================================================-->
         <section>
             <!-- ========== -->
@@ -67,13 +67,13 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner" style=" width:100%; height: 500px !important;">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active" style="color: #c7d5e0;">
                         <img class="d-block w-100" src="..." alt="First slide">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" style="color: #c7d5e0;">
                         <img class="d-block w-100" src="..." alt="Second slide">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" style="color: #c7d5e0;">
                         <img class="d-block w-100" src="..." alt="Third slide">
                     </div>
                 </div>
@@ -87,22 +87,57 @@
                 </a>
             </div>
 
-            <h1 class="gameName">Game Name: </h1>
+            <h1 class="restaurantName">restaurant Name: </h1>
             <h2 style="display:inline-block;">uReview</h2>
 
             <h3>uReview Rating: </h3>
         </section>
 
-
         <!--================================================================================-->
         <!--       Content info / review description or whatever you want to put here       -->
         <!--================================================================================-->
-        <section class="info content">
-            <div id="norm">
-                lorem ipsum dolor sit amet, consectetur adipiscing elit. maecenas quis feugiat lorem. nunc vitae maximus quam. vivamus suscipit hendrerit nisl. cras sodales ultricies augue quis efficitur. phasellus eget porttitor metus. integer blandit ultricies mauris. pellentesque scelerisque lectus quam, vel lobortis dolor ornare eu.
 
-                duis faucibus, sem non ullamcorper laoreet, lectus urna aliquam purus, a viverra nulla ipsum vel nunc. phasellus congue neque fermentum, faucibus nulla sagittis, fringilla libero. curabitur vehicula consequat massa, varius pellentesque elit dictum eu. aliquam erat volutpat. ut suscipit vitae leo sed porta. quisque at semper ante. mauris commodo risus ex, non imperdiet sem aliquet vel. morbi eu tristique mi. proin rhoncus justo nisl, sed fringilla risus cursus eu. aliquam viverra ante ut dolor finibus, non lacinia augue hendrerit. phasellus dictum congue dui, quis scelerisque augue faucibus ut.
+       
+
+        <section class="jumbotron info content select">
+            <!-- data toggle "collapse is to make disappear / appear-->
+            <div>
+                <!--<a class="btn btn-primary collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Link with href</a>-->
+                <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseExample">
+                    Menu
+                </button>
+                <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseLocation" aria-expanded="false" aria-controls="collapseExample">
+                    Location
+                </button>
+                <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseContact" aria-expanded="false" aria-controls="collapseExample">
+                    Contact / website
+                </button>
             </div>
+            <div class="collapse multi-collapse" id="collapseMenu">
+                <div class="card card-body">
+                    Food items
+                </div>
+            </div>
+
+            <div class="collapse" id="collapseLocation">
+                <div class="card card-body">
+                    Location address
+                </div>
+            </div>
+
+            <div class="collapse" id="collapseContact">
+                <div class="card card-body">
+                    contact details / website link?
+                </div>
+            </div>
+
+            <!--<div class="container">
+                <h1 class="display-3">Fluid jumbotron</h1>
+                <p class="lead">
+                    This is a modified jumbotron that occupies
+                    the entire horizontal space of its parent.
+                </p>
+            </div>-->
         </section>
 
 
@@ -113,7 +148,7 @@
             <div>
                 <h3>Rating Breakdown:</h3>
                 <ul>
-                    <li class="default">Gameplay:</li>
+                    <li class="default">restaurantplay:</li>
                     <li class="default">Graphics: </li>
                     <li class="default">Story: </li>
                     <li class="default">AVG:</li>
@@ -124,72 +159,14 @@
             </div>
         </aside>
 
-        <!--================================================================================-->
-        <!--            This is the linking to the games steam store page                   -->
-        <!--================================================================================-->
-        <section class="hold">
-            <h1 class="title-card">Get the game here!</h1>
-            <div class="center">
-                <ul style="margin-bottom: 0; padding:0;">
-                    <li><button class="tabs" id="pc" onclick="change(this.id)"><h3>PC</h3></button></li>
-                    <li><button class="tabs" id="console" onclick="change(this.id)"><h3>Console</h3></button></li>
-                    <li><button class="tabs" id="mobile" onclick="change(this.id)"><h3>Mobile</h3></button></li>
-                </ul>
-
-                <ul class="storeLink" id="l_pc" style="display:flex;">
-                    <li class="listing"><a><img class="logo" src="media/logo/log_steam.png" alt="Steam Store" /></a></li>
-                    <li class="listing"><a><img class="logo" src="media/logo/log_org.png" alt="Origin" /></a></li>
-                    <li class="listing"><a><img class="logo" src="media/logo/log_blizz.png" alt="Blizzard" /></a></li>
-                    <li class="listing"><a><img class="logo" src="media/logo/log_epic.png" alt="Epic Games" /></a></li>
-                </ul>
-                <ul class="storeLink" id="l_console" style="display: none;">
-                    <li class="listing"><a><img class="logo" src="media/logo/log_nin.png" alt="Nintendo eshop" />   </a></li>
-                    <li class="listing"><a><img class="logo" src="media/logo/log_wind.png" alt="Microsoft store" /> </a></li>
-                    <li class="listing"><a><img class="logo" src="media/logo/log_psp.png" alt="Playstation store" /></a></li>
-                </ul>
-                <ul class="storeLink" id="l_mobile" style="display: none;">
-                    <li class="listing"><a><img class="logo" src="media/logo/log_ios.png" alt="AppStore" /></a></li>
-                    <li class="listing"><a><img class="logo" src="media/logo/log_android.png" alt="PlayStore" /></a></li>
-                </ul>
-            </div>
-        </section>
-
-        <!--================================================================================-->
-        <!--                                comment section                                 -->
-        <!--================================================================================-->
-        <div class="list-group">
-            <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Replying to...</h5>
-                    <small class="text-muted">Time stamp? Remove if not in use</small>
-                </div>
-                <p class="mb-1">Comment content</p>
-                <small class="text-muted">Username</small>
-            </a>
-
-            <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Replying to...</h5>
-                    <small class="text-muted">Time stamp? Remove if not in use</small>
-                </div>
-                <p class="mb-1">Comment content</p>
-                <small class="text-muted">Username</small>
-            </a>
-
-            <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Replying to...</h5>
-                    <small class="text-muted">Time stamp? Remove if not in use</small>
-                </div>
-                <p class="mb-1">Comment content</p>
-                <small class="text-muted">Username</small>
-            </a>
-        </div>
 
     </main>
 
     <footer>
     </footer>
 
+    <script>
+
+    </script>
 </body>
 </html>

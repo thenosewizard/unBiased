@@ -3,7 +3,7 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
-import json
+import json, requests
 
 main = Blueprint('main', __name__, template_folder= "templates")
 
@@ -57,29 +57,38 @@ def logout():
 
 @main.route("/browse")
 def browse():
-    page = request.args.get('page', 1, type=int)
+    page = request.args.get("page", 1, type=int)
     games = Item.query.order_by(Item.rating.desc()).paginate(page= page, per_page=3)
     return render_template("browse.html", games=games)
 
 @main.route("/review")
 def review():
     index = request.args.get("index", type=int)
-    game = Item.query.filter_by(gameId=index).first()
-    link = ItemLink.query.filter_by(gameId=index).first()
+    game = Item.query.filter_by(itemId=index).first()
+    link = ItemLink.query.filter_by(itemId=index).first()
+    if game.address == None:
+        section = "steam"
+    else:
+        section = "yelp"
+    requestjson = {
+        "section" : section,
+        "id" : str(game.refid)
+    }
+    reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
+    game.reviewAI = removeExtra(reviewAI)
     return render_template("review.html", game=game, link=link)
 
 
 
-@main.route("/checkreview", methods = ['GET'])
+@main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
     form = CheckReviewForm()
     isbiased = False
     if form.is_submitted():
         if form.validate():
-            pload = { "review" : form.content.data }
-            result = requests.get("http://35.240.189.97/classifyYelp", json = pload)
-            print(result)
-            if result.text == "0":
+            requestjson = { "review" : form.content.data }
+            result = requests.get("http://35.240.189.97/classifyYelp", json = requestjson)
+            if result.content == 1:
                 isbiased = False
             else:
                 isbiased = True
@@ -92,8 +101,24 @@ def genReview():
     form = genForm()
     if form.is_submitted():
         if form.validate():
-                text = reviews.AI.getReviews.generate_text_attr(form.content.data)
-                return render_template("textGen.html",form = form, text1 =text)
-    text = reviews.AI.getReviews.generate_text()
-    print(text)
-    return render_template("textGen.html",form = form, text1 =text)
+            index = request.args.get("index", type=int)
+            item = Item.query.filter_by(itemId=index).first()
+            if item.address == None:
+                section = "steam"
+            else:
+                section = "yelp"
+            requestjson = {
+                "section" : section,
+                "id" : str(item.refid),
+                "keyword" : form.content.data
+            }
+            review = requests.get("http://35.240.189.97/contextGen", json = requestjson)
+            text = removeExtra(review.content)
+            print(text)
+            return render_template("textGen.html",form = form, text1 = text)
+    return render_template("textGen.html",form = form, text1 = "")
+
+def removeExtra(i):
+    text = str(i)
+    list = text.split("\"")
+    return list[-2]
