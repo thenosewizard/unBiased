@@ -2,14 +2,21 @@
 
 {% block content %}
 <div class="list-group">
-    {% for thread in threads.items %}
     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{thread.title}}</h5>
-            <small>{{thread.datetimeCreated}}</small>
+            <h5 class="mb-1">Announcements</h5>
         </div>
-        <small>Started By: {{thread.author.username}}</small>
+        <small>Nothing Yet</small>
     </a>
-    {% endfor %}
+    <a href="{{url_for('forum.game')}}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Games</h5>
+        </div>
+    </a>
+    <a href="{{url_for('forum.food')}}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Food</h5>
+        </div>
+    </a>
 </div>
 {% endblock content %}
