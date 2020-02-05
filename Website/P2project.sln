@@ -23,7 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{CC5E2E39-80C
 		css\indexStyles.css = css\indexStyles.css
 		css\loginForgotRegister.css = css\loginForgotRegister.css
 		css\main.css = css\main.css
-		css\reviewcasesStyles.css = css\reviewcasesStyles.css
 		css\styles.css = css\styles.css
 		css\test.css = css\test.css
 		css\util.css = css\util.css
@@ -81,6 +80,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_games", "pages_games"
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_admin", "pages_admin", "{706BF9B0-91D7-40BC-9411-91E073C1F5ED}"
+	ProjectSection(SolutionItems) = preProject
+		reviewUsers.html = reviewUsers.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "food", "food", "{ED593DE5-85A0-456B-BFFD-65148066787C}"
 	ProjectSection(SolutionItems) = preProject
@@ -100,6 +102,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{16BF79
 		css\reviewStyles.css = css\reviewStyles.css
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{A2082ACE-25FB-49F0-8A21-763A966345BD}"
+	ProjectSection(SolutionItems) = preProject
+		css\reviewcasesStyles.css = css\reviewcasesStyles.css
+		css\reviewUserStyles.css = css\reviewUserStyles.css
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,7 @@ Global
 		{ED593DE5-85A0-456B-BFFD-65148066787C} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
 		{82A8E831-5981-4D6C-AB38-1316543E5698} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
 		{16BF7979-A9B0-4E0B-9EEA-6FE69299898E} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
+		{A2082ACE-25FB-49F0-8A21-763A966345BD} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CA796463-EC8E-437B-9535-C2E8E5BE8DC9}
