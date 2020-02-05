@@ -134,7 +134,7 @@ db.session.add_all(
         ItemLink(itemId=2, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/8930/Sid_Meiers_Civilization_V/'),
         ItemLink(itemId=3, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/728880/Overcooked_2/'),
         ItemLink(itemId=4, platform="PC", source ="Steam", link ='https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/'),
-        Item(title = 'Counter-Strike: Global Offensive', refid = 1, rating = 4.37, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
+        Item(itemId = 1, title = 'Counter-Strike: Global Offensive', refid = 1, rating = 4.37, description = 'Counter-Strike: Global Offensive (CS: GO) expands upon the \
             team-based action Itemplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, \
             and Item modes, and delivers updated versions of the classic CS content (de_dust2, etc.).', image = "cs_go.jpg", itemType = "Game"),
         Item(title = 'Civilization V', refid = 2, rating = 4.80, description = 'Create, discover, and download new player-created maps, scenarios, interfaces, and more!', 
