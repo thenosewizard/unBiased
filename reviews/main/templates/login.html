@@ -8,7 +8,7 @@
         <form method="POST" action="" class="container">
             {{ form.csrf_token }}
             <div class="container" style="position:center; text-align:center;">
-                <img src="../../static/img/icons/UNBIASED.png" alt="Login" class="avatar" style="width:300px">
+                <img src="../../static/img/icons/uReview_round.png" alt="Login" class="avatar" style="width:300px">
             </div>
             <div class="container">
                 <div class="font-weight-bold">{{form.email.label}}</div>
@@ -25,18 +25,6 @@
                 <!-- <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label> -->
-            </div>
-            <div class="container">
-                <p style="display:inline-block;"><b>or try login using  </b></p>
-                <div style="display:inline-block;">
-                    <ul style="display:inline-block;">
-                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="../../static/img/icons/steamlogo.png" alt="SteamLogo"></li>
-                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="../../static/img/icons/amazonlogo.png" alt="AmazonLogo"></li>
-                        <!-- <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/googlelogo.png" alt="GoogleLogo"></li>
-                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/facebooklogo.png" alt="FacebookLogo"></li>
-                        <li style="display:inline-block;"><input class="logobutton logo" type="image" src="media/twitterlogo.png" alt="TwitterLogo"></li>  -->
-                    </ul>
-                </div>
             </div>
             <div class="container">
                 <span class="psw"><a href="#">Forgot password?</a>	|   <a href="{{url_for('main.register')}}">Create an account</a></span>
