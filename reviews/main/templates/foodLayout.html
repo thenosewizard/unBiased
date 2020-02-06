@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Food review</title>
+    <!--Boot strap js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+    <!--Style sheets-->
+    <!--------------------------------------------------------------------------------------------------------------------------------->
+    <!--Boot strap style sheets-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Font Awesome for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--styles.css-->
+    <link rel="stylesheet" type="text/css" href="../../static/styles.css" />
+
+    <!--Montserrat Font-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!--Roboto Font-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <!--Favicon-->
+    <link rel="icon" href="../../static/img/icons/favIcon.png" type="image/gif" sizes="16x16">
+    <!--JavaScript-->
+    <script src="../../static/script.js"></script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        #map {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+        }
+
+        #menu {
+            position: absolute;
+            background: #fff;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!--================================================================================-->
+    <!--                                    Navbar                                      -->
+    <!--================================================================================-->
+    <header id="nav">
+        <nav class="navbar">
+            <a class="navbar-brand" href="{{url_for('main.foodIndex')}}">uReview</a>
+            <div class="navLinks">
+                <a class="navLinks" href="{{url_for('main.index')}}">Game</a>
+                <a class="navLinks" href="{{url_for('main.browse')}}">Browse</a>
+                <a class="navLinks" href="{{url_for('main.checkreview')}}">Check Review</a>
+                <a class="navLinks" href="{{url_for('forum.index')}}">Forum</a>
+                {% if current_user.is_authenticated %}
+                <a class="navLinks" href="{{url_for('main.logout')}}">Logout</a>
+                {% else %}
+                <a class="navLinks" href="{{url_for('main.login')}}">Login</a>
+                <a class="navLinks" href="{{ url_for('main.register')}}">Register</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+
+    {% endblock content %}
+</body>

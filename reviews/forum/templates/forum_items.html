@@ -1,0 +1,23 @@
+{% extends 'forum_layout.html' %}
+
+{% block content %}
+<div class="list-group">
+    <div class="card">
+        <div class="card-body">
+            <h3>{{title}}</h3>
+            <p class="lead">
+                <a class="btn btn-outline-success" href="{{ url_for('forum.newThread')}}" role="button">Add New Thread</a>
+            </p>
+        </div>
+    </div>
+    {% for thread in threads.items %}
+    <a href="{{ url_for('forum.thread',index = thread.threadId) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{thread.title}}</h5>
+            <small>{{thread.datetimeCreated}}</small>
+        </div>
+        <small>Started By: {{thread.author.username}}</small>
+    </a>
+    {% endfor %}
+</div>
+{% endblock content %}

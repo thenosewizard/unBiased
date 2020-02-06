@@ -4,9 +4,9 @@
 
 <head>
     {% if title %}
-    <title>UnBiased - {{title}}</title>
+    <title>uReview - {{title}}</title>
     {% else %}
-    <title>UnBiased</title>
+    <title>uReview</title>
     {% endif %}
 
     <!--Boot strap js-->
@@ -47,10 +47,13 @@
         <!--                                    Navbar                                      -->
         <!--================================================================================-->
         <nav class="navbar">
-            <a class="navbar-brand" href="{{url_for('main.index')}}">UNBIASED</a>
+            <a class="navbar-brand" href="{{url_for('main.index')}}">uReview</a>
             <div class="navLinks">
+                <a class="navLinks" href="{{url_for('main.foodIndex')}}">Food</a>
                 <a class="navLinks" href="{{url_for('main.browse')}}">Browse</a>
                 <a class="navLinks" href="{{url_for('main.checkreview')}}">Check Review</a>
+                <a class="navLinks" href="{{url_for('forum.index')}}">Forum</a>
+                <a class="navLinks" href="{{ url_for('main.contactUs')}}">Contact Us</a>
                 {% if current_user.is_authenticated %}
                 <a class="navLinks" href="{{url_for('main.logout')}}">Logout</a>
                 {% else %}

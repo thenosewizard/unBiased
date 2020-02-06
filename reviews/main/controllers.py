@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, IndexForm, genForm
-from reviews.models import User, Game, Feedback, GenreGame, Comment, GameLink
+from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink, Feature
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
+import json, requests
 
 main = Blueprint('main', __name__, template_folder= "templates")
 
@@ -56,18 +57,27 @@ def logout():
 
 @main.route("/browse")
 def browse():
-    page = request.args.get('page', 1, type=int)
-    games = Game.query.order_by(Game.rating.desc()).paginate(page= page, per_page=3)
+    page = request.args.get("page", 1, type=int)
+    games = Item.query.order_by(Item.rating.desc()).paginate(page= page, per_page=3)
     return render_template("browse.html", games=games)
 
 @main.route("/review")
 def review():
     index = request.args.get("index", type=int)
-    game = Game.query.filter_by(gameId=index).first()
-    link = GameLink.query.filter_by(gameId=index).first()
-    return render_template("review.html", game=game, link=link)
-
-
+    game = Item.query.filter_by(itemId=index).first()
+    link = ItemLink.query.filter_by(itemId=index).first()
+    features = Feature.query.all()
+    if game.address == None:
+        section = "steam"
+    else:
+        section = "yelp"
+    requestjson = {
+        "section" : section,
+        "id" : str(game.refid)
+    }
+    reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
+    game.reviewAI = removeExtra(reviewAI)
+    return render_template("review.html", game=game, link=link, features = features)
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
@@ -75,17 +85,14 @@ def checkreview():
     isbiased = False
     if form.is_submitted():
         if form.validate():
-            review = form.content.data
-            result = reviews.AI.train.predicter(review)
-            print(result)
-            if result == 1:
+            requestjson = { "review" : form.content.data }
+            result = requests.get("http://35.240.189.97/classifyYelp", json = requestjson)
+            if result.content == 1:
                 isbiased = False
             else:
                 isbiased = True
             flash("Please wait while we process your review", "success")
             return render_template("checkreview.html", form=form , biased = isbiased)
-#         else:
-#             flash("Please enter a review", "danger")
     return render_template("checkreview.html", form=form , biased = isbiased)
 
 @main.route("/reviewGen", methods = ['GET','POST'])
@@ -93,8 +100,34 @@ def genReview():
     form = genForm()
     if form.is_submitted():
         if form.validate():
-                text = reviews.AI.getReviews.generate_text_attr(form.content.data)
-                return render_template("textGen.html",form = form, text1 =text)
-    text = reviews.AI.getReviews.generate_text()
-    print(text)
-    return render_template("textGen.html",form = form, text1 =text)
+            index = request.args.get("index", type=int)
+            item = Item.query.filter_by(itemId=index).first()
+            if item.address == None:
+                section = "steam"
+            else:
+                section = "yelp"
+            requestjson = {
+                "section" : section,
+                "id" : str(item.refid),
+                "keyword" : form.content.data
+            }
+            review = requests.get("http://35.240.189.97/contextGen", json = requestjson)
+            text = removeExtra(review.content)
+            print(text)
+            return render_template("textGen.html",form = form, text1 = text)
+    return render_template("textGen.html",form = form, text1 = "")
+
+def removeExtra(i):
+    text = str(i)
+    list = text.split("\"")
+    return list[-2]
+
+@main.route("/contacUs")
+def contactUs():
+    return render_template("feedback(Updated).html")
+
+@main.route('/food')
+def foodIndex():
+    carousell = Item.query.filter(Item.itemType=="Food").limit(3).all()
+    food = Item.query.filter(Item.itemType=="Food").all()
+    return render_template("foodIndex.html", title="Index", carousell=carousell, food=food)

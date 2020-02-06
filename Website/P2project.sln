@@ -5,43 +5,38 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2E5661A-FE5F-4134-8BB4-B9DC73ECC369}"
 	ProjectSection(SolutionItems) = preProject
-		Browse.html = Browse.html
-		Error.html = Error.html
-		feedback.html = feedback.html
-		forgetpassword.html = forgetpassword.html
 		header.html = header.html
 		header_logIn.html = header_logIn.html
 		historycases.html = historycases.html
-		Index.html = Index.html
 		login.html = login.html
 		register.html = register.html
-		Review.html = Review.html
 		reviewcases.html = reviewcases.html
-		script.js = script.js
 		templateIndex@Jeff.html = templateIndex@Jeff.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}"
 	ProjectSection(SolutionItems) = preProject
-		browseStyles.css = browseStyles.css
-		errorStyles.css = errorStyles.css
-		feedbackAndReview.css = feedbackAndReview.css
-		historycasesStyles.css = historycasesStyles.css
-		indexStyles.css = indexStyles.css
-		loginForgotRegister.css = loginForgotRegister.css
-		reviewcasesStyles.css = reviewcasesStyles.css
-		reviewStyles.css = reviewStyles.css
+		css\CopyOfStyle.css = css\CopyOfStyle.css
+		css\errorStyles.css = css\errorStyles.css
+		css\feedbackAndReview.css = css\feedbackAndReview.css
+		css\historycasesStyles.css = css\historycasesStyles.css
+		css\indexStyles.css = css\indexStyles.css
+		css\loginForgotRegister.css = css\loginForgotRegister.css
+		css\main.css = css\main.css
 		css\styles.css = css\styles.css
+		css\test.css = css\test.css
+		css\util.css = css\util.css
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{4DE196EF-21F9-4F3D-B815-349F22ED12E5}"
 	ProjectSection(SolutionItems) = preProject
 		media\404logo.png = media\404logo.png
+		media\defaultProfile.png = media\defaultProfile.png
 		media\error404LogoFull.png = media\error404LogoFull.png
 		media\favIcon.png = media\favIcon.png
 		media\lock.png = media\lock.png
 		media\register.png = media\register.png
-		..\..\..\School\Year 2\2.2\P2\UNBIASED.png = ..\..\..\School\Year 2\2.2\P2\UNBIASED.png
+		media\uReview_round.png = media\uReview_round.png
 		media\wheelShadow.JPG = media\wheelShadow.JPG
 		media\white.jpg = media\white.jpg
 	EndProjectSection
@@ -60,6 +55,68 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logo", "logo", "{466F1C1B-A
 		media\logo\log_xbox.png = media\logo\log_xbox.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_food", "pages_food", "{E6196AD0-A612-483D-B2D5-5C4B2AFF2E9C}"
+	ProjectSection(SolutionItems) = preProject
+		foodBrowse.html = foodBrowse.html
+		foodReview.html = foodReview.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_shared", "pages_shared", "{2F930FFE-A6F8-4725-A142-F3C819EE191B}"
+	ProjectSection(SolutionItems) = preProject
+		discussionBoardTemp.html = discussionBoardTemp.html
+		discussionPageTemp.html = discussionPageTemp.html
+		Error.html = Error.html
+		feedback.html = feedback.html
+		forgetpassword.html = forgetpassword.html
+		landing.html = landing.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_games", "pages_games", "{3588D20E-54FB-4F99-A4E6-A1DEB50D7063}"
+	ProjectSection(SolutionItems) = preProject
+		Browse.html = Browse.html
+		Index.html = Index.html
+		Review.html = Review.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages_admin", "pages_admin", "{706BF9B0-91D7-40BC-9411-91E073C1F5ED}"
+	ProjectSection(SolutionItems) = preProject
+		reviewUsers.html = reviewUsers.html
+		userAccount.html = userAccount.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "food", "food", "{ED593DE5-85A0-456B-BFFD-65148066787C}"
+	ProjectSection(SolutionItems) = preProject
+		css\foodBrowseStyles.css = css\foodBrowseStyles.css
+		css\foodReviewStyles.css = css\foodReviewStyles.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "games", "games", "{82A8E831-5981-4D6C-AB38-1316543E5698}"
+	ProjectSection(SolutionItems) = preProject
+		css\browseStyles.css = css\browseStyles.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{16BF7979-A9B0-4E0B-9EEA-6FE69299898E}"
+	ProjectSection(SolutionItems) = preProject
+		css\discussionStyles.css = css\discussionStyles.css
+		css\landingStyles.css = css\landingStyles.css
+		css\reviewStyles.css = css\reviewStyles.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "admin", "admin", "{A2082ACE-25FB-49F0-8A21-763A966345BD}"
+	ProjectSection(SolutionItems) = preProject
+		css\reviewcasesStyles.css = css\reviewcasesStyles.css
+		css\reviewUserStyles.css = css\reviewUserStyles.css
+		css\userAccountStyles.css = css\userAccountStyles.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uReviewLogos", "uReviewLogos", "{A9400824-300B-4AF4-999B-4FD8755486D4}"
+	ProjectSection(SolutionItems) = preProject
+		media\food.png = media\food.png
+		media\games.png = media\games.png
+		media\uReview.jpg = media\uReview.jpg
+		media\uReview_round.png = media\uReview_round.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +125,15 @@ Global
 		{CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE} = {B2E5661A-FE5F-4134-8BB4-B9DC73ECC369}
 		{4DE196EF-21F9-4F3D-B815-349F22ED12E5} = {B2E5661A-FE5F-4134-8BB4-B9DC73ECC369}
 		{466F1C1B-A667-4C31-81E6-7DD6E8190D6F} = {4DE196EF-21F9-4F3D-B815-349F22ED12E5}
+		{E6196AD0-A612-483D-B2D5-5C4B2AFF2E9C} = {B2E5661A-FE5F-4134-8BB4-B9DC73ECC369}
+		{2F930FFE-A6F8-4725-A142-F3C819EE191B} = {B2E5661A-FE5F-4134-8BB4-B9DC73ECC369}
+		{3588D20E-54FB-4F99-A4E6-A1DEB50D7063} = {B2E5661A-FE5F-4134-8BB4-B9DC73ECC369}
+		{706BF9B0-91D7-40BC-9411-91E073C1F5ED} = {B2E5661A-FE5F-4134-8BB4-B9DC73ECC369}
+		{ED593DE5-85A0-456B-BFFD-65148066787C} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
+		{82A8E831-5981-4D6C-AB38-1316543E5698} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
+		{16BF7979-A9B0-4E0B-9EEA-6FE69299898E} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
+		{A2082ACE-25FB-49F0-8A21-763A966345BD} = {CC5E2E39-80CF-4DFC-9849-D9C7E8EDAFCE}
+		{A9400824-300B-4AF4-999B-4FD8755486D4} = {4DE196EF-21F9-4F3D-B815-349F22ED12E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CA796463-EC8E-437B-9535-C2E8E5BE8DC9}

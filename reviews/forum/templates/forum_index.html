@@ -1,0 +1,27 @@
+{% extends "forum_layout.html" %}
+
+{% block content %}
+<div class="list-group">
+    <div class="card">
+        <div class="card-body">
+            <h3>Welcome to the Forum! Chat with the Community!</h3>
+        </div>
+    </div>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Announcements</h5>
+        </div>
+        <small>Nothing Yet</small>
+    </a>
+    <a href="{{url_for('forum.game')}}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Games</h5>
+        </div>
+    </a>
+    <a href="{{url_for('forum.food')}}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Food</h5>
+        </div>
+    </a>
+</div>
+{% endblock content %}

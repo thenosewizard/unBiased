@@ -1,0 +1,137 @@
+body {
+    /*Page layout*/
+    margin: 5% 10% 0 10%;
+    background-color: #D8D8D8;
+    /*Text display*/
+    color: black;
+    line-height: 1.6;
+    font-family: 'Montserrat';
+}
+
+.content {
+    font-family: 'Roboto';
+}
+
+header {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1b2838;
+}
+
+/*Using Font Awesome to get the icon*/
+.glyphicon-search:before {
+    content: "\270f";
+}
+
+.title-card {
+    margin: 10% 0 0 0;
+    text-align: center;
+}
+
+/*Using Font Awesome to get the icon*/
+.glyphicon-search:before {
+    content: "\270f";
+}
+
+aside {
+    width: 40%;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 0 0 3%;
+    display: inline-block;
+    border: 2px solid #57a64a;
+}
+
+ul, li {
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    list-style-position: inside;
+}
+
+img {
+    /*font size being changed to default is in case 
+        the img fails*/
+    font-size: 16px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 5px 5px 5px 0;
+}
+
+.navLinks {
+    margin: 0 10px 0 0;
+}
+
+a {
+    color: #08090a;
+    text-decoration: none;
+}
+
+    a:hover {
+        opacity: 0.5;
+        color: #c7d5e0;
+        text-decoration: none;
+    }
+
+.hold {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center {
+    flex: 1;
+    width: 70%;
+    margin: 0 0 20px 0;
+}
+
+.storeLink {
+    width: 100%;
+    margin-top: 0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #2a475e;
+    border-radius: 0 10px 10px 10px;
+}
+
+.listing {
+    padding: 0;
+    flex: 1;
+    width: auto;
+    height: 50px;
+    text-align: center;
+}
+
+.logo {
+    margin: 5px;
+    max-height: 50px;
+    max-width: 100px;
+    display: inline-block;
+}
+
+button {
+    border: none;
+    color: inherit;
+    background: inherit;
+}
+
+/*=====================GuoJun Side========================================*/
+
+/*Everywhere*/
+
+body main #title {
+    width: 100%;
+    padding-top: 110px;
+}
+
+body main h2 {
+    font-weight: bolder;
+}

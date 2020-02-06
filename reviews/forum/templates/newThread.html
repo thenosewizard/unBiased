@@ -1,0 +1,25 @@
+{% extends "forum_layout.html" %}
+
+{% block content %}
+<h3>New Thread</h3>
+<form method="POST" action="">
+    {{ form.csrf_token }}
+    <div class="form-group">
+        <div class="font-weight-bold">{{form.title.label}}</div>
+        {{form.title(class="form-control", placeholder="Title")}}
+    </div>
+    <div class="form-group">
+        <div class="font-weight-bold">{{form.content.label}}</div>
+        {{form.content(class="form-control", placeholder="Content",rows="4",cols="50")}}
+    </div>
+    <div class="form-group">
+        {% for subfield in form.category %}
+            <tr>
+                <td>{{ subfield }}</td>
+                <td>{{ subfield.label}}</td>
+            </tr>
+        {% endfor %}
+    </div>
+    {{form.submit(class="btn btn-info")}}
+</form>      
+{% endblock content %}

@@ -1,8 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, RadioField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from reviews.models import User, Game
-
+from reviews.models import User, Item, ItemLink
 
 class RegistrationForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()])
@@ -42,7 +41,7 @@ class IndexForm(FlaskForm):
         if (query == None):
             query = ""
         if (query != "" and query != " "):
-            game = Game.query.filter(Game.title.contains(query)).all()
+            game = Item.query.filter(Item.title.contains(query)).filter(Item.itemType == "Game").all()
             return(game)
         else:
             return []
@@ -55,3 +54,16 @@ class CheckReviewForm(FlaskForm):
 class genForm(FlaskForm):
     content = StringField("Enter an attribute")
     submit = SubmitField("Check")
+
+class threadForm(FlaskForm):
+    title = StringField("Title", validators=[DataRequired()])
+    content = TextAreaField("Content", validators=[DataRequired()])
+    category = RadioField("Category", choices=[("Game", "Game"), ("Food", "Food")], validators=[DataRequired()] )
+    submit = SubmitField("Submit")
+
+class postForm(FlaskForm):
+    title = StringField("Title")
+    content = TextAreaField("Content", validators=[DataRequired()])
+    submit = SubmitField("Submit")
+
+    
