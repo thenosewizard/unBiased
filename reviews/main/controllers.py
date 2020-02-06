@@ -123,5 +123,6 @@ def removeExtra(i):
 
 @main.route('/food')
 def foodIndex():
-    food = Item.query.filter(Item.itemType=="Food").limit(3).all()
-    return render_template("foodIndex.html", title="Index", food=food)
+    carousell = Item.query.filter(Item.itemType=="Food").limit(3).all()
+    food = Item.query.filter(Item.itemType=="Food").all()
+    return render_template("foodIndex.html", title="Index", carousell=carousell, food=food)
