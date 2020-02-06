@@ -128,10 +128,18 @@ def contactUs():
 
 @main.route('/food')
 def foodIndex():
-    carousell = Item.query.filter(Item.itemType=="Food").limit(3).all()
-    food = Item.query.filter(Item.itemType=="Food").all()
-    return render_template("foodIndex.html", title="Index", carousell=carousell, food=food)
+    page = request.args.get("page", 1, type=int)
+    games = Item.query.filter_by(itemType = "Food").order_by(Item.rating.desc()).paginate(page= page, per_page=3)
+    return render_template("browse.html", games = games)
+
+@main.route('/game')
+def gameIndex():
+    page = request.args.get("page", 1, type=int)
+    games = Item.query.filter_by(itemType = "Game").order_by(Item.rating.desc()).paginate(page= page, per_page=3)
+    return render_template("browse.html", games = games)
 
 @main.route("/profile", methods = ['GET','POST'])
 def profile():
-    return render_template("profile.html")
+    user = User.query.filter_by(id = current_user.id).first()
+    print(user.id)
+    return render_template("profile.html", user = user)
