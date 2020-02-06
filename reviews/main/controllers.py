@@ -66,7 +66,7 @@ def review():
     index = request.args.get("index", type=int)
     game = Item.query.filter_by(itemId=index).first()
     link = ItemLink.query.filter_by(itemId=index).first()
-    features = Feature.query.all()
+    features = Feature.query.filter_by(itemId = index)
     if game.address == None:
         section = "steam"
     else:
@@ -77,7 +77,7 @@ def review():
     }
     reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
     game.reviewAI = removeExtra(reviewAI)
-    return render_template("review.html", game=game, link=link, features = features)
+    return render_template("review.html", game=game, link=link, features=features)
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():

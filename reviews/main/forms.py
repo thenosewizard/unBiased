@@ -47,7 +47,7 @@ class IndexForm(FlaskForm):
             return []
 
 class CheckReviewForm(FlaskForm):
-    content = StringField("Review",
+    content = TextAreaField("Review",
         validators=[DataRequired()])
     submit = SubmitField("Check")
 
