@@ -82,8 +82,7 @@ class Feedback(db.Model):
     email = db.Column(db.String(200), nullable = False)
     name = db.Column(db.String(50), nullable = True)
     content = db.Column(db.String(1000), nullable = False)
-    userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
+    
     def __repr__(self):
         return '{}, {}, {}, {}'.format(self.feedbackId, self.email, self.name, self.content)
 

@@ -126,7 +126,7 @@ def removeExtra(i):
 
 @main.route("/contacUs")
 def contactUs():
-    return render_template("feedback(Updated).html")
+    return render_template("feedback.html")
 
 @main.route('/food')
 def foodIndex():
