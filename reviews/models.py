@@ -120,9 +120,9 @@ db.create_all()
 db.session.add_all(
     [
         #User
-        User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member'),
-        User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Admin'),
-        User(username = "Zach", email= "Zach@email.com", password='$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member'),
+        User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member', ban = False),
+        User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Admin',ban = False),
+        User(username = "Zach", email= "Zach@email.com", password='$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member',ban = False),
 
         #Game Genres
         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
