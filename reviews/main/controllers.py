@@ -140,6 +140,7 @@ def gameIndex():
 
 @main.route("/profile", methods = ['GET','POST'])
 def profile():
-    user = User.query.filter_by(id = current_user.id).first()
+    index = request.args.get('index', type=int)
+    user = User.query.filter_by(id = index).first()
     print(user.id)
     return render_template("profile.html", user = user)

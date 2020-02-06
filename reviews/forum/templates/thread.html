@@ -19,7 +19,7 @@
 <section>
     <div class="list-group">
         {% for post in posts.items %}
-        <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
                 {% if post.title %}
                     <h5 class="mb-1">{{post.title}}</h5>
@@ -29,8 +29,8 @@
                 <small class="text-muted">{{post.dateTimePosted}}</small>
             </div>
             <p class="mb-1">{{post.content}}</p>
-            <small class="text-muted">{{post.author.username}}</small>
-        </a>
+            <small class="text-muted"><a href="{{url_for('main.profile', index = post.author.id)}}">{{post.author.username}}</a></small>
+        </div>
         {% endfor %}
     </div>
 </section>
