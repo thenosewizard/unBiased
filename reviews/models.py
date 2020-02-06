@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     comments = db.relationship('Comment', backref = 'user', lazy = True)
     posts = db.relationship("Post", backref='author', lazy = True)
     threads = db.relationship("Thread", backref = "author", lazy = True)
+    ban = db.Column(db.Boolean, nullable = False)
 
     def __repr__(self):
         return 'userId = {0}, username = {1}, role = {2}'.format(self.id, self.username, self.role)

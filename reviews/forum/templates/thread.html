@@ -11,7 +11,11 @@
         <hr class="my-2">
         <p>{{thread.dateTimeCreated}}</p>
         <p class="lead">
-            <a class="btn btn-outline-success" href="{{ url_for('forum.newPost', index=thread.threadId)}}" role="button">Add New Post</a>
+            {% if current_user.ban == False %}
+                <a class="btn btn-outline-success" href="{{ url_for('forum.newPost', index=thread.threadId)}}" role="button">Add New Post</a>
+            {% else %}
+                <a class="btn btn-outline-warning" role="button" disabled = true >Add New Post</a>
+            {% endif %}
         </p>
 </section>
 <section>

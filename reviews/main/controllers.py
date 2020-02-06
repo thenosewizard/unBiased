@@ -3,6 +3,7 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink, Feature
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
+from sqlalchemy import update
 import json, requests
 from itertools import zip_longest
 
@@ -66,6 +67,9 @@ def browse():
 def review():
     index = request.args.get("index", type=int)
     item = Item.query.filter_by(itemId=index).first()
+    if item == None:
+        form = IndexForm()
+        return redirect('main.index', title="Index", form=form)
     link = ItemLink.query.filter_by(itemId=index).first()
     pos_features = Feature.query.filter_by(itemId = index, positive = True)
     neg_features = Feature.query.filter_by(itemId = index, positive = False)
@@ -95,6 +99,7 @@ def checkreview():
                 isbiased = True
             print(isbiased)
             flash("Please wait while we process your review", "success")
+            
             return render_template("checkreview.html", form=form , biased = isbiased)
     return render_template("checkreview.html", form=form , biased = isbiased)
 
@@ -145,5 +150,28 @@ def gameIndex():
 def profile():
     index = request.args.get('index', type=int)
     user = User.query.filter_by(id = index).first()
-    print(user.id)
+    if user == None:
+        return redirect('main.index', title="index")
     return render_template("profile.html", user = user)
+
+@main.route("/ban")
+def ban():
+    index = request.args.get('index', type=int)
+    user = User.query.filter_by(id = index).first()
+    if user.ban == True:
+        user.ban = False
+        db.session.commit()
+    else:
+        user.ban = True
+        db.session.commit()
+    print(user.ban)
+    return redirect(url_for('main.profile', index = index))
+
+@main.route("/delete")
+def deleteuser():
+    index = request.args.get('index', type=int)
+    user = User.query.filter_by(id = index).first()
+    db.session.delete(user)
+    db.session.commit()
+    form = IndexForm()
+    return redirect(url_for('main.index', title = "index", form = form))

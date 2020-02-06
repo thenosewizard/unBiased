@@ -6,7 +6,11 @@
         <div class="card-body">
             <h3>{{title}}</h3>
             <p class="lead">
-                <a class="btn btn-outline-success" href="{{ url_for('forum.newThread')}}" role="button">Add New Thread</a>
+                {% if current_user.ban == False %}
+                    <a class="btn btn-outline-success" href="{{ url_for('forum.newThread')}}" role="button">Add New Thread</a>
+                {% else %}
+                    <a class="btn btn-outline-warning" role="button" disabled = true >Add New Thread</a>
+                {% endif %}
             </p>
         </div>
     </div>
