@@ -66,7 +66,7 @@ def review():
     index = request.args.get("index", type=int)
     game = Item.query.filter_by(itemId=index).first()
     link = ItemLink.query.filter_by(itemId=index).first()
-    features = Feature.query.all()
+    features = Feature.query.filter_by(itemId = index)
     if game.address == None:
         section = "steam"
     else:
@@ -77,7 +77,7 @@ def review():
     }
     reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
     game.reviewAI = removeExtra(reviewAI)
-    return render_template("review.html", game=game, link=link, features = features)
+    return render_template("review.html", game=game, link=link, features=features)
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
@@ -126,8 +126,6 @@ def removeExtra(i):
 def contactUs():
     return render_template("feedback(Updated).html")
 
-@main.route('/food')
-def foodIndex():
-    carousell = Item.query.filter(Item.itemType=="Food").limit(3).all()
-    food = Item.query.filter(Item.itemType=="Food").all()
-    return render_template("foodIndex.html", title="Index", carousell=carousell, food=food)
+@main.route("/profile", methods = ['GET','POST'])
+def profile():
+    return render_template("profile.html")
