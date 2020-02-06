@@ -34,6 +34,30 @@
 }*/
 
 
+/*///////////////////////////*/
+/*    Overall Nav & Footer   */
+/*///////////////////////////*/
+
+.newNav {
+    background-color: black;
+    padding: 0px;
+}
+
+body footer {
+    color: white;
+}
+
+/*///////////////////////////*/
+/*    Feedback page form     */
+/*///////////////////////////*/
+
+body #feedbackpage {
+    padding: 40px;
+}
+
+body #feedbackpage #feedbackcontainer {
+    padding: 20px;
+}
 
 
 
