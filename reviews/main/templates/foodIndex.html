@@ -1,4 +1,4 @@
-﻿{% extends "layout.html" %}
+﻿{% extends "foodLayout.html" %}
 
 
 {% block content %}
@@ -18,13 +18,13 @@
             </ol>
             <div class="carousel-inner" style=" width:100%; height: 500px !important;">
                 <div class="carousel-item active" style="color: #c7d5e0;">
-                    <img class="d-block w-100" src="..." alt="First slide">
+                    <img class="d-block w-100" src="../../static/img/item_images/{{food[0].image}}" alt="First slide">
                 </div>
                 <div class="carousel-item" style="color: #c7d5e0;">
-                    <img class="d-block w-100" src="..." alt="Second slide">
+                    <img class="d-block w-100" src="../../static/img/item_images/{{food[1].image}}" alt="Second slide">
                 </div>
                 <div class="carousel-item" style="color: #c7d5e0;">
-                    <img class="d-block w-100" src="..." alt="Third slide">
+                    <img class="d-block w-100" src="../../static/img/item_images/{{food[2].image}}" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

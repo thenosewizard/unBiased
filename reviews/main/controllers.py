@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, IndexForm, genForm
-from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink, Feature
+from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
 import json, requests
@@ -58,7 +58,7 @@ def logout():
 @main.route("/browse")
 def browse():
     page = request.args.get("page", 1, type=int)
-    games = Item.query.paginate(page= page, per_page=3)
+    games = Item.query.order_by(Item.rating.desc()).paginate(page= page, per_page=3)
     return render_template("browse.html", games=games)
 
 @main.route("/review")
@@ -66,7 +66,6 @@ def review():
     index = request.args.get("index", type=int)
     game = Item.query.filter_by(itemId=index).first()
     link = ItemLink.query.filter_by(itemId=index).first()
-    features = Feature.query.filter_by(itemId=index).all()
     if game.address == None:
         section = "steam"
     else:
@@ -77,9 +76,7 @@ def review():
     }
     reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
     game.reviewAI = removeExtra(reviewAI)
-    return render_template("review.html", game=game, link=link, features = features)
-
-
+    return render_template("review.html", game=game, link=link)
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
@@ -127,3 +124,8 @@ def removeExtra(i):
 @main.route("/contacUs")
 def contactUs():
     return render_template("feedback(Updated).html")
+    
+@main.route('/food')
+def foodIndex():
+    food = Item.query.filter(Item.itemType=="Food").limit(3).all()
+    return render_template("foodIndex.html", title="Index", food=food)
