@@ -78,8 +78,6 @@ def review():
     game.reviewAI = removeExtra(reviewAI)
     return render_template("review.html", game=game, link=link)
 
-
-
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
     form = CheckReviewForm()
@@ -122,3 +120,8 @@ def removeExtra(i):
     text = str(i)
     list = text.split("\"")
     return list[-2]
+
+@main.route('/food')
+def foodIndex():
+    first = Item.query.filter(Item.itemType=="Food").first()
+    return render_template("foodIndex.html", title="Index", first=first)
