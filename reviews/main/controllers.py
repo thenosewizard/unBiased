@@ -3,6 +3,7 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink, Feature
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
+from sqlalchemy import update
 import json, requests
 
 main = Blueprint('main', __name__, template_folder= "templates")
@@ -143,3 +144,13 @@ def profile():
     user = User.query.filter_by(id = current_user.id).first()
     print(user.id)
     return render_template("profile.html", user = user)
+
+# def ban():
+#     user = User.query.filter_by(id = id).first()
+#     if user.ban == True:
+#         user.ban = False
+#     else:
+#         user.ban == False
+#     db.session.commit()
+#     index = id
+#     return profile(index)

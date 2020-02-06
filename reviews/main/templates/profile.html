@@ -38,10 +38,13 @@
                             <a class="nav-link" href="{{url_for('main.foodIndex')}}">Food</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url_for('main.index')}}">Games</a>
+                            <a class="nav-link" href="{{url_for('main.gameIndex')}}">Game</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url_for('main.checkreview')}}">Verify</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('forum.index')}}">Forum</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">About us</a>
@@ -58,7 +61,7 @@
                         <li class="nav-item avatar dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
+                                <img src="../../static/img/icons/defaultProfile.png" class="rounded-circle z-depth-0"
                                     alt="avatar image" style="width:30px">
                             </a>
                             <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
@@ -108,18 +111,23 @@
                     </div>
 
                 </div>
+
+                {% if user.role == "Admin" %}
+                {% if user.ban == False %}
                 <!--Note class="disabled" and data-toggle="popover" are for buttons that CANNOT be clicked-->
                 <button type="button" class="btn btn-primary ban" data-toggle="modal" data-target="#banModal">
                     Ban
                 </button>
-                <button type="button" class="btn btn-success ban disabled" data-toggle="popover" data-target="#unBanModal" 
-                        data-trigger="focus" title="Whoops!" data-content="User account is NOT banned.">
+                {% else %}
+                <button type="button" class="btn btn-success ban" data-toggle="popover" data-target="#unBanModal">
                     unBan
                 </button>
+                {% endif %}
                 <br />
                 <button type="button" class="btn btn-danger ban" data-toggle="modal" data-target="#deleteModal">
                     DELETE ACCOUNT
                 </button>
+                {% endif %}
                 <!-- Ban Modal -->
                 <div class="modal" id="banModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -127,7 +135,7 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">�</span>
+                                    <span aria-hidden="true">X</span>
                                 </button>
                             </div>
                             <div class="modal-body">
@@ -135,7 +143,9 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: indianred">No</button>
-                                <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                <a href="{{ url_for('main.ban', id=user.id)}}">
+                                    <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -148,7 +158,7 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">�</span>
+                                    <span aria-hidden="true">X</span>
                                 </button>
                             </div>
                             <div class="modal-body">
@@ -156,7 +166,9 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: indianred">No</button>
-                                <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                <a href="{{ url_for('main.ban', id=user.id)}}">
+                                    <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -169,7 +181,7 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">WARNING</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">�</span>
+                                    <span aria-hidden="true">X</span>
                                 </button>
                             </div>
                             <div class="modal-body">
@@ -177,7 +189,9 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: indianred">No</button>
-                                <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                <a href="{{ url_for('main.deleteuser', id=user.id)}}">
+                                    <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                </a>
                             </div>
                         </div>
                     </div>

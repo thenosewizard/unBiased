@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     comments = db.relationship('Comment', backref = 'user', lazy = True)
     posts = db.relationship("Post", backref='author', lazy = True)
     threads = db.relationship("Thread", backref = "author", lazy = True)
+    ban = db.Column(db.Boolean, nullable = False)
 
     def __repr__(self):
         return 'userId = {0}, username = {1}, role = {2}'.format(self.id, self.username, self.role)
@@ -120,8 +121,8 @@ db.create_all()
 db.session.add_all(
     [
         #User
-        User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member'),
-        User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Admin'),
+        User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member', ban = False),
+        User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Admin', ban = False),
 
         #Game Genres
         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
