@@ -103,28 +103,27 @@
             </div>
         </section>
     {% else %}
-        {% if features %}
+    <section>
+        {% if pos_features or neg_features %}
+        <h3 class="float-left">Features identified by AI</h3>
         <table class="table text-white">
             <thead class="thead-dark">
             <tr>
-                <th>Features identified by AI</th>
-                <th>Comment Type</th>
+                <th>Positive</th>
+                <th>Negative</th>
             </tr>
             </thead>
             <tbody>
-                {% for feature in features %}
+                {% for x,y in zip_longest(pos_features,neg_features, fillvalue='-') %}
                 <tr>
-                    <td>{{feature.description}}</td>
-                    {% if feature.positive %}
-                        <td>Positive</td>
-                    {% else %}
-                        <td>Negative</td>
-                    {% endif %}
+                    <td>{{x.description}}</td>
+                    <td>{{y.description}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
         {% endif %}
+    </section>
     {% endif %}
 
     <!--================================================================================-->

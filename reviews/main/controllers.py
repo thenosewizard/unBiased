@@ -4,6 +4,7 @@ from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink, F
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
 import json, requests
+from itertools import zip_longest
 
 main = Blueprint('main', __name__, template_folder= "templates")
 
@@ -66,7 +67,8 @@ def review():
     index = request.args.get("index", type=int)
     game = Item.query.filter_by(itemId=index).first()
     link = ItemLink.query.filter_by(itemId=index).first()
-    features = Feature.query.filter_by(itemId = index)
+    pos_features = Feature.query.filter_by(itemId = index, positive = True)
+    neg_features = Feature.query.filter_by(itemId = index, positive = False)
     if game.address == None:
         section = "steam"
     else:
@@ -77,7 +79,7 @@ def review():
     }
     reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
     game.reviewAI = removeExtra(reviewAI)
-    return render_template("review.html", game=game, link=link, features=features)
+    return render_template("review.html", game=game, link=link, pos_features=pos_features, neg_features = neg_features, zip_longest=zip_longest)
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
