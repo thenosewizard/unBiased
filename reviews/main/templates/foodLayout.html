@@ -58,19 +58,53 @@
     <!--                                    Navbar                                      -->
     <!--================================================================================-->
     <header id="nav">
-        <nav class="navbar">
-            <a class="navbar-brand" href="{{url_for('main.foodIndex')}}">uReview</a>
-            <div class="navLinks">
-                <a class="navLinks" href="{{url_for('main.index')}}">Game</a>
-                <a class="navLinks" href="{{url_for('main.browse')}}">Browse</a>
-                <a class="navLinks" href="{{url_for('main.checkreview')}}">Check Review</a>
-                <a class="navLinks" href="{{url_for('forum.index')}}">Forum</a>
-                {% if current_user.is_authenticated %}
-                <a class="navLinks" href="{{url_for('main.logout')}}">Logout</a>
-                {% else %}
-                <a class="navLinks" href="{{url_for('main.login')}}">Login</a>
-                <a class="navLinks" href="{{ url_for('main.register')}}">Register</a>
-                {% endif %}
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
+            <a class="navbar-brand" href="{{url_for('main.index')}}">uReview</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+                    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('main.foodIndex')}}">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('main.index')}}">Games</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('main.checkreview')}}">Verify</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.contactUs')}}">Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
+                        <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
+                    </form>
+                    <li class="nav-item avatar dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
+                                 alt="avatar image" style="width:30px">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+                             aria-labelledby="navbarDropdownMenuLink-55">
+                             {% if current_user.is_authenticated %}
+                            <a class="dropdown-item" href="{{url_for('main.profile')}}">Profile</a>
+                            <a class="dropdown-item" href="{{url_for('main.logout')}}">Logout</a>
+                             {% else %}
+                            <a class="dropdown-item" href="{{url_for('main.login')}}">Login</a>
+                            <a class="dropdown-item" href="{{ url_for('main.register')}}">Register</a>
+                             {% endif %}
+                        </div>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
