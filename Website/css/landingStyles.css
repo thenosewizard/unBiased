@@ -1,7 +1,24 @@
 .logo {
+    max-width: 100%; 
     text-align: center;
 }
 
+.mainLogo{
+    width:40%;
+    min-width: 20%;
+    max-width:100%;
+    margin: 5px 5px 5px 0;
+}
+
+.options {
+    max-width: 40%;
+}
+
+.container {
+    margin: 0;
+    max-width: 100%;
+    text-align: center;
+}
 
 body {
     /*Page layout*/
@@ -57,14 +74,7 @@ ul, li {
     list-style-position: inside;
 }
 
-img {
-    /*font size being changed to default is in case 
-        the img fails*/
-    font-size: 16px;
-    max-width: 100%;
-    max-height: 100%;
-    margin: 5px 5px 5px 0;
-}
+
 
 .navLinks {
     margin: 0 10px 0 0;
