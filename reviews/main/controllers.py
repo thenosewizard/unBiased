@@ -5,6 +5,7 @@ from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
 from sqlalchemy import update
 import json, requests
+from itertools import zip_longest
 
 main = Blueprint('main', __name__, template_folder= "templates")
 
@@ -67,7 +68,8 @@ def review():
     index = request.args.get("index", type=int)
     item = Item.query.filter_by(itemId=index).first()
     link = ItemLink.query.filter_by(itemId=index).first()
-    features = Feature.query.filter_by(itemId = index)
+    pos_features = Feature.query.filter_by(itemId = index, positive = True)
+    neg_features = Feature.query.filter_by(itemId = index, positive = False)
     if item.address == None:
         section = "steam"
     else:
@@ -78,7 +80,7 @@ def review():
     }
     reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
     item.reviewAI = removeExtra(reviewAI)
-    return render_template("review.html", item=item, link=link, features=features)
+    return render_template("review.html", item=item, link=link, pos_features=pos_features, neg_features = neg_features, zip_longest=zip_longest)
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
@@ -126,7 +128,7 @@ def removeExtra(i):
 
 @main.route("/contacUs")
 def contactUs():
-    return render_template("feedback(Updated).html")
+    return render_template("feedback.html")
 
 @main.route('/food')
 def foodIndex():
