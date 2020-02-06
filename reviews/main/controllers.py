@@ -3,7 +3,9 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink, Feature
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
+from sqlalchemy import update
 import json, requests
+from itertools import zip_longest
 
 main = Blueprint('main', __name__, template_folder= "templates")
 
@@ -66,7 +68,8 @@ def review():
     index = request.args.get("index", type=int)
     item = Item.query.filter_by(itemId=index).first()
     link = ItemLink.query.filter_by(itemId=index).first()
-    features = Feature.query.filter_by(itemId = index)
+    pos_features = Feature.query.filter_by(itemId = index, positive = True)
+    neg_features = Feature.query.filter_by(itemId = index, positive = False)
     if item.address == None:
         section = "steam"
     else:
@@ -77,7 +80,7 @@ def review():
     }
     reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
     item.reviewAI = removeExtra(reviewAI)
-    return render_template("review.html", item=item, link=link, features=features)
+    return render_template("review.html", item=item, link=link, pos_features=pos_features, neg_features = neg_features, zip_longest=zip_longest)
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
@@ -88,10 +91,11 @@ def checkreview():
             requestjson = { "review" : form.content.data }
             result = requests.get("http://35.240.189.97/classifyYelp", json = requestjson)
             if result.content == 1:
-                isbiased = False
-            else:
                 isbiased = True
+            else:
+                isbiased = False
             flash("Please wait while we process your review", "success")
+            
             return render_template("checkreview.html", form=form , biased = isbiased)
     return render_template("checkreview.html", form=form , biased = isbiased)
 
@@ -124,7 +128,7 @@ def removeExtra(i):
 
 @main.route("/contacUs")
 def contactUs():
-    return render_template("feedback(Updated).html")
+    return render_template("feedback.html")
 
 @main.route('/food')
 def foodIndex():
@@ -142,5 +146,24 @@ def gameIndex():
 def profile():
     index = request.args.get('index', type=int)
     user = User.query.filter_by(id = index).first()
-    print(user.id)
     return render_template("profile.html", user = user)
+
+@main.route("/ban")
+def ban():
+    user = User.query.filter_by(id = index).first()
+    if user.ban == True:
+        user.ban = False
+        db.session.commit()
+    else:
+        user.ban = True
+        db.session.commit()
+    print(user.ban)
+    return render_template("profile.html", user = user)
+
+@main.route("/delete")
+def deleteuser():
+    user = User.query.filter_by(id = id).first()
+    db.session.delete(user)
+    db.session.commit()
+    form = IndexForm()
+    return render_template("index.html",title="Index",form=form)

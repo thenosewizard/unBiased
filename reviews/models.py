@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     comments = db.relationship('Comment', backref = 'user', lazy = True)
     posts = db.relationship("Post", backref='author', lazy = True)
     threads = db.relationship("Thread", backref = "author", lazy = True)
+    ban = db.Column(db.Boolean, nullable = False)
 
     def __repr__(self):
         return 'userId = {0}, username = {1}, role = {2}'.format(self.id, self.username, self.role)
@@ -82,8 +83,7 @@ class Feedback(db.Model):
     email = db.Column(db.String(200), nullable = False)
     name = db.Column(db.String(50), nullable = True)
     content = db.Column(db.String(1000), nullable = False)
-    userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
+    
     def __repr__(self):
         return '{}, {}, {}, {}'.format(self.feedbackId, self.email, self.name, self.content)
 
@@ -120,8 +120,9 @@ db.create_all()
 db.session.add_all(
     [
         #User
-        User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member'),
-        User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Admin'),
+        User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member', ban = False),
+        User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Admin', ban = False),
+        User(username = 'Anan', email = "anan@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member', ban = True),
 
         #Game Genres
         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),

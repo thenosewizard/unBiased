@@ -57,19 +57,7 @@
     <!--================================================================================-->
     <!--            This stuff is the side bar / review break down                      -->
     <!--================================================================================-->
-    <aside>
-        {% if item.itemType == "Food" %}
-        <div id="map"></div>
-        <div id="menu">
-            <input id="light-v10" type="button" value="light" />
-            <input id="dark-v10" type="button" value="dark" />
-        </div>
-        {%endif%}
-        <div class="comp">
-            <button class="btn btn-outline-success"><a href="{{url_for('main.genReview', index = item.itemId)}}">Get
-                    Product Specifics</a></button>
-        </div>
-    </aside>
+    <button class="btn btn-outline-success"><a href="{{url_for('main.genReview', index = item.itemId)}}">Get Product Specifics</a></button>
 
     <!--================================================================================-->
     <!--            This is the linking to the games steam store page                   -->
@@ -117,13 +105,22 @@
         </div>
     </section>
     {% else %}
+<<<<<<< HEAD
     {% if features %}
     <table class="table text-white">
         <thead class="thead-dark">
+=======
+    <section>
+        {% if pos_features or neg_features %}
+        <h3 style="margin-top: 35%;">Features identified by AI</h3>
+        <table class="table text-white">
+            <thead class="thead-dark">
+>>>>>>> f8de0c0ff30061af042fba23b747e852130697ee
             <tr>
-                <th>Features identified by AI</th>
-                <th>Comment Type</th>
+                <th>Positive</th>
+                <th>Negative</th>
             </tr>
+<<<<<<< HEAD
         </thead>
         <tbody>
             {% for feature in features %}
@@ -139,6 +136,20 @@
         </tbody>
     </table>
     {% endif %}
+=======
+            </thead>
+            <tbody>
+                {% for x,y in zip_longest(pos_features,neg_features, fillvalue='-') %}
+                <tr>
+                    <td>{{x.description}}</td>
+                    <td>{{y.description}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </section>
+>>>>>>> f8de0c0ff30061af042fba23b747e852130697ee
     {% endif %}
 
     <!--================================================================================-->
