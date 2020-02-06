@@ -105,7 +105,7 @@
                         <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
                              aria-labelledby="navbarDropdownMenuLink-55">
                              {% if current_user.is_authenticated %}
-                            <a class="dropdown-item" href="{{url_for('main.profile')}}">Profile</a>
+                            <a class="dropdown-item" href="{{url_for('main.profile', index = current_user.id)}}">Profile</a>
                             <a class="dropdown-item" href="{{url_for('main.logout')}}">Logout</a>
                              {% else %}
                             <a class="dropdown-item" href="{{url_for('main.login')}}">Login</a>
