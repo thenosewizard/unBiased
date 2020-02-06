@@ -89,10 +89,11 @@ def checkreview():
         if form.validate():
             requestjson = { "review" : form.content.data }
             result = requests.get("http://35.240.189.97/classifyYelp", json = requestjson)
-            if result.content == 1:
+            if str(result.content) == 'b\'"1"\\n\'':
                 isbiased = False
             else:
                 isbiased = True
+            print(isbiased)
             flash("Please wait while we process your review", "success")
             return render_template("checkreview.html", form=form , biased = isbiased)
     return render_template("checkreview.html", form=form , biased = isbiased)

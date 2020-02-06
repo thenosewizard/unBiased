@@ -7,7 +7,7 @@
         <p class="lead">
             {{thread.content}}
         </p>
-        <p><a href="{{url_for('main.profile', index = thread.author.id)}}">{{thread.author.username}}</a></p>
+        <p>Posted By: <a href="{{url_for('main.profile', index = thread.author.id)}}"><u>{{thread.author.username}}</u></a></p>
         <hr class="my-2">
         <p>{{thread.dateTimeCreated}}</p>
         <p class="lead">
