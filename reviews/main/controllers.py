@@ -123,3 +123,7 @@ def removeExtra(i):
     text = str(i)
     list = text.split("\"")
     return list[-2]
+
+@main.route("/contacUs")
+def contactUs():
+    return render_template("feedback(Updated).html")
