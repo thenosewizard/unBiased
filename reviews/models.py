@@ -181,8 +181,17 @@ db.session.add_all(
         Feature(itemId = 5, description = "'Las Vegas", positive = True),
         Feature(itemId = 5, description = "White tissue", positive = True),
         Feature(itemId = 5, description = "'pizza delicious", positive = True),
-        Feature(itemId = 5, description = "'pizza delicious", positive = True),
-        Feature(itemId = 5, description = "'pizza delicious", positive = True),
+
+        Feature(itemId = 5, description = "customer service", positive = False),
+        Feature(itemId = 5, description = "excited try", positive = False),
+        Feature(itemId = 5, description = "line hour", positive = False),
+        Feature(itemId = 5, description = "place sucks", positive = False),
+        Feature(itemId = 5, description = "pizza terrible", positive = False),
+        Feature(itemId = 5, description = "'tasted like", positive = False),
+        Feature(itemId = 5, description = "average pizza", positive = False),
+        Feature(itemId = 5, description = "'pizza ok", positive = False),
+        Feature(itemId = 5, description = "'pizza average", positive = False),
+
 
         Comment(userId = 1, itemId = 1, content = 'Love it'),
         Comment(userId = 2, itemId = 1, content = '10/10'),

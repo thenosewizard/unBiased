@@ -46,6 +46,7 @@ def newPost():
 
 @forum.errorhandler(401)
 def page_not_found(e):
+    flash("Login Required!","danger")
     return redirect(url_for("main.login"))
 
 @forum.route('/forum/newThread', methods=["GET","POST"])

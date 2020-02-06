@@ -37,7 +37,7 @@
         </div> -->
         <img src="../../static/img/item_images/{{game.image}}"  class="card-img-top" alt="CS_GO">
         <h1 class="gameName">{{game.title}}</h1>
-        <h3>Game Rating: {{game.rating}}</h3>
+        <h3>Item Rating: {{game.rating}}</h3>
         <br>
     </section>
 
@@ -46,7 +46,7 @@
     <!--       Content info / review description or whatever you want to put here       -->
     <!--================================================================================-->
     <section class="info content">
-        <h4>Game Description</h2>
+        <h4>Item Description</h2>
         <p>{{game.description}}</p>
         <br>
         <h4>Summaried AI review</h4>
@@ -75,32 +75,57 @@
     <!--================================================================================-->
     <!--            This is the linking to the games steam store page                   -->
     <!--================================================================================-->
-    <section class="hold">
-        <h1 class="title-card">Get the game here!</h1>
-        <div class="center">
-            <ul style="margin-bottom: 0; padding:0;">
-                <li><button class="tabs" id="pc" onclick="change(this.id)"><h3>PC</h3></button></li>
-                <li><button class="tabs" id="console" onclick="change(this.id)"><h3>Console</h3></button></li>
-                <li><button class="tabs" id="mobile" onclick="change(this.id)"><h3>Mobile</h3></button></li>
-            </ul>
+    {% if game.itemType == "Game" %}
+        <section class="hold">
+            <h1 class="title-card">Get the game here!</h1>
+            <div class="center">
+                <ul style="margin-bottom: 0; padding:0;">
+                    <li><button class="tabs" id="pc" onclick="change(this.id)"><h3>PC</h3></button></li>
+                    <li><button class="tabs" id="console" onclick="change(this.id)"><h3>Console</h3></button></li>
+                    <li><button class="tabs" id="mobile" onclick="change(this.id)"><h3>Mobile</h3></button></li>
+                </ul>
 
-            <ul class="storeLink" id="l_pc" style="display:flex;">
-                <li class="listing"><a href="{{link.link}}"><img class="logo" src="../../static/img/logo_reviews/log_steam.png" alt="Steam Store" /></a></li>
-                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_org.png" alt="Origin" /></a></li>
-                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_blizz.png" alt="Blizzard" /></a></li>
-                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_epic.png" alt="Epic Games" /></a></li>
-            </ul>
-            <ul class="storeLink" id="l_console" style="display: none;">
-                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_nin.png" alt="Nintendo eshop" />   </a></li>
-                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_wind.png" alt="Microsoft store" /> </a></li>
-                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_psp.png" alt="Playstation store" /></a></li>
-            </ul>
-            <ul class="storeLink" id="l_mobile" style="display: none;">
-                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_ios.png" alt="AppStore" /></a></li>
-                <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_android.png" alt="PlayStore" /></a></li>
-            </ul>
-        </div>
-    </section>
+                <ul class="storeLink" id="l_pc" style="display:flex;">
+                    <li class="listing"><a href="{{link.link}}"><img class="logo" src="../../static/img/logo_reviews/log_steam.png" alt="Steam Store" /></a></li>
+                    <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_org.png" alt="Origin" /></a></li>
+                    <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_blizz.png" alt="Blizzard" /></a></li>
+                    <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_epic.png" alt="Epic Games" /></a></li>
+                </ul>
+                <ul class="storeLink" id="l_console" style="display: none;">
+                    <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_nin.png" alt="Nintendo eshop" />   </a></li>
+                    <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_wind.png" alt="Microsoft store" /> </a></li>
+                    <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_psp.png" alt="Playstation store" /></a></li>
+                </ul>
+                <ul class="storeLink" id="l_mobile" style="display: none;">
+                    <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_ios.png" alt="AppStore" /></a></li>
+                    <li class="listing"><a><img class="logo" src="../../static/img/logo_reviews/log_android.png" alt="PlayStore" /></a></li>
+                </ul>
+            </div>
+        </section>
+    {% else %}
+        {% if features != [] %}
+        <table class="table text-white">
+            <thead class="thead-dark">
+            <tr>
+                <th>Features identified by AI</th>
+                <th>Comment Type</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for feature in features %}
+                <tr>
+                    <td>{{feature.description}}</td>
+                    {% if feature.positive %}
+                        <td>Positive</td>
+                    {% else %}
+                        <td>Negative</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    {% endif %}
 
     <!--================================================================================-->
     <!--                                comment section                                 -->
