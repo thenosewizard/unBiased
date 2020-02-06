@@ -33,9 +33,9 @@ class Genre(db.Model):
     def __repr__(self):
         return 'genreId = {0}, description = {1}'.format(self.genreId,self.description)
 
-class Feature(db.Nodel):
+class Feature(db.Model):
     featureId = db.Column(db.Integer, primary_key = True)
-    itemId = db.Column(db.Integer, db.ForeignKey(item.itemId), nullable = False)
+    itemId = db.Column(db.Integer, db.ForeignKey('item.itemId'), nullable = False)
     description = db.Column(db.String(500), nullable = False)
     positive = db.Column(db.Boolean, nullable = False)
 
