@@ -35,9 +35,9 @@
                 <span class="sr-only">Next</span>
             </a>
         </div> -->
-        <img src="../../static/img/item_images/{{game.image}}"  class="card-img-top" alt="CS_GO">
-        <h1 class="gameName">{{game.title}}</h1>
-        <h3>Item Rating: {{game.rating}}</h3>
+        <img src="../../static/img/item_images/{{item.image}}"  class="card-img-top" alt="CS_GO">
+        <h1 class="itemName">{{item.title}}</h1>
+        <h3>Item Rating: {{item.rating}}</h3>
         <br>
     </section>
 
@@ -47,35 +47,22 @@
     <!--================================================================================-->
     <section class="info content">
         <h4>Item Description</h2>
-        <p>{{game.description}}</p>
+        <p>{{item.description}}</p>
         <br>
         <h4>Summaried AI review</h4>
-        <p>{{game.reviewAI}}</p>
+        <p>{{item.reviewAI}}</p>
     </section>
 
 
     <!--================================================================================-->
     <!--            This stuff is the side bar / review break down                      -->
     <!--================================================================================-->
-    <aside>
-        <div>
-            <h3>Rating Breakdown:</h3>
-            <ul>
-                <li class="default">Credibility: {{game.credibility}}</li>
-                <li class="default">Placeholder:</li>
-                <li class="default">Placeholder: </li>
-                <li class="default">Placeholder:</li>
-            </ul>
-        </div>
-        <div class="comp">
-            <button class="btn btn-outline-success"><a href="{{url_for('main.genReview', index = game.itemId)}}">Get Product Specifics</a></button>
-        </div>
-    </aside>
+    <button class="btn btn-outline-success"><a href="{{url_for('main.genReview', index = item.itemId)}}">Get Product Specifics</a></button>
 
     <!--================================================================================-->
     <!--            This is the linking to the games steam store page                   -->
     <!--================================================================================-->
-    {% if game.itemType == "Game" %}
+    {% if item.itemType == "Game" %}
         <section class="hold">
             <h1 class="title-card">Get the game here!</h1>
             <div class="center">
@@ -105,7 +92,7 @@
     {% else %}
     <section>
         {% if pos_features or neg_features %}
-        <h3 class="float-left">Features identified by AI</h3>
+        <h3 style="margin-top: 35%;">Features identified by AI</h3>
         <table class="table text-white">
             <thead class="thead-dark">
             <tr>

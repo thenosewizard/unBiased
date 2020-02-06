@@ -65,21 +65,21 @@ def browse():
 @main.route("/review")
 def review():
     index = request.args.get("index", type=int)
-    game = Item.query.filter_by(itemId=index).first()
+    item = Item.query.filter_by(itemId=index).first()
     link = ItemLink.query.filter_by(itemId=index).first()
     pos_features = Feature.query.filter_by(itemId = index, positive = True)
     neg_features = Feature.query.filter_by(itemId = index, positive = False)
-    if game.address == None:
+    if item.address == None:
         section = "steam"
     else:
         section = "yelp"
     requestjson = {
         "section" : section,
-        "id" : str(game.refid)
+        "id" : str(item.refid)
     }
     reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
-    game.reviewAI = removeExtra(reviewAI)
-    return render_template("review.html", game=game, link=link, pos_features=pos_features, neg_features = neg_features, zip_longest=zip_longest)
+    item.reviewAI = removeExtra(reviewAI)
+    return render_template("review.html", item=item, link=link, pos_features=pos_features, neg_features = neg_features, zip_longest=zip_longest)
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
