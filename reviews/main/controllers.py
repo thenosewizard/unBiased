@@ -126,12 +126,6 @@ def removeExtra(i):
 def contactUs():
     return render_template("feedback(Updated).html")
 
-@main.route('/food')
-def foodIndex():
-    carousell = Item.query.filter(Item.itemType=="Food").limit(3).all()
-    food = Item.query.filter(Item.itemType=="Food").all()
-    return render_template("foodIndex.html", title="Index", carousell=carousell, food=food)
-
 @main.route("/profile", methods = ['GET','POST'])
 def profile():
     return render_template("profile.html")
