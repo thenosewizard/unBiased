@@ -67,6 +67,9 @@ def browse():
 def review():
     index = request.args.get("index", type=int)
     item = Item.query.filter_by(itemId=index).first()
+    if item == None:
+        form = IndexForm()
+        return redirect('main.index', title="Index", form=form)
     link = ItemLink.query.filter_by(itemId=index).first()
     pos_features = Feature.query.filter_by(itemId = index, positive = True)
     neg_features = Feature.query.filter_by(itemId = index, positive = False)
@@ -146,10 +149,13 @@ def gameIndex():
 def profile():
     index = request.args.get('index', type=int)
     user = User.query.filter_by(id = index).first()
+    if user == None:
+        return redirect('main.index', title="index")
     return render_template("profile.html", user = user)
 
 @main.route("/ban")
 def ban():
+    index = request.args.get('index', type=int)
     user = User.query.filter_by(id = index).first()
     if user.ban == True:
         user.ban = False
@@ -158,12 +164,13 @@ def ban():
         user.ban = True
         db.session.commit()
     print(user.ban)
-    return render_template("profile.html", user = user)
+    return redirect(url_for('main.profile', index = index))
 
 @main.route("/delete")
 def deleteuser():
-    user = User.query.filter_by(id = id).first()
+    index = request.args.get('index', type=int)
+    user = User.query.filter_by(id = index).first()
     db.session.delete(user)
     db.session.commit()
     form = IndexForm()
-    return render_template("index.html",title="Index",form=form)
+    return redirect(url_for('main.index', title = "index", form = form))
