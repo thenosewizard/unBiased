@@ -44,6 +44,10 @@ def newPost():
     
     return render_template("newPost.html", form=form, index=index)
 
+@forum.errorhandler(401)
+def page_not_found(e):
+    return redirect(url_for("main.login"))
+
 @forum.route('/forum/newThread', methods=["GET","POST"])
 @login_required
 def newThread():
