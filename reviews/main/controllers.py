@@ -89,10 +89,11 @@ def checkreview():
             requestjson = { "review" : form.content.data }
             result = requests.get("http://35.240.189.97/classifyYelp", json = requestjson)
             if result.content == 1:
-                isbiased = False
-            else:
                 isbiased = True
+            else:
+                isbiased = False
             flash("Please wait while we process your review", "success")
+            
             return render_template("checkreview.html", form=form , biased = isbiased)
     return render_template("checkreview.html", form=form , biased = isbiased)
 
@@ -143,15 +144,24 @@ def gameIndex():
 def profile():
     index = request.args.get('index', type=int)
     user = User.query.filter_by(id = index).first()
-    print(user.id)
     return render_template("profile.html", user = user)
 
-# def ban():
-#     user = User.query.filter_by(id = id).first()
-#     if user.ban == True:
-#         user.ban = False
-#     else:
-#         user.ban == False
-#     db.session.commit()
-#     index = id
-#     return profile(index)
+@main.route("/ban")
+def ban():
+    user = User.query.filter_by(id = index).first()
+    if user.ban == True:
+        user.ban = False
+        db.session.commit()
+    else:
+        user.ban = True
+        db.session.commit()
+    print(user.ban)
+    return render_template("profile.html", user = user)
+
+@main.route("/delete")
+def deleteuser():
+    user = User.query.filter_by(id = id).first()
+    db.session.delete(user)
+    db.session.commit()
+    form = IndexForm()
+    return render_template("index.html",title="Index",form=form)

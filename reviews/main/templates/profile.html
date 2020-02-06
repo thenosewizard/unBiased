@@ -112,7 +112,7 @@
 
                 </div>
 
-                {% if user.role == "Admin" %}
+                {% if current_user.role == "Admin" %}
                 {% if user.ban == False %}
                 <!--Note class="disabled" and data-toggle="popover" are for buttons that CANNOT be clicked-->
                 <button type="button" class="btn btn-primary ban" data-toggle="modal" data-target="#banModal">
@@ -133,7 +133,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">WARNING</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">X</span>
                                 </button>
@@ -143,9 +143,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: indianred">No</button>
-                                <a href="{{ url_for('main.ban', id=user.id)}}">
-                                    <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
-                                </a>
+                                <button type="button" class="btn btn-primary" style="background-color: darkgreen;" href="{{ url_for('main.ban', index=user.id)}}">Yes</button>
                             </div>
                         </div>
                     </div>
@@ -156,7 +154,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">WARNING</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">X</span>
                                 </button>
@@ -166,9 +164,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: indianred">No</button>
-                                <a href="{{ url_for('main.ban', id=user.id)}}">
-                                    <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
-                                </a>
+                                <button type="button" class="btn btn-primary" style="background-color: darkgreen;" href="{{ url_for('main.ban', index=user.id)}}">Yes</button>
                             </div>
                         </div>
                     </div>
@@ -185,13 +181,11 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p style="color:black;">WARNING</p>
+                                <p style="color:black;">Delete {{user.username}}?</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: indianred">No</button>
-                                <a href="{{ url_for('main.deleteuser', id=user.id)}}">
-                                    <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
-                                </a>
+                                <button type="button" class="btn btn-primary" style="background-color: darkgreen;" href="{{ url_for('main.deleteuser', index=user.id)}}">Yes</button>
                             </div>
                         </div>
                     </div>
