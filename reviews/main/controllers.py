@@ -121,6 +121,10 @@ def removeExtra(i):
     list = text.split("\"")
     return list[-2]
 
+@main.route("/contacUs")
+def contactUs():
+    return render_template("feedback(Updated).html")
+    
 @main.route('/food')
 def foodIndex():
     carousell = Item.query.filter(Item.itemType=="Food").limit(3).all()

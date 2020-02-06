@@ -53,6 +53,7 @@
                 <a class="navLinks" href="{{url_for('main.browse')}}">Browse</a>
                 <a class="navLinks" href="{{url_for('main.checkreview')}}">Check Review</a>
                 <a class="navLinks" href="{{url_for('forum.index')}}">Forum</a>
+                <a class="navLinks" href="{{ url_for('main.contactUs')}}">Contact Us</a>
                 {% if current_user.is_authenticated %}
                 <a class="navLinks" href="{{url_for('main.logout')}}">Logout</a>
                 {% else %}
