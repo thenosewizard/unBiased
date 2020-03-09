@@ -1,3 +1,9 @@
+.text {
+    text-align: center;
+    color: #13161F;
+    /*padding-right: 50px;*/
+}
+
 .logo {
     max-width: 100%; 
     text-align: center;
