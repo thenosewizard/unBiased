@@ -3,7 +3,9 @@ from reviews.main.forms import RegistrationForm, LoginForm, CheckReviewForm, Ind
 from reviews.models import User, Item, Feedback, GenreItem, Comment, ItemLink, Feature
 from reviews import db, bcrypt
 from flask_login import login_user, current_user, logout_user
+from sqlalchemy import update
 import json, requests
+from itertools import zip_longest
 
 main = Blueprint('main', __name__, template_folder= "templates")
 
@@ -64,20 +66,24 @@ def browse():
 @main.route("/review")
 def review():
     index = request.args.get("index", type=int)
-    game = Item.query.filter_by(itemId=index).first()
+    item = Item.query.filter_by(itemId=index).first()
+    if item == None:
+        form = IndexForm()
+        return redirect('main.index', title="Index", form=form)
     link = ItemLink.query.filter_by(itemId=index).first()
-    features = Feature.query.filter_by(itemId = index)
-    if game.address == None:
+    pos_features = Feature.query.filter_by(itemId = index, positive = True)
+    neg_features = Feature.query.filter_by(itemId = index, positive = False)
+    if item.address == None:
         section = "steam"
     else:
         section = "yelp"
     requestjson = {
         "section" : section,
-        "id" : str(game.refid)
+        "id" : str(item.refid)
     }
     reviewAI = requests.get("http://35.240.189.97/reviewGen", json = requestjson).content
-    game.reviewAI = removeExtra(reviewAI)
-    return render_template("review.html", game=game, link=link, features=features)
+    item.reviewAI = removeExtra(reviewAI)
+    return render_template("review.html", item=item, link=link, pos_features=pos_features, neg_features = neg_features, zip_longest=zip_longest)
 
 @main.route("/checkreview", methods = ['GET','POST'])
 def checkreview():
@@ -87,11 +93,13 @@ def checkreview():
         if form.validate():
             requestjson = { "review" : form.content.data }
             result = requests.get("http://35.240.189.97/classifyYelp", json = requestjson)
-            if result.content == 1:
+            if str(result.content) == 'b\'"1"\\n\'':
                 isbiased = False
             else:
                 isbiased = True
+            print(isbiased)
             flash("Please wait while we process your review", "success")
+            
             return render_template("checkreview.html", form=form , biased = isbiased)
     return render_template("checkreview.html", form=form , biased = isbiased)
 
@@ -124,14 +132,46 @@ def removeExtra(i):
 
 @main.route("/contacUs")
 def contactUs():
-    return render_template("feedback(Updated).html")
+    return render_template("feedback.html")
 
 @main.route('/food')
 def foodIndex():
-    carousell = Item.query.filter(Item.itemType=="Food").limit(3).all()
-    food = Item.query.filter(Item.itemType=="Food").all()
-    return render_template("foodIndex.html", title="Index", carousell=carousell, food=food)
+    page = request.args.get("page", 1, type=int)
+    games = Item.query.filter_by(itemType = "Food").order_by(Item.rating.desc()).paginate(page= page, per_page=3)
+    return render_template("browse.html", games = games)
+
+@main.route('/game')
+def gameIndex():
+    page = request.args.get("page", 1, type=int)
+    games = Item.query.filter_by(itemType = "Game").order_by(Item.rating.desc()).paginate(page= page, per_page=3)
+    return render_template("browse.html", games = games)
 
 @main.route("/profile", methods = ['GET','POST'])
 def profile():
-    return render_template("profile.html")
+    index = request.args.get('index', type=int)
+    user = User.query.filter_by(id = index).first()
+    if user == None:
+        return redirect('main.index', title="index")
+    return render_template("profile.html", user = user)
+
+@main.route("/ban")
+def ban():
+    index = request.args.get('index', type=int)
+    user = User.query.filter_by(id = index).first()
+    if user.ban == True:
+        user.ban = False
+        db.session.commit()
+    else:
+        user.ban = True
+        db.session.commit()
+    print(user.ban)
+    return redirect(url_for('main.profile', index = index))
+
+@main.route("/delete")
+def deleteuser():
+    index = request.args.get('index', type=int)
+    user = User.query.filter_by(id = index).first()
+    db.session.delete(user)
+    db.session.commit()
+    form = IndexForm()
+    return redirect(url_for('main.index', title = "index", form = form))

@@ -35,6 +35,8 @@ def thread(index):
 @login_required
 def newPost():
     index = request.args.get("index", type=int)
+    if current_user.ban == True:
+        return redirect('forum.thread', index=index)
     form = postForm()
     if form.validate_on_submit():
         newPost = Post(title = form.title.data, authorId = current_user.id, threadId = index, content=form.content.data)
@@ -52,6 +54,9 @@ def page_not_found(e):
 @forum.route('/forum/newThread', methods=["GET","POST"])
 @login_required
 def newThread():
+    if current_user.ban == True:
+        threads = Thread.query.paginate(page=page, per_page=8)
+        return redirect('forum.index', threads=threads)
     form = threadForm()
     if form.validate_on_submit():
         newThread = Thread(title = form.title.data, content = form.content.data, category = form.category.data, userId = current_user.id)

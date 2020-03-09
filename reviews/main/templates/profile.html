@@ -25,28 +25,70 @@
         <link rel="icon" href="media/favIcon.png" type="image/gif" sizes="16x16">
     </head>
     <body>
-        <header id="nav">
-            <!--================================================================================-->
-            <!--                                    Navbar                                      -->
-            <!--================================================================================-->
-            <nav class="navbar">
-                <a class="navbar-brand">uReview</a>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
-                    <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
-                </form>
+        <header>
+            <nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
+                <a class="navbar-brand" href="{{url_for('main.index')}}">uReview</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+                        aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('main.foodIndex')}}">Food</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('main.gameIndex')}}">Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('main.checkreview')}}">Verify</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('forum.index')}}">Forum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('main.contactUs')}}">Contact Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto nav-flex-icons">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="search the database" aria-label="Search" />
+                            <button class="btn btn-outline-success fa fa-search" id="bootstap-override" type="submit"></button>
+                        </form>
+                        <li class="nav-item avatar dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                                <img src="../../static/img/icons/defaultProfile.png" class="rounded-circle z-depth-0"
+                                    alt="avatar image" style="width:30px">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+                                aria-labelledby="navbarDropdownMenuLink-55">
+                                {% if current_user.is_authenticated %}
+                                <a class="dropdown-item" href="{{url_for('main.profile')}}">Profile</a>
+                                <a class="dropdown-item" href="{{url_for('main.logout')}}">Logout</a>
+                                {% else %}
+                                <a class="dropdown-item" href="{{url_for('main.login')}}">Login</a>
+                                <a class="dropdown-item" href="{{ url_for('main.register')}}">Register</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
     
         <main>
            
             <div class="container">
-                <img src="media/defaultProfile.png" />
+                <img src="../../static/img/icons/defaultProfile.png" />
 
                 <div class="container">
                     <div class="row bg-dark header">
                         <div class="col">
-                            Account Number
+                            User ID
                         </div>
                         <div class="col">
                             Username
@@ -58,45 +100,52 @@
 
                     <div class="row">
                         <div class="col" id="accountNo">
-                            4
+                            {{user.id}}
                         </div>
                         <div class="col" id="userName">
-                            Hunter2
+                            {{user.username}}
                         </div>
                         <div class="col" id="email">
-                            abc@123.com
+                            {{user.email}}
                         </div>
                     </div>
 
                 </div>
+
+                {% if current_user.role == "Admin" %}
+                {% if user.ban == False %}
                 <!--Note class="disabled" and data-toggle="popover" are for buttons that CANNOT be clicked-->
                 <button type="button" class="btn btn-primary ban" data-toggle="modal" data-target="#banModal">
                     Ban
                 </button>
-                <button type="button" class="btn btn-success ban disabled" data-toggle="popover" data-target="#unBanModal" 
-                        data-trigger="focus" title="Whoops!" data-content="User account is NOT banned.">
+                {% else %}
+                <button type="button" class="btn btn-success ban" data-toggle="modal" data-target="#unBanModal">
                     unBan
                 </button>
+                {% endif %}
                 <br />
                 <button type="button" class="btn btn-danger ban" data-toggle="modal" data-target="#deleteModal">
                     DELETE ACCOUNT
                 </button>
+                {% endif %}
                 <!-- Ban Modal -->
                 <div class="modal" id="banModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">WARNING</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">�</span>
+                                    <span aria-hidden="true">X</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p style="color:black;">Woah there are you sure you want to ban "INSERT USERNAME"?</p>
+                                <p style="color:black;">Confirm ban {{user.username}}?</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: indianred">No</button>
-                                <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                <a href="{{ url_for('main.ban', index=user.id) }}">
+                                    <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -107,17 +156,19 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">WARNING</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">�</span>
+                                    <span aria-hidden="true">X</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p style="color:black;">Unban "INSERT USERNAME"?</p>
+                                <p style="color:black;">Confirm Unban {{user.username}}?</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: indianred">No</button>
-                                <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                <a href="{{ url_for('main.ban', index=user.id)}}">
+                                    <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -130,15 +181,17 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">WARNING</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">�</span>
+                                    <span aria-hidden="true">X</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p style="color:black;">WARNING</p>
+                                <p style="color:black;">Delete {{user.username}}?</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: indianred">No</button>
-                                <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                <a href="{{url_for('main.deleteuser', index=user.id)}}">
+                                    <button type="button" class="btn btn-primary" style="background-color: darkgreen;">Yes</button>
+                                </a>
                             </div>
                         </div>
                     </div>

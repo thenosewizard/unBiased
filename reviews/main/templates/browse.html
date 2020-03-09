@@ -29,9 +29,17 @@
     {% for page_num in games.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
     {% if page_num %}
     {% if games.page == page_num %}
-    <a class="btn btn-info mb-4" href="{{ url_for('main.browse', page=page_num) }}">{{ page_num }}</a>
+    {% if games.items[0].itemType == "Food" %}
+    <a class="btn btn-info mb-4" href="{{ url_for('main.foodIndex', page=page_num) }}">{{ page_num }}</a>
     {% else %}
-    <a class="btn btn-outline-info mb-4" href="{{ url_for('main.browse', page=page_num) }}">{{ page_num }}</a>
+    <a class="btn btn-info mb-4" href="{{ url_for('main.gameIndex', page=page_num) }}">{{ page_num }}</a>
+    {% endif %}
+    {% else %}
+    {% if games.items[0].itemType == "Food" %}
+    <a class="btn btn-outline-info mb-4" href="{{ url_for('main.foodIndex', page=page_num) }}">{{ page_num }}</a>
+    {% else %}
+    <a class="btn btn-outline-info mb-4" href="{{ url_for('main.gameIndex', page=page_num) }}">{{ page_num }}</a>
+    {% endif %}
     {% endif %}
     {% else %}
     {% endif %}

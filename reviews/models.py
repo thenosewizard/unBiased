@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     comments = db.relationship('Comment', backref = 'user', lazy = True)
     posts = db.relationship("Post", backref='author', lazy = True)
     threads = db.relationship("Thread", backref = "author", lazy = True)
+    ban = db.Column(db.Boolean, nullable = False)
 
     def __repr__(self):
         return 'userId = {0}, username = {1}, role = {2}'.format(self.id, self.username, self.role)
@@ -82,8 +83,7 @@ class Feedback(db.Model):
     email = db.Column(db.String(200), nullable = False)
     name = db.Column(db.String(50), nullable = True)
     content = db.Column(db.String(1000), nullable = False)
-    userId = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
+    
     def __repr__(self):
         return '{}, {}, {}, {}'.format(self.feedbackId, self.email, self.name, self.content)
 
@@ -120,8 +120,9 @@ db.create_all()
 db.session.add_all(
     [
         #User
-        User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member'),
-        User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Admin'),
+        User(username = 'abi', email= "abi@email.com", password = '$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member', ban = False),
+        User(username = 'Oscar', email = "oscar@email.com", password = '$2b$12$s81hqvO2Vx0L468C8eLqP.WNnagcuqoXYDs.QqYuCekM3cgs1hsBG', role = 'Admin',ban = False),
+        User(username = "Zach", email= "Zach@email.com", password='$2b$12$HEwBRGGScKLcbQOepmjWz.OSa51kG9InyudOu/ABXU7t9RmhQGuG.', role = 'Member',ban = False),
 
         #Game Genres
         Genre(name = 'Adventure', description = 'Go on a Journey and Explore!'),
@@ -259,12 +260,18 @@ db.session.add_all(
 
         Comment(userId = 1, itemId = 1, content = 'Love it'),
         Comment(userId = 2, itemId = 1, content = '10/10'),
-        Thread(threadId = 1, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!",category= "Game", userId = 1),
+        Thread(threadId = 1, title = "CSGO VAC BAN by bot called ZONERBOT.xyz", content="Hello, I recently received a vac ban I must've been \
+            mistook for someone else because I've never cheated. That is the last thing on my mind, I've played with cheaters before but I've \
+                always made sure to report them and I've overwatched several cases. I'm totally against cheating, this came as a big surprise.",
+                category= "Game", userId = 1),
         Thread(threadId = 2, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
              Suggestions?", category="Food", userId = 2),
-        Thread(threadId = 3, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!", category= "Game", userId = 1),
-        Thread(threadId = 4, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
-             Suggestions?",  category="Food", userId = 2),
+        Thread(threadId = 3, title = "Looking for the Title of this MMO!", content="I recently came across a free MMO survival sandbox game (or \
+            so the description seemed to explain it that way). Where you make an undead character in avast desert like region. You are able to \
+                craft housing and material. I don't believe there is a leveling system, or that I saw. There is use of magic, black magic \
+                    combinations, and other item crafts. I did not add the game to my wishlist or got the title of it...but I know it starts with\
+                    'Armi---or Irma....' something with an 'A' or 'I'", category= "Game", userId = 1),
+        Thread(threadId = 4, title = "What did you just eat?", content="It could be breakfast, lunch, dinner or a quick snack.",  category="Food", userId = 2),
         Thread(threadId = 5, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!", category= "Game", userId = 1),
         Thread(threadId = 6, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
              Suggestions?",  category="Food", userId = 2),
@@ -274,14 +281,15 @@ db.session.add_all(
         Thread(threadId = 9, title = "What games are worth buying?", content="I don't know what games to play on Steam. Help Please!", category= "Game", userId = 1),
         Thread(threadId = 10, title = "Where to find good food?", content="Hi guys! I want to know where can I eat good food in Singapore. Any \
              Suggestions?",  category="Food", userId = 2),
-        Post(postId = 1, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
+        Post(postId = 1, title = "CSGO", authorId = 2, threadId = 1, content = "Report bots do not give vac. Report bots do not even work."),
         Post(postId = 2, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
-        Post(postId = 3, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
-        Post(postId = 4, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
-        Post(postId = 5, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
-        Post(postId = 6, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
-        Post(postId = 7, title = "CSGO", authorId = 2, threadId = 1, content = "I will recommend you to try CSGO. Its really fun!"),
-        Post(postId = 8, authorId = 1, threadId = 2, content = "Chomp Chomp has the best food! Its at 20 Kensington Park Rd, Singapore 557269"),
+        Post(postId = 3, title = "CSGO", authorId = 1, threadId = 1, content = "That's not an answer. Thanks anyway"),
+        Post(postId = 4, authorId = 1, threadId = 4, content = "I just had a small salad and a grilled chicken sandwich. Boring, but healthy."),
+        Post(postId = 5, title = "CSGO", authorId = 3, threadId = 1, content = "hes right tho, report bots can at best get you into overwatch, which wont ban you if legit. i would know im banned"),
+        Post(postId = 6, authorId = 3, threadId = 4, content = "6oz of shredded chicken."),
+        Post(postId = 7, title = "CSGO", authorId = 2, threadId = 5, content = "I will recommend you to try CSGO. Its really fun!"),
+        Post(postId = 8, authorId = 3, threadId = 4, content = "BBQ beans with cornbread and celery with ranch. Enjoyed it with my son at school. He only liked the cornbread:/"),
+        Post(postId = 9, title = "Inferna", authorId = 2, threadId = 3, content = "Maybe Inferna?"),
     ]
 )
 
